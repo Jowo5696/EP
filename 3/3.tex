@@ -73,10 +73,25 @@
 \fancyhead[R]{\leftmark}
 
 \section{Einleitung}
-jjj
+In diesem Versuch werden bipolare und Feldeffekttransistoren behandelt; ihr Aufbau, physikalische Funktionsweise und Integration in Schaltungen werden verstanden.
+Konkreter soll die Ausgangskennlinie sowie Arbeitsgerade und Arbeitspunkt einen npn--Transistors und FETs mit Hilfe eines Kennlinienschreibers und Oszillographen vermessen werden.
 
 \clearpage
 \section{Theorie}
+Es gibt zwei verschiedene Arten von Transistoren; Bipolar-- und Feldeffekttransistor.
+Der Bipolartransistor
+\begin{figure}[h]
+        \centering
+        \includegraphics[width=0.3\textwidth]{bipolartransistor.png}
+        \caption{Schaltbild und Aufbau eines Bipolartransistors; Abbildung 3/4.1 a) \cite{Praktikumsanleitung}}
+\end{figure}\\
+ist aufgebaut aus zwei n--dotierten Materialien (Emitter und Kollektor), wobei der Emitter deutlich stärker n--dotiert ist als der Kollektor.
+Die Basis ist nur sehr dünn und leicht p--dotiert.
+\\\indent Wird nun an der Basis ein geringer Strom angeschlossen und es herrscht eine Spannung zwischen Emitter und Kollektor, so fließen Elektronen aus dem Emitter in die Basis und füllen dort die p--Löcher auf.
+Da die Basis allerdings nicht alle Elektronen des Emitters aufnehmen kann, und eine Spannung zwischen Emitter und Kollektor anliegt, fließen die Elektronen des Emitters direkt weiter in den Kollektor.
+Obwohl zwischen Basis und Kollektor die Sperrrichtung ist, fließen die Elektronen trotzdem, da die Sperrung bereits durch den Strom aus dem Emitter in die Basis aufgehoben worden ist.
+Zudem wirkt eine Kraft auf die Elektronen in Richtung Kollektor durch das starke Feld zwischen Basis und Kollektor.
+\\\\ Der FET (\textbf{F}eld\textbf{e}ffekt\textbf{t}ransistor) ist ein Transistor ein elektrisches Feld als Analogon zum Basisstrom des Bipolartransistors verwendet.
 
 \clearpage
 \section{Voraufgaben}
@@ -109,6 +124,55 @@ Leitet man nach $I_E$ ab folgt
         \Leftrightarrow &&\dfrac{\alpha }{1-\alpha }&=\beta .&&
 \end{align} 
 
+\subsection{D}
+Ein vereinfachtes Schaltbild zum Kennlinienschreiber könnte sein
+\begin{figure}[h]
+        \begin{minipage}{0.5\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{kennlinienschreiber.png}
+                \caption{Schaltbild Kennlinienschreiber; Abbildung 3.1 \cite{Praktikumsanleitung}}
+        \end{minipage}
+        \begin{minipage}{0.5\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{D_crop.pdf}
+                \caption{Vereinfachtes Schaltbild Kennlinienschreiber}
+        \end{minipage}
+\end{figure}\\
+Die 16 verschiedenen Basisströme erhält man aus den vier verschiedenen Widerständen, mit denen binär gezählt wird.
+\\\indent Um die Kennlinie eines Feldeffekttransistors zu vermessen muss nach dem Hochpass eine variable Spannung anliegen, die mit einem Potentiometer erreicht werden kann.
+Da der Aufbau des Feldeffekttransistors analog zu dem des Bipolartransistors ist, lässt sich hier \textit{Basis} durch \textit{Gate}, \textit{Emitter} durch \textit{Source} und \textit{Kollektor} durch \textit{Drain} einfach tauschen.
+
+\subsection{E}
+$\zz\ U_B=U_0\tfrac{R_2}{R_1+R_2}-I_B\tfrac{R_1R_2}{R_1+R_2}$.\\
+Nach Maschen-- und Knotenregel: $U_0=U_1+U_B$ und $I_1=I_B+I_2$ 
+\begin{align} 
+        && U_B &= U_0-U_1 &&\\
+        \Leftrightarrow && U_B &= U_0-R_1I_1 &&\nonumber \\
+        \Leftrightarrow && U_B &= U_0-\left(I_B+I_2\right)R_1 &&\nonumber \\
+        \Leftrightarrow && U_B &= U_0-I_BR_1-R_1\dfrac{U_B}{R_2} &&\nonumber \\
+        \Leftrightarrow && R_2U_B &= U_0R_2-I_BR_1R_2-R_1U_B &&\nonumber \\
+        \Leftrightarrow && U_B &= U_0\dfrac{R_2}{R_1+R_2}-I_B\dfrac{R_1R_2}{R_1+R_2}. &&
+\end{align} 
+
+\newpage
+\subsection{F WIP Schaltkreis}
+\begin{figure}[h]
+        \centering
+        \includegraphics[width=0.5\textwidth]{F_crop.pdf}
+        \caption{Ausgangskennlinienfeld Bipolartransistor mit EIN und AUS Schaltung}
+\end{figure}
+
+\begin{figure}[h]
+        \centering
+        \begin{circuitikz}
+                \draw
+                (0,0) node[anchor=east] {24V}
+                to [short, o-*] (2,0)
+                to (2,0) node[npn,anchor=C] (npn) {} 
+                ;
+        \end{circuitikz}
+        \caption{Schaltkreis zum Steuern einer Lampe}
+\end{figure}
 
 \clearpage
 \section{Auswertung}
