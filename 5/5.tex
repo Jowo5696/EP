@@ -1,0 +1,122 @@
+%{{{ Formatierung
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{physics_notetaking}
+
+%%% dark red
+%\definecolor{bg}{RGB}{60,47,47}
+%\definecolor{fg}{RGB}{255,244,230}
+%%% space grey
+%\definecolor{bg}{RGB}{46,52,64}
+%\definecolor{fg}{RGB}{216,222,233}
+%%% purple
+%\definecolor{bg}{RGB}{69,0,128}
+%\definecolor{fg}{RGB}{237,237,222}
+%\pagecolor{bg}
+%\color{fg}
+
+\newcommand{\td}{\,\text{d}}
+\newcommand{\RN}[1]{\uppercase\expandafter{\romannumeral#1}}
+\newcommand{\zz}{\mathrm{Z\kern-.3em\raise-0.5ex\hbox{Z} }}
+\newcommand{\id}{1\kern-.258em1}
+
+\newcommand\inlineeqno{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnoa{(\theequation.\text{a})}
+\newcommand\inlineeqnob{(\theequation.\text{b})}
+\newcommand\inlineeqnoc{(\theequation.\text{c})}
+
+\newcommand\inlineeqnowo{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnowoa{\theequation.\text{a}}
+\newcommand\inlineeqnowob{\theequation.\text{b}}
+\newcommand\inlineeqnowoc{\theequation.\text{c}}
+
+\renewcommand{\refname}{Source}
+\renewcommand{\sfdefault}{phv}
+%\renewcommand*\contentsname{Contents}
+
+\pagestyle{fancy}
+
+\sloppy
+
+\numberwithin{equation}{section}
+
+%}}}
+
+\begin{document}
+
+%{{{ Titelseite
+
+\title{5 (1.\ Halbtag) $|$ Operationsverstärker}
+\author{Angelo Brade, Jonas Wortmann}
+\maketitle
+\pagenumbering{gobble}
+
+%}}}
+
+\newpage
+
+%{{{ Inhaltsverzeichnis
+
+\fancyhead[L]{\thepage}
+\fancyfoot[C]{}
+\pagenumbering{arabic}
+
+\tableofcontents
+
+%}}}
+
+\newpage
+
+%{{{
+
+\fancyhead[R]{\leftmark\\\rightmark}
+
+\newpage
+\section{Einleitung}
+
+\newpage
+\section{Theorie}
+
+\newpage
+\section{Voraufgaben}
+\subsection{A}
+Es gilt die Formel
+\begin{align} 
+        \dfrac{1}{v}&=\dfrac{1}{v_0}+k&v&=\dfrac{1}{\tfrac{1}{v_0}+k}
+.\end{align} 
+Für die Werte $k=0.1$, $v_0=10^4$ und $v_0=10^5$ ergibt sich
+\begin{align} 
+        v_1&\approx 9.990 & v_2&\approx 9.999
+.\end{align} 
+Mit der Näherung von $v=\tfrac{1}{k}$ ergibt sich
+\begin{align} 
+        v_\text{Näh}&=10
+.\end{align} 
+Die Abweichung von $v_1$ und $v_2$ von $v_\text{Näh}$ liegen jeweils bei $0.001\%$ und $0.0001\%$.
+
+\subsection{B}
+Es gilt
+\begin{align} 
+        && U_x &= U_\text{in}-kU_\text{out} && \\
+        \Leftrightarrow && &= U_\text{in}-kv_0U_x &&\nonumber \\
+        \Leftrightarrow && &= \dfrac{U_\text{in}}{1+v_0k}. &&
+\end{align} 
+Für $k=0.1$, $v_0=10^5$ und $U_\text{in}=\SI{1}{V}$ ist
+\begin{align} 
+        U_x\approx \SI{0.0001}{V}
+.\end{align} 
+
+
+\newpage
+\section{Auswertung}
+
+\clearpage
+\listoffigures
+\listoftables
+%\bibliographystyle{plain}
+%\bibliography{refs}
+
+%}}}
+
+\end{document}
