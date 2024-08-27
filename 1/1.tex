@@ -1,6 +1,6 @@
 %{{{ Formatierung
 
-\documentclass[a4paper,12pt]{article}
+\documentclass[a4paper,12pt,twocoloumn]{article}
 
 \usepackage{physics_notetaking}
 
@@ -146,7 +146,54 @@ und die Verzögerung
 \section{Auswertung}
 
 \subsection{Versuchsaufgabe 1: Differenzierglied}
-Wir erzeugen Impulse, indem wir ein Rechtecksignal mithilfe eines Differenzierglieds ableiten. Es sind 200 kHz bei 10 V eingestellt.
+Wir erzeugen Impulse, indem wir ein Rechtecksignal mithilfe eines Differenzierglieds ableiten. Es sind 200 kHz bei 10 V eingestellt. Ein Ausschnitt ist in Abb. \ref{fig:1.1} gezeigt.
+\begin{figure}[h]
+        \centering
+        \includegraphics[width=0.8\textwidth]{data/DS0001.BMP.png}
+        \caption{Impulse als Ableitung des Rechtecksignals}
+		\label{fig:1.1}
+\end{figure}
+Wenn wir nun den eingebauten 2.2 k$\Omega$ Widerstand verwenden, sehen wir eine deutliche Verkleinerung des Rignals (betrachte die gelbe Skalar: 50 mV im Vergleich zu 500 mV von zuvor). Dieses ist wieder in Abb. \ref{fig:1.2} dargestellt. Zusätzlich können wir eine Abklinkzeit beobachten. Dies ist auch plausibel, da Widerstände Dämpfen, sowie die Konstruktion nicht mehr annähand Verlustfrei machen und so eine sichbare Verzögerung/Abklinkzeit hinzukommt.
+\begin{figure}[h]
+        \centering
+        \includegraphics[width=0.8\textwidth]{data/DS0003.BMP.png}
+        \caption{Impulse mit Widerstand}
+		\label{fig:1.2}
+\end{figure}
+\subsection{Versuchsaufgabe 2: Impulse auf Kabeln}
+Es wird eine Schaltung nach Abb. \ref{fig:2.1} aufgebaut, um Impulse an beiden Enden hin- und herlaufen zu lassen.
+\begin{figure}[h]
+        \centering
+        \includegraphics[width=0.8\textwidth]{Schaltung_offen.png}
+        \caption{Schaltung mit offenen Enden}
+		\label{fig:2.1}
+\end{figure}
+An dem Signalgenerator stellen wir 100 kHz und 20V ein.
+\begin{figure}[h]
+        \centering
+        \includegraphics[width=0.8\textwidth]{data/DS0017.BMP.png}
+        \caption{Schaltung mit offenen Enden}
+		\label{fig:2.2}
+\end{figure}
+Bei dem Urspungssignal sehen wir, dass es mit einem größerem Peak und dann mit kleineren Peaks nachhallt. Das zweite Signal, welches durch die Kabel gedämpft wird, hier in blau in Abb. \ref{fig:2.2}, zieht um einen Versatz dem Ursprungssignal nach und beinhaltet zusätzlich die rückläufige Welle. So lassen sich pro Ursprungssignal, zwei weitere Peaks dem blauen Signal entnehmen. Die rückläufige Welle Entsteht aufgrund des offenen Leiter-Endes, welches als Glanzfläche, die einlaufende Welle phasengleich reflektiert. Einen Abstieg der Amplituden lässt sich aufgrund der Dämpfung - des Widerstands im Kabel - erklären.
+
+\subsection{Versuchsaufabe 3: Leitungsabschluss, Verzögerungszeit}
+Zur Untersuchng verschiedener Leitungsabschlüsse wird die Schaltung nach Abb. \ref{fig:3.1} konstruiert. Vorerst ist hierbei der Verzögerungskabel offen. Wir erhlaten den in Abb. \ref{fig:3.2} gezeigte Spannung.
+
+\begin{figure}[h]
+        \centering
+        \includegraphics[width=0.8\textwidth]{Schaltung_Abschluss.png}
+        \caption{Schaltung mit offenen Enden}
+		\label{fig:3.1}
+\end{figure}
+\begin{figure}[h]
+        \centering
+        \includegraphics[width=0.8\textwidth]{data/DS0018.BMP.png}
+        \caption{Schaltung mit offenen Enden}
+		\label{fig:3.2}
+\end{figure}
+Hierbei
+
 
 \clearpage
 \listoffigures
