@@ -241,7 +241,24 @@ Die Spezifikationen dieses R--C--Glieds sind
         R &= \SI{470}{\ohm} & C &= \SI{0.1}{\micro F} & \tau &= RC = \SI{47}{\micro s}
 .\end{align} 
 Dieser Tiefpass wird dann mit CH1 des Oszillographen verbunden.
-Am Funktionsgenerator wird ein Sinussignal mit $U_\text{pp}=\SI{4}{V}$ eingestellt, für welches die Dämpfung des Tiefpasses berechnet werden soll. a
+Am Funktionsgenerator wird ein Sinussignal mit $U_\text{pp}=\SI{4}{V}$ eingestellt, für welches die Dämpfung des Tiefpasses berechnet werden soll. 
+Die theoretisch berechnete Grenzfrequenz liegt bei 
+\begin{align} 
+        f_\text{Grenz}=\dfrac{1}{2\pi \tau }\approx \SI{3386}{\kilo Hz}
+.\end{align} 
+\begin{figure}[h]
+        \centering
+        \includegraphics[width=\textwidth]{plot/c_crop.pdf}
+        \caption{Bode--Diagramm des Tiefpasses und Grenzfrequenz}
+\end{figure}\\
+Wie erwartet, steigt die Dämpfung bei zunehmender Frequenz nicht--linear an und ihre größte Steigung liegt bei der Grenzfrequenz mit einer Dämpfung von $\SI{4.5}{dB}$.
+
+\newpage
+\section{Fazit}
+In diesem Versuch wurde sich ausgiebig mit dem Oszillographen als Messgerät für Spannung beschäftigt.
+Die Anstiegszeit für Rechtecksignale wurde auf $\Delta t_\text{Signal}=\SI{14.14+-2.12}{ns}$ bestimmt und die Bandbreite des Funktionsgenerators auf $B=\SI{24.8+-3.7}{\mega Hz}$.
+\\\indent Zudem wurde die Grenzfrequenz eines Tiefpasses auf $f_\text{Grenz}=\SI{3386}{kHz}$ bestimmt und mit Hilfe eines Bode--Plots bestätigt.
+
 %}}}
 
 \clearpage
