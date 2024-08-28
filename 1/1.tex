@@ -79,9 +79,9 @@
 \fancyhead[L]{\leftmark}
 
 \section{Einleitung}
-In diesem Versuch werden Koaxialkabel behandelt und ihre Eigenschaften behandelt.
-Die Reflexionseigenschaften innerhalb von Koaxialkablen sollen verstanden, sowie die Verzögerungszeit eines Kabels gemessen werden.
-Zudem soll das Rechtecksignal eines Hochpasses differenziert werden.
+In diesem Versuch werden Koaxialkabel und ihre Eigenschaften behandelt.
+Die Reflexionseigenschaften innerhalb von Koaxialkablen sollen verstanden, sowie die spezifische Dämpfung von Klippkabeln gemessen werden.
+Zudem wird das Rechtecksignal eines Hochpasses differenziert und das Verhalten bei verschiedenen vorgeschalteten Widerständen beobachtet.
 
 \newpage
 \section{Theorie}
@@ -93,9 +93,9 @@ Hier verteilt sich die gesamte Induktivität und Kapazität über das gesamte Ka
 Ein Ersatzschaltbild für die Wellenausbreitung in einem Leiter ist
 \begin{figure}[h]
         \centering
-        \includegraphics[width=0.8\textwidth]{ersatz_wellenausbreitung.png}
+        \includegraphics[width=0.6\textwidth]{ersatz_wellenausbreitung.png}
         \caption{Ersatzschaltbild zur Wellenausbreitung; Abbildung 1.3 \cite{Praktikumsanleitung}}
-\end{figure}
+\end{figure}\\
 Der Wellenwiderstand eines Kabels ist definiert als 
 \begin{align} 
         Z=\dfrac{U_h\left(x\right)}{I_h\left(x\right)}=\dfrac{U_r\left(x\right)}{-I_r\left(x\right)}
@@ -109,11 +109,22 @@ Für ein Koaxialkabel mit Innenradius $R_i$ und Außenradius $R_a$ gilt
 wobei $Z_\text{frei}=\,\sqrt[]{\tfrac{\mu _0}{\varepsilon _0}}=120\pi \,\SI{}{\ohm}$ der Wellenwiderstand des Vakuums ist.
 \\\indent Es existieren drei verschiedene wichtige Möglichkeiten für den Abschlusswiderstand in einer Leitung.
 \begin{enumerate}[label=--]
-        \item Angepasster Abschluss: $R_A=Z,r=0,s=1,m=1$ 
-        \item Offene Leitung: $R_A=\infty,r=+1,s=\infty,m=0$ 
-        \item Kurzschluss: $R_A=0,r=-1,s=\infty,m=0$ 
+        \item Angepasster Abschluss: $R_A=Z,r=0,s=1,m=1$. 
+                Hier sieht es für die einhegende Welle so aus, als würde der Widerstand $R_A$ das Kabel fortführen.
+                Es kommt zu keiner Reflexion der Welle (siehe $r=0$).
+        \item Offene Leitung: $R_A=\infty,r=+1,s=\infty,m=0$.
+                Bei einer offenen Leitung ist kein Widerstand an das Ende des Kabels angeschlossen.
+                Hier wird die Welle mit gleicher Polarisation reflektiert und interferiert dann mit der eingehenden Welle konstruktiv.
+        \item Kurzschluss: $R_A=0,r=-1,s=\infty,m=0$.
+                Bei einem Kurzschluss wird die Welle mit umgekehrter Polarisation reflektiert und interferiert desstruktiv mit der eingehenden Welle.
 \end{enumerate}
-Hier beschreiben $R_A$ den Abschlusswiderstand, $r$ den Reflexionskoeffizienten, $s$ das Stehwellenverhältnis und $m$ den Anpassungsfaktor.
+Hier beschreiben $R_A$ den Abschlusswiderstand, $r$ den Reflexionskoeffizienten, $s$ das Stehwellenverhältnis und $m$ den Anpassungsfaktor.\\\\
+In Klippkabeln kann die Länge eines Impulses sowie die Dämpfung variiert werden.
+Die Dämpfung ist bestimmt über das Verhältnis der Eingangsspannung zur Ausgangsspannung
+\begin{align} 
+        20\,\log\left(\dfrac{U_\text{out}}{U_\text{in}}\right)
+.\end{align} 
+Einige Beispiele für spezifische Dämpfungen finden sich in (\ref{fig:literatur}). 
 
 \newpage
 \section{Voraufgaben}
@@ -155,97 +166,95 @@ und die Verzögerung
 Wir erzeugen Impulse, indem wir ein Rechtecksignal mithilfe eines Differenzierglieds ableiten. Es sind 200 kHz bei 10 V eingestellt. Ein Ausschnitt ist in Abb. \ref{fig:1.1} gezeigt.
 \begin{figure}[h]
         \centering
-        \includegraphics[width=0.8\textwidth]{data/DS0001.BMP.png}
+        \includegraphics[width=0.6\textwidth]{data/DS0001.BMP.png}
         \caption{Impulse als Ableitung des Rechtecksignals}
 		\label{fig:1.1}
-\end{figure}
+\end{figure}\\
 Wenn wir nun den eingebauten 2.2 k$\Omega$ Widerstand verwenden, sehen wir eine deutliche Verkleinerung des Rignals (betrachte die gelbe Skalar: 50 mV im Vergleich zu 500 mV von zuvor). Dieses ist wieder in Abb. \ref{fig:1.2} dargestellt. Zusätzlich können wir eine Abklinkzeit beobachten. Dies ist auch plausibel, da Widerstände Dämpfen, sowie die Konstruktion nicht mehr annähand Verlustfrei machen und so eine sichbare Verzögerung/Abklinkzeit hinzukommt.
 \begin{figure}[h]
         \centering
-        \includegraphics[width=0.8\textwidth]{data/DS0003.BMP.png}
+        \includegraphics[width=0.6\textwidth]{data/DS0003.BMP.png}
         \caption{Impulse mit Widerstand}
 		\label{fig:1.2}
 \end{figure}
+
 \subsection{Versuchsaufgabe 2: Impulse auf Kabeln}
 Es wird eine Schaltung nach Abb. \ref{fig:2.1} aufgebaut, um Impulse an beiden Enden hin- und herlaufen zu lassen.
 \begin{figure}[h]
         \centering
-        \includegraphics[width=0.8\textwidth]{Schaltung_offen.png}
+        \includegraphics[width=0.6\textwidth]{Schaltung_offen.png}
         \caption{Schaltung mit offenen Enden}
 		\label{fig:2.1}
 \end{figure}
 An dem Signalgenerator stellen wir 100 kHz und 20V ein.
 \begin{figure}[h]
         \centering
-        \includegraphics[width=0.8\textwidth]{data/DS0017.BMP.png}
+        \includegraphics[width=0.6\textwidth]{data/DS0017.BMP.png}
         \caption{Schaltung mit offenen Enden}
 		\label{fig:2.2}
-\end{figure}
-Bei dem Urspungssignal sehen wir, dass es mit einem größerem Peak und dann mit kleineren Peaks nachhallt. Das zweite Signal, welches durch die Kabel gedämpft wird, hier in blau in Abb. \ref{fig:2.2}, zieht um einen Versatz dem Ursprungssignal nach und beinhaltet zusätzlich die rückläufige Welle. So lassen sich pro Ursprungssignal, zwei weitere Peaks dem blauen Signal entnehmen. Die rückläufige Welle Entsteht aufgrund des offenen Leiter-Endes, welches als Glanzfläche, die einlaufende Welle phasengleich reflektiert. Einen Abstieg der Amplituden lässt sich aufgrund der Dämpfung - des Widerstands im Kabel - erklären.
+\end{figure}\\
+Bei dem Urspungssignal sehen wir, dass es mit einem größerem Peak und dann mit kleineren Peaks nachhallt. Das zweite Signal, welches durch die Kabel gedämpft wird, hier in blau in Abb. \ref{fig:2.2}, zieht um einen Versatz dem Ursprungssignal nach und beinhaltet zusätzlich die rückläufige Welle. So lassen sich pro Ursprungssignal, zwei weitere Peaks dem blauen Signal entnehmen. Die rückläufige Welle entsteht aufgrund des offenen Leiter-Endes, welches als Glanzfläche, die einlaufende Welle phasengleich reflektiert. Einen Abstieg der Amplituden lässt sich aufgrund der Dämpfung - des Widerstands im Kabel - erklären.
 
 \subsection{Versuchsaufabe 3: Leitungsabschluss, Verzögerungszeit}
 Zur Untersuchng verschiedener Leitungsabschlüsse wird die Schaltung nach Abb. \ref{fig:3.1} konstruiert. 
 \begin{figure}[h]
         \centering
-        \includegraphics[width=0.8\textwidth]{Schaltung_Abschluss.png}
+        \includegraphics[width=0.6\textwidth]{Schaltung_Abschluss.png}
         \caption{Schaltung mit offenen Enden}
 		\label{fig:3.1}
-\end{figure}
-
-Vorerst ist hierbei das Verzögerungskabel offen. Wir erhlaten die in Abb. \ref{fig:3.2} gezeigte Spannung.
+\end{figure}\\
+\indent Vorerst ist hierbei das Verzögerungskabel offen. Wir erhlaten die in Abb. \ref{fig:3.2} gezeigte Spannung.
 \begin{figure}[h]
         \centering
-        \includegraphics[width=0.8\textwidth]{data/DS0018.BMP.png}
+        \includegraphics[width=0.6\textwidth]{data/DS0018.BMP.png}
         \caption{Einzelner Impuls mit Nachschwingung}
 		\label{fig:3.2}
 \end{figure}
 \begin{figure}[h]
         \centering
-        \includegraphics[width=0.8\textwidth]{data/DS0021.BMP.png}
+        \includegraphics[width=0.6\textwidth]{data/DS0021.BMP.png}
         \caption{Mehrere Impulse mit Nachschwingung}
 		\label{fig:3.3}
-\end{figure}
+\end{figure}\\
 Hierbei ist klar der eigentliche Impuls, sowie die Nachschwingung (zweiter Peak) zu erkennen.
-
-Schließen wir nun das Kabel mit einem 50 $\Omega$ ab, so können wir in Abb. \ref{fig:3.4} erkennen, dass es keine Nachschwingung gibt und das Kabel aus der eigenen Sicht unendlich weitergeführt wird. 
+\indent Schließen wir nun das Kabel mit einem 50 $\Omega$ ab, so können wir in Abb. \ref{fig:3.4} erkennen, dass es keine Nachschwingung gibt und das Kabel aus der eigenen Sicht unendlich weitergeführt wird. 
 \begin{figure}[h]
         \centering
-        \includegraphics[width=0.8\textwidth]{data/DS0019.BMP.png}
+        \includegraphics[width=0.6\textwidth]{data/DS0019.BMP.png}
         \caption{Einzelner Impuls ohne Nachschwingung}
 		\label{fig:3.4}
 \end{figure}
 \begin{figure}[h]
         \centering
-        \includegraphics[width=0.8\textwidth]{data/DS0020.BMP.png}
+        \includegraphics[width=0.6\textwidth]{data/DS0020.BMP.png}
         \caption{Mehrere Impulse ohne Nachschwingung}
 		\label{fig:3.5}
-\end{figure}
-
-Lassen wir nun das Kabel in einem Kurzschluss enden, so kann man in Abb. \ref{fig:3.6} die rücklaufende gegenphasige Nachschwingung erkennen.
+\end{figure}\\
+\indent Lassen wir nun das Kabel in einem Kurzschluss enden, so kann man in Abb. \ref{fig:3.6} die rücklaufende gegenphasige Nachschwingung erkennen.
 \begin{figure}[h]
         \centering
-        \includegraphics[width=0.8\textwidth]{data/DS0023.BMP.png}
+        \includegraphics[width=0.6\textwidth]{data/DS0023.BMP.png}
         \caption{Einzelner Impuls mit gegenphasiger Nachschwingung}
 		\label{fig:3.6}
 \end{figure}
 \begin{figure}[h]
         \centering
-        \includegraphics[width=0.8\textwidth]{data/DS0022.BMP.png}
+        \includegraphics[width=0.6\textwidth]{data/DS0022.BMP.png}
         \caption{Mehrere Impulse mit gegenphasiger Nachschwingung}
 		\label{fig:3.7}
-\end{figure}
+\end{figure}\\
 Diese gegenphasige Nachschiwngung ist aufgrund des kleineren Widerstandes zu erklären, da bei einem Kurzschluss der Widerstand praktisch Null und somit kleiner dem Wellenwiderstand ist. 
 
 Variieren wir nun die Frequenz, so erhalten wir mit einer kleineren Frequenz (2 MHz) Abb. \ref{fig:3.8} und mit einer höheren Frequzenz (2.7MHz) Abb. \ref{fig:3.9}
 \begin{figure}[h]
         \centering
-        \includegraphics[width=0.8\textwidth]{data/DS0024.BMP.png}
+        \includegraphics[width=0.6\textwidth]{data/DS0024.BMP.png}
         \caption{Einzelner Impuls mit gegenphasiger Nachschwingung}
 		\label{fig:3.8}
 \end{figure}
 \begin{figure}[h]
         \centering
-        \includegraphics[width=0.8\textwidth]{data/DS0025.BMP.png}
+        \includegraphics[width=0.6\textwidth]{data/DS0025.BMP.png}
         \caption{Mehrere Impulse mit gegenphasiger Nachschwingung}
 		\label{fig:3.9}
 \end{figure}
@@ -257,15 +266,81 @@ Den Abbildungen kann man eine Zeitdifferenz von 64(2) ns, zwischen Impuls und Na
 Mit einem Abschluss durch einen Wellenwiderstand würden wir nun keine Nachschwingung erwarten, da die Energie der Schwingung vollständig im Widerstand absorbiert wird. Dies Vermutung wurde getestet und in Abb. \ref{fig:3.10} gezeigt.
 \begin{figure}[h]
         \centering
-        \includegraphics[width=0.8\textwidth]{data/DS0026.BMP.png}
+        \includegraphics[width=0.6\textwidth]{data/DS0026.BMP.png}
         \caption{Einzelner Impulse mit abgeschlossenem Kabel}
 		\label{fig:3.10}
-\end{figure}
+\end{figure}\\
 Unsere Vermutung lässt sich mit der Abb. bestätigen.
 
+\clearpage
 \subsection{Versuchsaufgabe 4: Klippkabel, Dämpfung}
+In diesem Veruchsteil werden Klippkabel verwendet, die es möglich machen die Länge von Impulsen zu variieren.
+\begin{figure}[h]
+        \centering
+        \includegraphics[width=\textwidth]{versuchsaufgabe4.png}
+        \caption{Aufbau mit Klippkabel}
+\end{figure}\\
+Die Frequenz des Funktionsgenerators liegt bei $\SI{40}{kHz}$.\\\\
+Zunächst bleibt das $\SI{2500}{\ohm}$ Klippkabel offen.
+Das Rechtecksignal hat die folgende Form
+\begin{figure}[h]
+        \centering
+        \includegraphics[width=0.6\textwidth]{data/DS0028.BMP.png}
+        \caption{Rechtecksignal durch offenes Klippkabel}
+\end{figure}\\
+Das Signal, welches auf dem Oszillographen angezeigt wird ist eine Überlagerung der hin-- und rücklaufenden Welle durch das Klippkabel.
+Es lässt sich erkennen, dass im drei Plateaus vorhanden sind.
+Die größten Amplituden (in positive als auch negative Richtung) sind die Amplituden des Rechtecksignals gleicher Polarisation beider Wellen.
+Die Amplituden um die Nulllage herum, entstehen durch destruktive Interferenz beider Signale, da eine Phasendifferenz zwischen dem hin-- und rücklaufenden Signal vorhanden ist.\\\\
+Schließt man das Verzögerungskabel kurz entsteht folgendes Bild
+\begin{figure}[h]
+        \centering
+        \includegraphics[width=0.6\textwidth]{data/DS0031.BMP.png}
+        \caption{Signal mit kurzgeschlossenem Klippkabel}
+\end{figure}\\
+Bei einem Kurzgeschlossenen Ende des Kabels wird die Welle um $\SI{180}{\degree}$ Phasenverschoben reflektiert (Reflexionskoeffizient $r=-1$).
+Das bedeutet, dass der Großteil des Signals durch destruktive Interferenz verschwindet und nur kleine Peaks bleiben, bei denen sich die Wellen aufgrund von Verzögerung noch konstruktiv Überlagern.\\\\
+Variiert man die Frequenz des Funktionsgenerators, so bleibt die Größe der Impulse selbst gleich, nur die Abstände zwischen den Impulsen verändert sich.
+Das kommt daher, dass sich die Frequenz des Funktionsgenerators nur auf die Anzahl der Impulse und nicht ihre Länge bezieht.\\\\
+Nun werden drei $\SI{70}{cm}$ Klippkabel in Reihe geschalten, um ein $\SI{2}{m}$ langes Klippkable zu erzeugen.
+Die Länge der Impulse ist in diesem Fall nur von der Länge der Klippkabel bestimmt.
+Die Zeit zwischen zwei Impulsen erhöht sich bei einem längeren Klippkabel.\\\\
+Die Dämpfung des Klippkabels bemerkt man an den Höhenunterschieden der Plateaus um die Nulllage herum (\ref{fig:dämpfung_anschaulich}).
+Um die spezifische Dämpfung des Kabels zu berechnen kann die Spitze--Spitze Spannung mit der Eingangsspannung verglichen werden.
+In (\ref{fig:dämpfung}) erkennt man eine Spitze--Spitze Spannung von $U_\text{out}=\SI{18}{V}$.
+Es gilt bei einer Eingangsspannung von $U_\text{in}=\SI{20}{V}$ mit einer Frequenz von $\SI{200}{\kilo Hz}$
+\begin{align} 
+        D=20\log\left(\dfrac{U_\text{out}}{U_\text{in}}\right)\dfrac{1}{l}=20\log\left(\dfrac{\SI{18}{V}}{\SI{20}{V}}\right)\dfrac{1}{\SI{2}{m}}\approx 0.458
+.\end{align} 
+Vergleicht man mit den Literaturwerten (\ref{fig:literatur}), erkennt man, dass der berechnete Wert für die Dämpfung pro Meter des Kabels genau auf der Linie für das HH2500 Kabel liegt.
+\begin{figure}[h]
+        \centering
+        \includegraphics[width=0.6\textwidth]{data/DS0038.BMP.png}
+        \caption{Dämpfung eines Klippkabels, veranschaulicht}\label{fig:dämpfung_anschaulich}
+\end{figure}
+\begin{figure}
+        \centering
+        \includegraphics[width=0.6\textwidth]{data/DS0039.BMP.png}
+        \caption{Dämpfung anhand der Spitze--Spitze Spannung}\label{fig:dämpfung}
+\end{figure}
+\begin{figure}[h]
+        \centering
+        \includegraphics[width=0.7\textwidth]{literatur.png}
+        \caption[Literatur Dämpfung pro Meter]{Literaturwerte der Dämpfung pro Meter in Abhängigkeit der Frequenz verschiedener Kabel}\label{fig:literatur}
+\end{figure}
 
-
+\clearpage
+\section{Fazit}
+In diesem Versuch wurde die Verhaltensweise eines Differenzierglieds untersucht, indem ein Rechtecksignal differenziert worden ist, und die Änderung der Abklingzeit aufgrund verschiedener Widerstände beobachtet wurde.\\\\
+Des Weiteren wurden Impulse auf Kabeln behandelt.
+Kabel, die verschiedene Enden besitzen, weisen unterschiedliche Eigenschaften auf.
+In abgeschlossenen Kabeln, deren Abschlusswiderstand gleich dem Wellenwiderstand des Kabels ist, werden keine Wellen reflektiert;
+in offenen Kabeln werden Wellen mit gleicher Phase reflektiert;
+und in kurzgeschlossenen Kabeln werden Wellen mit umgekehrter Phase reflektiert.\\\\
+Im letzten Versuchsteil wurde sich mit Klippkabeln und der spezifischen Dämpfung beschäftigt.
+Wenn ein Rechtecksignal in ein Klippkabel geleitet wird, kann man erkennen, dass es zu sowohl konstruktiver als auch destruktiver Interferenz der beiden Wellen kommt.
+Diese sind auch bei verschiedenen Abschlüssen zu erkennen.
+Zum Schluss wurde die spezifische Dämpfung des Klippkabels HH2500 auf $D=0.458$ bestimmt und mit dem Literaturwert erfolgreich verglichen. 
 
 \clearpage
 \listoffigures
