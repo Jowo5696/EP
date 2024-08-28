@@ -3,8 +3,8 @@
 # 0.1e-6 F
 # Frequenzgenerator 4 Vpp
 # Amplitude [Vpp], Fehler Amplitude, Frequenz [Hz]
-4 10
-4 1e+2
+4 10 0
+4 1e+2 0
 3.88 1e+3 0.05
 3.44 2e+3 0.04
 2.98 3e+3 0.02
