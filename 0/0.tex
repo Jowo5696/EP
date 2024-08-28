@@ -1,6 +1,6 @@
 %{{{ Formatierung
 
-\documentclass[a4paper,12pt]{article}
+\documentclass[a4paper,10pt]{article}
 
 \usepackage{physics_notetaking}
 
@@ -43,42 +43,49 @@
 
 %}}}
 
-\begin{document}
 
 %{{{ Titelseite
 
-\title{0 $|$ Einführung und Vorversuch}
-\author{Angelo Brade, Jonas Wortmann}
+\begin{document}
+
+
+\begin{titlepage}
+        \title{0 $|$ Einführung und Vorversuch}
+        \author[1]{Angelo Brade\thanks{s72abrad@uni-bonn.de}}
+        \author[1]{Jonas Wortmann\thanks{s02jwort@uni-bonn.de}}
+        \affil[1]{Rheinische Friedrich--Wilhelms--Universität Bonn}
+        \date{\today}
+\end{titlepage}
+
 \maketitle
 \pagenumbering{gobble}
+\newpage
 
 %}}}
 
-\newpage
-
 %{{{ Inhaltsverzeichnis
 
-\fancyhead[L]{\thepage}
+\fancyhead[R]{\thepage}
 \fancyfoot[C]{}
-\pagenumbering{arabic}
 
 \tableofcontents
 
 %}}}
 
-\newpage
+\clearpage
 
 %{{{
 
-\fancyhead[R]{\leftmark}
+\pagenumbering{arabic}
+\fancyhead[L]{\leftmark}
 
-\newpage
+\clearpage
 \section{Einleitung}
 Dieser Versuch beschäftigt sich mit dem Oszillographen als Messegerät für verschiedene elektrische Signale.
 Die Funktionsweise basierend auf der Elektronenstrahlröhre und praktische Anwendung wie die Messung der Anstiegszeit bei einem Rechtecksignal werden behandelt.
 
 %{{{ Theorie
-\newpage
+\clearpage
 \section{Theorie}
 Messgeräte sind in ihrem fundamentalem Aufbau eine Kombination aus einer Messeinheit und einer Anzeigeeinheit.
 Oft wird ein Messwandler verwendet, der das gemessene Signal proportional in eine Anzeigegröße umwandelt.
@@ -185,6 +192,57 @@ Daraus folgt die Bandbreite
 %{{{ Auswertung
 \newpage
 \section{Auswertung}
+\subsection{b}
+Der Ausgang des Signalgenerators wird mit dem CH1--Eingang des Oszilloskops verbunden.
+Dazu wird ein kurzes RG--58 C/U Kabel (BNC Kabel) verwendet.
+Am Signalgenerator wird ein Rechtecksignal mit einer Frequenz von $\SI{2}{\mega Hz}$ eingestellt, um die Anstiegszeit des Oszillographen zu bestimmen.
+\\\indent Auf dem Bildschirm des Oszillographen werden die Cursor so platziert, dass die zwei vertiaklen Linien bei $10\%$ und $90\%$ Signalstärke liegen.
+Daraus lässt sich die Differenz der Zeitpunkte ablesen, welche die gemessene Anstiegszeit des Signals ist.
+\begin{align} 
+        \Delta t_\text{gemessen}=\SI{15+-1}{\nano s}
+.\end{align} 
+Die Anstiegszeit des Oszillographen kann aus der Bandbreite berechnet werden.
+Die Bandbreite dieses Oszis liegt bei 
+\begin{align} 
+        B=\SI{70}{\mega Hz}
+.\end{align} 
+Es gilt dann
+\begin{align} 
+        \Delta t_\text{Oszi}=\dfrac{0.35}{B}=\dfrac{0.35}{\SI{70}{\mega Hz}}=\SI{5}{\nano s}
+.\end{align} 
+Daraus ergibt sich die Anstiegszeit des Signal mit
+\begin{multline} 
+        \Delta t_\text{Signal}=\,\sqrt[]{\Delta t_\text{gemessen}^2-\Delta t_\text{Oszi}^2}=\,\sqrt[]{\left(\SI{15}{\nano s}\right)^2-\left(\SI{5}{\nano s}\right)^2}\\=\,\sqrt[]{2}\cdot 10^{-8}\SI{}{\nano s}\approx \SI{14.14}{\nano s}
+\end{multline} 
+und Fehler
+\begin{align} 
+        \Delta \Delta t_\text{Signal}=\dfrac{2\Delta t_\text{gemessen}\cdot \Delta \Delta t_\text{gemessen}}{\,\sqrt[]{\Delta t_\text{gemessen}^2-\Delta t_\text{Oszi}^2}}&=\SI{2.12}{\nano s}
+\end{align} 
+zu
+\begin{align} 
+        \Delta t_\text{Signal}=\SI{14.14+-2.12}{\nano s}
+.\end{align} 
+Mit der Anstiegszeit für das Signal ist die Bandbreite des Signalgenerators
+\begin{align} 
+        B=\dfrac{0.35}{\Delta t_\text{Signal}}\approx \SI{24.8}{\mega Hz}
+.\end{align} 
+Der Fehler liegt bei
+\begin{align} 
+        \Delta B=\dfrac{0.35}{\Delta t_\text{Signal}^2}\Delta \Delta t_\text{Signal}\approx \SI{3.7}{\mega Hz}
+.\end{align} 
+Insgesamt
+\begin{align} 
+        B=\SI{24.8+-3.7}{\mega Hz}
+.\end{align} 
+
+\subsection{c}
+Der Generators wird nun mit einem R--C--Tiefpass verbunden.
+Die Spezifikationen dieses R--C--Glieds sind
+\begin{align} 
+        R &= \SI{470}{\ohm} & C &= \SI{0.1}{\micro F} & \tau &= RC = \SI{47}{\micro s}
+.\end{align} 
+Dieser Tiefpass wird dann mit CH1 des Oszillographen verbunden.
+Am Funktionsgenerator wird ein Sinussignal mit $U_\text{pp}=\SI{4}{V}$ eingestellt, für welches die Dämpfung des Tiefpasses berechnet werden soll.
 %}}}
 
 \clearpage
