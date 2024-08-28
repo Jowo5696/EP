@@ -178,21 +178,59 @@ An dem Signalgenerator stellen wir 100 kHz und 20V ein.
 Bei dem Urspungssignal sehen wir, dass es mit einem größerem Peak und dann mit kleineren Peaks nachhallt. Das zweite Signal, welches durch die Kabel gedämpft wird, hier in blau in Abb. \ref{fig:2.2}, zieht um einen Versatz dem Ursprungssignal nach und beinhaltet zusätzlich die rückläufige Welle. So lassen sich pro Ursprungssignal, zwei weitere Peaks dem blauen Signal entnehmen. Die rückläufige Welle Entsteht aufgrund des offenen Leiter-Endes, welches als Glanzfläche, die einlaufende Welle phasengleich reflektiert. Einen Abstieg der Amplituden lässt sich aufgrund der Dämpfung - des Widerstands im Kabel - erklären.
 
 \subsection{Versuchsaufabe 3: Leitungsabschluss, Verzögerungszeit}
-Zur Untersuchng verschiedener Leitungsabschlüsse wird die Schaltung nach Abb. \ref{fig:3.1} konstruiert. Vorerst ist hierbei der Verzögerungskabel offen. Wir erhlaten den in Abb. \ref{fig:3.2} gezeigte Spannung.
-
+Zur Untersuchng verschiedener Leitungsabschlüsse wird die Schaltung nach Abb. \ref{fig:3.1} konstruiert. 
 \begin{figure}[h]
         \centering
         \includegraphics[width=0.8\textwidth]{Schaltung_Abschluss.png}
         \caption{Schaltung mit offenen Enden}
 		\label{fig:3.1}
 \end{figure}
+
+Vorerst ist hierbei das Verzögerungskabel offen. Wir erhlaten die in Abb. \ref{fig:3.2} gezeigte Spannung.
 \begin{figure}[h]
         \centering
         \includegraphics[width=0.8\textwidth]{data/DS0018.BMP.png}
-        \caption{Schaltung mit offenen Enden}
+        \caption{Einzelner Impuls mit Nachschwingung}
 		\label{fig:3.2}
 \end{figure}
-Hierbei
+\begin{figure}[h]
+        \centering
+        \includegraphics[width=0.8\textwidth]{data/DS0021.BMP.png}
+        \caption{Mehrere Impulse mit Nachschwingung}
+		\label{fig:3.3}
+\end{figure}
+Hierbei ist klar der eigentliche Impuls, sowie die Nachschwingung (zweiter Peak) zu erkennen.
+
+Schließen wir nun das Kabel mit einem 50 $\Omega$ ab, so können wir in Abb. \ref{fig:3.4} erkennen, dass es keine Nachschwingung gibt und das Kabel aus der eigenen Sicht unendlich weitergeführt wird. 
+\begin{figure}[h]
+        \centering
+        \includegraphics[width=0.8\textwidth]{data/DS0019.BMP.png}
+        \caption{Einzelner Impuls ohne Nachschwingung}
+		\label{fig:3.4}
+\end{figure}
+\begin{figure}[h]
+        \centering
+        \includegraphics[width=0.8\textwidth]{data/DS0020.BMP.png}
+        \caption{Mehrere Impulse ohne Nachschwingung}
+		\label{fig:3.5}
+\end{figure}
+
+Lassen wir nun das Kabel in einem Kurzschluss enden, so kann man in Abb. \ref{fig:3.6} die rücklaufende gegenphasige Nachschwingung erkennen.
+\begin{figure}[h]
+        \centering
+        \includegraphics[width=0.8\textwidth]{data/DS0023.BMP.png}
+        \caption{Einzelner Impuls mit gegenphasiger Nachschwingung}
+		\label{fig:3.6}
+\end{figure}
+\begin{figure}[h]
+        \centering
+        \includegraphics[width=0.8\textwidth]{data/DS0022.BMP.png}
+        \caption{Mehrere Impulse mit gegenphasiger Nachschwingung}
+		\label{fig:3.7}
+\end{figure}
+Diese gegenphasige Nachschiwngung ist aufgrund des kleineren Widerstandes zu erklären, da bei einem Kurzschluss der Widerstand praktisch Null und somit kleiner dem Wellenwiderstand ist. 
+
+
 
 
 \clearpage
