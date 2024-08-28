@@ -1,0 +1,15 @@
+# c 
+# 470 ohm 
+# 0.1e-6 F
+# Frequenzgenerator 4 Vpp
+# Amplitude [Vpp], Fehler Amplitude, Frequenz [Hz]
+4 10
+4 1e+2
+3.88 1e+3 0.05
+3.44 2e+3 0.04
+2.98 3e+3 0.02
+2.59 4e+3 0.02
+2.24 5e+3 0.01
+1.96 6e+3 0.01
+1.27 1e+4 0.01
+156e-3 1e+5 3e-3

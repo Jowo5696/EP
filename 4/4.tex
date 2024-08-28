@@ -1,6 +1,6 @@
 %{{{ Formatierung
 
-\documentclass[a4paper,12pt]{article}
+\documentclass[a4paper,10pt]{article}
 
 \usepackage{physics_notetaking}
 
@@ -47,8 +47,14 @@
 
 %{{{ Titelseite
 
-\title{3/4 (2. Halbtag) $|$ Transistor und Transistorverstärker}
-\author{Angelo Brade, Jonas Wortmann}
+\begin{titlepage}
+        \title{3/4 (2. Halbtag) $|$ Transistor und Transistorverstärker}
+        \author[1]{Angelo Brade\thanks{s72abrad@uni-bonn.de}}
+        \author[1]{Jonas Wortmann\thanks{s02jwort@uni-bonn.de}}
+        \affil[1]{Rheinische Friedrich--Wilhelms--Universität Bonn}
+        \date{\today}
+\end{titlepage}
+
 \maketitle
 \pagenumbering{gobble}
 
@@ -58,9 +64,8 @@
 
 %{{{ Inhaltsverzeichnis
 
-\fancyhead[L]{\thepage}
+\fancyhead[R]{\thepage}
 \fancyfoot[C]{}
-\pagenumbering{arabic}
 
 \tableofcontents
 
@@ -70,7 +75,8 @@
 
 %{{{
 
-\fancyhead[R]{\leftmark\\\rightmark}
+\pagenumbering{arabic}
+\fancyhead[L]{\leftmark}
 
 \newpage
 \section{Einleitung}
