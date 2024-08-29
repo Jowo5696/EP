@@ -83,23 +83,28 @@
 In diesem Versuch werden verschiedene Arten von Dioden und die mit ihnen zu bauenden Schaltungen untersucht.
 Zudem werden Kennlinien von Dioden betrachtet und gemessen und Ein-- und Zweiweggleichrichterschaltungen mit Glättung behandelt.
 
+%{{{
 \newpage
 \section{Theorie}
-Dioden sind die einfachsten nichtlinearen Zweipole mit Kennlinie
+Dioden bestehen aus einem n-- und einem p--dotierten Material, welche eine Grenzschicht bilden und sind die einfachsten nichtlinearen Zweipole mit Kennlinie
 \begin{figure}[h]
         \centering
         \includegraphics[width=0.4\textwidth]{diode_kennlinie.png}
         \caption{Kennlinie einer Diode; Abbildung 2.2 \cite{Praktikumsanleitung}}
 \end{figure}\\
 Es ist zu erkennen, dass die Diode Strom nur in eine Richtung fließen lässt.
-Mit dieser Diode lassen sich Ein-- und Zweiweggleichrichter bauen, die Wechselspannung in direkte Spannung umwandeln.
+In die Durchlassrichtung muss eine Mindestspannung von ca.\ $\SI{6}{V}$ bis $\SI{7}{V}$ anliegen, um das Gegenfeld der Diode zu überwinden.
+Ist dieses Gegenfeld einmal überwunden, so kann ein großer Strom bei kleiner Spannung fließen.
+In die Sperrichtung kommen meist nur wenige $\SI{}{\micro A}$ bei einer sehr hohen Spannung durch.
+\\\indent Mit dieser Diode lassen sich Ein-- und Zweiweggleichrichter bauen, die Wechselspannung in direkte Spannung umwandeln.
 \begin{figure}[h]
         \centering
         \includegraphics[width=0.7\textwidth]{ein_zweiweggleichrichter.png}
         \caption{Ein-- und Zweiweggleichrichter; Abbildung 2.4 \cite{Praktikumsanleitung}}
-\end{figure}\\
-Mit Hilfe eines Kondensators kann das noch vorhandene Brummen der direkten Spannung weitgehend unterdrückt werden.
-Dieses existiert weiterhin, da Gleichrichter und die Polarität der Spannung kompensieren.
+\end{figure}
+\clearpage
+Mit Hilfe eines Kondensators kann das noch vorhandene Brummen der Gleichspannung weitgehend unterdrückt werden.
+Dieses existiert weiterhin, da Gleichrichter nur die Polarität der Spannung kompensieren und nicht interpolieren.
 \begin{figure}[h]
         \centering
         \includegraphics[width=0.4\textwidth]{glättung.png}
