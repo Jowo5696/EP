@@ -1,0 +1,32 @@
+# U[V] I[50 Skt max] DeltaU(letzte stelle) DeltaI(2) // ohne Zenerdiode
+0.009 49.0 # 100 milli
+1.230 5.7 # 1 A
+4.73 6.0 # 1 A
+7.02 6.1 # 1 A
+8.08 6.2 # 1 A
+10.32 6.6 # 1 A
+11.96 6.8 # 1 A
+13.33 6.9 # 1 A
+14.73 6.95 # 1 A
+16.33 7.0 # 1 A
+17.74 7.1 # 1 A
+18.90 7.2 # 1 A
+19.67 7.3 # 1 A
+20.34 7.4 # 1 A
+22.10 7.5 # 1 A
+
+# U[V] I[50 Skt max] DeltaU(letzte stelle) DeltaI(2) // mit Zenerdiode
+0.003 34.7 # 100 milli A
+0.233 34.8 # 100 milli A
+0.800 34.9 # 100 milli A
+2.792 36.0 # 100 milli A
+4.08 36.8 # 100 milli A
+4.86 37.1 # 100 milli A
+5.48 37.6 # 100 milli A
+5.88 38.0 # 100 milli A
+6.32 38.0 # 100 milli A
+6.92 38.1 # 100 milli A
+7.17 38.2 # 100 milli A
+7.55 38.5 # 100 milli A
+7.80 38.8 # 100 milli A
+7.94 38.9 # 100 milli A

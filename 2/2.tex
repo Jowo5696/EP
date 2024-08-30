@@ -83,9 +83,25 @@
 In diesem Versuch werden verschiedene Arten von Dioden und die mit ihnen zu bauenden Schaltungen untersucht.
 Zudem werden Kennlinien von Dioden betrachtet und gemessen und Ein-- und Zweiweggleichrichterschaltungen mit Glättung behandelt.
 
-%{{{
+%{{{ Theorie
 \newpage
 \section{Theorie}
+\subsection{Halbleiter, Dotierung}
+Halbleiter sind Materialien, zwischen deren Leitungs-- und Valenzband eine gewissen Gap--Energie ist.
+Es ist Elektronen nicht möglich ohne die Aufnahme bzw.\ Abgabe von Energie, wie z.B.\ in Metallen, zwischen Valenz-- und Leitungsband zu wechseln.
+\\Es gibt zwei Arten von Halbleitern bzw.\ --übergängen
+\begin{enumerate}[label=--]
+        \item Direkte Halbleiter: Wenn Energieminimum des Leitungsbands und Energiemaximum des Valenzbands direkt untereinander liegen, dann können Elektronen allein durch Aufnahme bzw.\ Abgabe eines Photons das Band wechseln.
+        \item Indirekte Halbleiter: Wenn Energieminimum des Leitungsbands und Energiemaximum des Valenzbands nicht direkt untereinander liegen, sondern nuoch eine Verschiebung nach links oder rechts besitzen, dann müssen die Elektronen nicht nur ihre Energie mit Hilfe eines Photons ändern, sondern auch ihren Impuls durch Aufnahme eines Phonons.
+\end{enumerate}
+Es ist möglich Halbleiter zu dotieren.
+Der Prozess der Dotierung beschreibt das Hinzufügen von gewollten Unreinheiten in einen Kristall, um die Leitungseigenschaften zu ändern.
+Die p--Dotierung beschreibt das Hinzufügen von Atomen in ein Gitter, die ein Valenzelektron weniger als die Atome des Kristalls besitzen.
+Das führt zu einem Ladungsüberschuss an \glqq positiven Ladungen\grqq{}, da nun eine freie Stelle im Gitter existiert, bei der Elektronen rekombinieren können.
+Die n--Dotierung beschreibt das Hinzufügen von Atomen in ein Gitter, die ein Valenzelektron mehr als die Atome des Kristalls besitzen.
+Das führt zu einem Ladungsüberschuss an negativen Ladungen, da diese Elektronen nicht mit anderen Atomen kombinieren.
+
+\subsection{Dioden}
 Dioden bestehen aus einem n-- und einem p--dotierten Material, welche eine Grenzschicht bilden und sind die einfachsten nichtlinearen Zweipole mit Kennlinie
 \begin{figure}[h]
         \centering
@@ -96,21 +112,26 @@ Es ist zu erkennen, dass die Diode Strom nur in eine Richtung fließen lässt.
 In die Durchlassrichtung muss eine Mindestspannung von ca.\ $\SI{6}{V}$ bis $\SI{7}{V}$ anliegen, um das Gegenfeld der Diode zu überwinden.
 Ist dieses Gegenfeld einmal überwunden, so kann ein großer Strom bei kleiner Spannung fließen.
 In die Sperrichtung kommen meist nur wenige $\SI{}{\micro A}$ bei einer sehr hohen Spannung durch.
-\\\indent Mit dieser Diode lassen sich Ein-- und Zweiweggleichrichter bauen, die Wechselspannung in direkte Spannung umwandeln.
+
+\subsection{Gleichrichter und Glättung}
+Mit dieser Diode lassen sich Ein-- und Zweiweggleichrichter bauen, die Wechselspannung in direkte Spannung umwandeln.
 \begin{figure}[h]
         \centering
         \includegraphics[width=0.7\textwidth]{ein_zweiweggleichrichter.png}
         \caption{Ein-- und Zweiweggleichrichter; Abbildung 2.4 \cite{Praktikumsanleitung}}
 \end{figure}
-\clearpage
 Mit Hilfe eines Kondensators kann das noch vorhandene Brummen der Gleichspannung weitgehend unterdrückt werden.
 Dieses existiert weiterhin, da Gleichrichter nur die Polarität der Spannung kompensieren und nicht interpolieren.
 \begin{figure}[h]
         \centering
         \includegraphics[width=0.4\textwidth]{glättung.png}
         \caption{Glättungskondensator; Abbildung 2.5 \cite{Praktikumsanleitung}}
-\end{figure}
+\end{figure}\\
+Die Kapazität des Kondensators sollte möglichst so gewählt sein, dass die Restspannung ausreicht, um die Zeit zwischen den Wellen zu überbrücken, aber auch nicht zu groß, dass der Kondensator länger als ein Wellenberg auflädt.
+Ist die Kapazität zu klein, so wird das Brummen weniger stark ausgeglichen und die Spannung fällt schneller ab.
+%}}}
 
+%{{{ Voraufgaben
 \clearpage
 \section{Voraufgaben}
 \subsection{A}
@@ -154,7 +175,7 @@ gilt.
 \subsection{H}
 Die größte Kapazität eines Kondensators in einer Glättung mit einer Si--Diode ($I_{\text{max}}=\SI{1}{A}, U_{\text{max}}=\SI{400}{V})$ mit einer anliegenden Wechselspannung (Steigung von $\SI{0.01}{V.\micro s ^{-1}}$) liegt bei
 \begin{align} 
-        C=\dfrac{Q}{U}=\dfrac{I\cdot \Delta t}{U}=\dfrac{\SI{1}{A}\cdot \SI{100}{\micro s}}{\SI{1}{V}}=\SI{100}{F}
+        C=\dfrac{Q}{U}=\dfrac{I\cdot \Delta t}{U}=\dfrac{\SI{1}{A}\cdot \SI{100}{\micro s}}{\SI{1}{V}}=\SI{100}{\micro F}
 .\end{align} 
 
 \subsection{I}
@@ -188,6 +209,7 @@ Mit $U_0 \in \left[\SI{16}{V},\SI{22}{V}\right]$, $R_L \in \left[\SI{200}{\ohm},
 \begin{align} 
         R \in \left[\SI{138}{\ohm},\SI{182}{\ohm}\right]
 .\end{align} 
+%}}}
 
 \clearpage
 \section{Auswertung}
