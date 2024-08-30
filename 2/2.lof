@@ -6,3 +6,5 @@
 \contentsline {figure}{\numberline {5}{\ignorespaces Ein-- und Zweiweggleichrichter}}{5}{figure.caption.5}%
 \contentsline {figure}{\numberline {6}{\ignorespaces Ein-- und Zweigleichrichter (Variationen)}}{6}{figure.caption.6}%
 \contentsline {figure}{\numberline {7}{\ignorespaces Spannungsabhängigkeit einer Spannungsteilerschaltung}}{6}{figure.caption.7}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Kennlinie der Siliziumdiode MRA4004; max.\ Sperrspannung $\SI {400}{V}$; max.\ Durchlassstrom $\SI {1000}{mA}$}}{9}{figure.caption.8}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Kennlinie der \textsc {Schottky}diode 10BQ015; max.\ Sperrspannung $\SI {15}{V}$; max.\ Durchlassstrom $\SI {1000}{mA}$}}{9}{figure.caption.9}%
