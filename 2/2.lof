@@ -14,3 +14,15 @@
 \contentsline {figure}{\numberline {13}{\ignorespaces Oszillogramm eines Zweiweggleichrichters mit 2.2 µF Kondensator}}{11}{figure.caption.13}%
 \contentsline {figure}{\numberline {14}{\ignorespaces Oszillogramm eines Zweiweggleichrichters mit 22 µF Kondensator}}{12}{figure.caption.14}%
 \contentsline {figure}{\numberline {15}{\ignorespaces Oszillogramm eines Zweiweggleichrichters mit 1000 µF Kondensator}}{12}{figure.caption.15}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Diodenschaltbrett; D1: MRA4004, D2: \textsc {Schottky}, ZD: \textsc {Zener}diode}}{8}{figure.caption.8}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Siliziumdiode MRA4004 D1 Kennlinie}}{8}{figure.caption.9}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Siliziumdiode MRA4004 D1 Kennlinie (Durchlassrichtung)}}{9}{figure.caption.10}%
+\contentsline {figure}{\numberline {11}{\ignorespaces \textsc {Schottky}diode 10BQ015 Kennlinie}}{10}{figure.caption.11}%
+\contentsline {figure}{\numberline {12}{\ignorespaces \textsc {Schottky}diode 10B015 Kennlinie (Durchlassrichtung)}}{11}{figure.caption.12}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Der untere Teil des Diodenschaltbretts}}{11}{figure.caption.13}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Oszillogramm des Einweggleichrichters; $\SI {15}{V}$ Wechselspannung}}{12}{figure.caption.14}%
+\contentsline {figure}{\numberline {15}{\ignorespaces $\SI {2.2}{\micro F}$ Kondensator zur Glättung einer $\SI {15}{V}$ Brummspannung}}{12}{figure.caption.15}%
+\contentsline {figure}{\numberline {16}{\ignorespaces $\SI {22}{\micro F}$ Kondensator zur Glättung einer $\SI {15}{V}$ Brummspannung}}{13}{figure.caption.16}%
+\contentsline {figure}{\numberline {17}{\ignorespaces $\SI {1000}{\micro F}$ Kondensator zur Glättung einer $\SI {15}{V}$ Brummspannung}}{13}{figure.caption.17}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Spannungsstabilisierung mittels \textsc {Zener}diode}}{14}{figure.caption.18}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Lastabhängigkeit der Spannung $U'$ mit und ohne Spannungsstabilisierung}}{14}{figure.caption.19}%
