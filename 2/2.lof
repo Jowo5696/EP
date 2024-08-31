@@ -7,22 +7,22 @@
 \contentsline {figure}{\numberline {6}{\ignorespaces Ein-- und Zweigleichrichter (Variationen)}}{6}{figure.caption.6}%
 \contentsline {figure}{\numberline {7}{\ignorespaces Spannungsabhängigkeit einer Spannungsteilerschaltung}}{6}{figure.caption.7}%
 \contentsline {figure}{\numberline {8}{\ignorespaces Diodenschaltbrett; D1: MRA4004, D2: \textsc {Schottky}, ZD: \textsc {Zener}diode}}{8}{figure.caption.8}%
-\contentsline {figure}{\numberline {9}{\ignorespaces Siliziumdiode MRA4004 D1 Kennlinie}}{8}{figure.caption.9}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Siliziumdiode MRA4004 D1 Kennlinie}}{9}{figure.caption.9}%
 \contentsline {figure}{\numberline {10}{\ignorespaces Siliziumdiode MRA4004 D1 Kennlinie (Durchlassrichtung)}}{9}{figure.caption.10}%
 \contentsline {figure}{\numberline {11}{\ignorespaces \textsc {Schottky}diode 10BQ015 Kennlinie}}{10}{figure.caption.11}%
-\contentsline {figure}{\numberline {12}{\ignorespaces \textsc {Schottky}diode 10B015 Kennlinie (Durchlassrichtung)}}{11}{figure.caption.12}%
-\contentsline {figure}{\numberline {13}{\ignorespaces Der untere Teil des Diodenschaltbretts}}{11}{figure.caption.13}%
-\contentsline {figure}{\numberline {14}{\ignorespaces Oszillogramm des Einweggleichrichters; $\SI {15}{V}$ Wechselspannung}}{12}{figure.caption.14}%
-\contentsline {figure}{\numberline {15}{\ignorespaces $\SI {2.2}{\micro F}$ Kondensator zur Glättung einer $\SI {15}{V}$ Brummspannung}}{12}{figure.caption.15}%
-\contentsline {figure}{\numberline {16}{\ignorespaces $\SI {22}{\micro F}$ Kondensator zur Glättung einer $\SI {15}{V}$ Brummspannung}}{13}{figure.caption.16}%
-\contentsline {figure}{\numberline {17}{\ignorespaces $\SI {1000}{\micro F}$ Kondensator zur Glättung einer $\SI {15}{V}$ Brummspannung}}{13}{figure.caption.17}%
-\contentsline {figure}{\numberline {18}{\ignorespaces Spannungsstabilisierung mittels \textsc {Zener}diode}}{14}{figure.caption.18}%
-\contentsline {figure}{\numberline {19}{\ignorespaces Lastabhängigkeit der Spannung $U'$ mit und ohne Spannungsstabilisierung}}{14}{figure.caption.19}%
-\contentsline {figure}{\numberline {20}{\ignorespaces Kennlinie der Siliziumdiode MRA4004; max.\ Sperrspannung $\SI {400}{V}$; max.\ Durchlassstrom $\SI {1000}{mA}$}}{15}{figure.caption.20}%
-\contentsline {figure}{\numberline {21}{\ignorespaces Kennlinie der \textsc {Schottky}diode 10BQ015; max.\ Sperrspannung $\SI {15}{V}$; max.\ Durchlassstrom $\SI {1000}{mA}$}}{15}{figure.caption.21}%
-\contentsline {figure}{\numberline {22}{\ignorespaces Kennlinie der Zenerdiode}}{16}{figure.caption.22}%
-\contentsline {figure}{\numberline {23}{\ignorespaces Kennlinie der Zenerdiode mit 10-facher Verkleinerung der x-Achse}}{16}{figure.caption.23}%
-\contentsline {figure}{\numberline {24}{\ignorespaces Oszillogramm eines Zweiweggleichrichters ohne Kondensator}}{16}{figure.caption.24}%
-\contentsline {figure}{\numberline {25}{\ignorespaces Oszillogramm eines Zweiweggleichrichters mit 2.2 µF Kondensator}}{17}{figure.caption.25}%
-\contentsline {figure}{\numberline {26}{\ignorespaces Oszillogramm eines Zweiweggleichrichters mit 22 µF Kondensator}}{17}{figure.caption.26}%
-\contentsline {figure}{\numberline {27}{\ignorespaces Oszillogramm eines Zweiweggleichrichters mit 1000 µF Kondensator}}{17}{figure.caption.27}%
+\contentsline {figure}{\numberline {12}{\ignorespaces \textsc {Schottky}diode 10B015 Kennlinie (Durchlassrichtung)}}{10}{figure.caption.12}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Kennlinie der Siliziumdiode MRA4004; max.\ Sperrspannung $\SI {400}{V}$; max.\ Durchlassstrom $\SI {1000}{mA}$}}{11}{figure.caption.13}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Kennlinie der \textsc {Schottky}diode 10BQ015; max.\ Sperrspannung $\SI {15}{V}$; max.\ Durchlassstrom $\SI {1000}{mA}$}}{12}{figure.caption.14}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Kennlinie der Zenerdiode}}{12}{figure.caption.15}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Kennlinie der Zenerdiode mit 10-facher Verkleinerung der x-Achse}}{12}{figure.caption.16}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Der untere Teil des Diodenschaltbretts}}{13}{figure.caption.17}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Oszillogramm des Einweggleichrichters; $\SI {15}{V}$ Wechselspannung}}{13}{figure.caption.18}%
+\contentsline {figure}{\numberline {19}{\ignorespaces $\SI {2.2}{\micro F}$ Kondensator zur Glättung einer $\SI {15}{V}$ Brummspannung}}{14}{figure.caption.19}%
+\contentsline {figure}{\numberline {20}{\ignorespaces $\SI {22}{\micro F}$ Kondensator zur Glättung einer $\SI {15}{V}$ Brummspannung}}{14}{figure.caption.20}%
+\contentsline {figure}{\numberline {21}{\ignorespaces $\SI {1000}{\micro F}$ Kondensator zur Glättung einer $\SI {15}{V}$ Brummspannung}}{15}{figure.caption.21}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Oszillogramm eines Zweiweggleichrichters ohne Kondensator}}{16}{figure.caption.22}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Oszillogramm eines Zweiweggleichrichters mit 2.2 µF Kondensator}}{16}{figure.caption.23}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Oszillogramm eines Zweiweggleichrichters mit 22 µF Kondensator}}{17}{figure.caption.24}%
+\contentsline {figure}{\numberline {25}{\ignorespaces Oszillogramm eines Zweiweggleichrichters mit 1000 µF Kondensator}}{17}{figure.caption.25}%
+\contentsline {figure}{\numberline {26}{\ignorespaces Spannungsstabilisierung mittels \textsc {Zener}diode}}{18}{figure.caption.26}%
+\contentsline {figure}{\numberline {27}{\ignorespaces Lastabhängigkeit der Spannung $U'$ mit und ohne Spannungsstabilisierung}}{18}{figure.caption.27}%

@@ -213,107 +213,46 @@ Mit $U_0 \in \left[\SI{16}{V},\SI{22}{V}\right]$, $R_L \in \left[\SI{200}{\ohm},
 
 \clearpage
 \section{Auswertung}
+%{{{ 1
 \subsection{Versuchsaufgabe 1: Statistische Messung der Diodenkennlinie}
 Für die Siliziumdiode MRA4004 und die \textsc{Schottky}diode 10BQ015 wird mit einer statistischen Messung mit Hilfe von Strom-- und Spannungsmessgerät die Kennlinie geplottet.
-Dazu werden die Dioden des Diodenschaltbretts verwendet.
+Dazu werden die Dioden des \hyperref[fig:diodenschaltbrett]{Diodenschaltbretts} verwendet.
 \begin{figure}[h]
         \centering
         \includegraphics[width=0.8\textwidth]{diodenschaltbrett.png}
-        \caption{Diodenschaltbrett; D1: MRA4004, D2: \textsc{Schottky}, ZD: \textsc{Zener}diode}
+        \caption{Diodenschaltbrett; D1: MRA4004, D2: \textsc{Schottky}, ZD: \textsc{Zener}diode} \label{fig:diodenschaltbrett}
 \end{figure}\\
 Ein Netzgerät wird über Buchse B1 und B2 angeschlossen; Strom-- und Spannungsmessgerät jeweils in Reihe und parallel.
-Mit den Messungen ergeben sich folgende Plots (die Tabellen sind im Anhang zu finden).
-\begin{figure}[h]
-        \centering
-        \includegraphics[width=0.8\textwidth]{plot/D1_crop.pdf}
-        \caption{Siliziumdiode MRA4004 D1 Kennlinie}
-\end{figure}\\
-\begin{figure}[h]
-        \centering
-        \includegraphics[width=0.8\textwidth]{plot/D1_durchlass_crop.pdf}
-        \caption{Siliziumdiode MRA4004 D1 Kennlinie (Durchlassrichtung)}
-\end{figure}\\
-\begin{figure}[h]
-        \centering
-        \includegraphics[width=0.8\textwidth]{plot/D2_crop.pdf}
-        \caption{\textsc{Schottky}diode 10BQ015 Kennlinie}
-\end{figure}\\
-\begin{figure}[h]
-        \centering
-        \includegraphics[width=0.8\textwidth]{plot/D2_durchlass_crop.pdf}
-        \caption{\textsc{Schottky}diode 10B015 Kennlinie (Durchlassrichtung)}
-\end{figure}\\
+Mit den Messungen ergeben sich die Plots (\hyperref[fig:sidiode_kennlinie]{Silizium Kennlinie}, \hyperref[fig:sidiode_kennlinie_durchlass]{Silizium Kennlinie (durchlass)}, \hyperref[fig:schottky_kennlinie]{\textsc{Schottky}diode Kennlinie}, \hyperref[fig:schottky_kennlinie_durchlass]{\textsc{Schottky}diode Kennlinie (durchlass)}) (die Tabellen sind im Anhang zu finden).
 Zu erkennen sind die typischen Kennlinienverläufe von Dioden.
 Es wird keine bis sehr wenig Strom in die Sperrrichtung durchgelassen und in Durchlassrichtung steigt der Strom ab einer gewissen Spannung exponentiell an.
 Hier liegt diese Spannung bei ca.\ $\SI{0.7}{V}$ bzw.\ $\SI{0.2}{V}$, was ein typischer Wert für eine Siliziumdiode bzw.\ \textsc{Schottky}diode ist.
-
-\subsection{Versuchsaufgabe 3: Oszillogramm des Einweggleichrichters}
-Es wird nun der untere Teil des Diodenschaltbretts verwendet.
-\begin{figure}[h!]
-        \centering
-        \includegraphics[width=0.6\textwidth]{diodenschaltbrett_unten.png}
-        \caption{Der untere Teil des Diodenschaltbretts}
-\end{figure}\\
-Der Einweggleichrichter wird eingeschalten und das Potentiometer vollständig erhöht ($\SI{8}{\kilo \ohm}$).
-Die sich daraus ergebende Spannung sieht wie folgt aus
 \begin{figure}[h]
         \centering
-        \includegraphics[width=0.6\textwidth]{data/a3_a.BMP.png}
-        \caption{Oszillogramm des Einweggleichrichters; $\SI{15}{V}$ Wechselspannung}
-\end{figure}\\
-Nun wird diese Brummspannung mit verschiedenen Kondensatoren geglättet.
+        \includegraphics[width=0.8\textwidth]{plot/D1_crop.pdf}
+        \caption{Siliziumdiode MRA4004 D1 Kennlinie} \label{fig:sidiode_kennlinie}
+\end{figure}
 \begin{figure}[h]
         \centering
-        \includegraphics[width=0.6\textwidth]{data/a3_b.BMP.png}
-        \caption{$\SI{2.2}{\micro F}$ Kondensator zur Glättung einer $\SI{15}{V}$ Brummspannung}
-\end{figure}\\
+        \includegraphics[width=0.8\textwidth]{plot/D1_durchlass_crop.pdf}
+        \caption{Siliziumdiode MRA4004 D1 Kennlinie (Durchlassrichtung)} \label{fig:sidiode_kennlinie_durchlass}
+\end{figure}
 \begin{figure}[h]
         \centering
-        \includegraphics[width=0.6\textwidth]{data/a3_c.BMP.png}
-        \caption{$\SI{22}{\micro F}$ Kondensator zur Glättung einer $\SI{15}{V}$ Brummspannung}
-\end{figure}\\
+        \includegraphics[width=0.8\textwidth]{plot/D2_crop.pdf}
+        \caption{\textsc{Schottky}diode 10BQ015 Kennlinie} \label{fig:schottky_kennlinie}
+\end{figure}
 \begin{figure}[h]
         \centering
-        \includegraphics[width=0.6\textwidth]{data/a3_d.BMP.png}
-        \caption{$\SI{1000}{\micro F}$ Kondensator zur Glättung einer $\SI{15}{V}$ Brummspannung}
+        \includegraphics[width=0.8\textwidth]{plot/D2_durchlass_crop.pdf}
+        \caption{\textsc{Schottky}diode 10B015 Kennlinie (Durchlassrichtung)} \label{fig:schottky_kennlinie_durchlass}
 \end{figure}\\
-Es ist zu erkennen, dass die Kondensatoren in Abhängigkeit ihrer Kapazität verschieden stark Glätten.
-\begin{enumerate}[label=--]
-        \item $\SI{2.2}{\micro F}$: $U_\text{eff}=\SI{13.6}{V}$ und $U_\text{pp}=\SI{18.0}{V}$ 
-        \item $\SI{22}{\micro F}$: $U_\text{eff}=\SI{20.6}{V}$ und $U_\text{pp}=\SI{3.59}{V}$ 
-        \item $\SI{1000}{\micro F}$: $U_\text{eff}=\SI{22.0}{V}$ und $U_\text{pp}=\SI{0.8}{V}$ 
-\end{enumerate}
-Dies ist auch an der peak--peak Spannung zu erkennen, da diese die Differenz zwischen dem höchsten und niedrigsten Wert einer Spannung angibt.
-Man erkennt auch, dass mit steigender Kapazität die Effektivspannung zunimmt, da die Spannung zwischen den peaks weniger stark abfällt.
-Die Kapazität des Kondensators spiest also weiter die Ausgangsspannung, obwohl die Spannung auf Grund des Wechselspannungsanteils eigentlich abfällt.
-
-\subsection{Versuchsaufgabe 5: Stabilisierung mit Zenerdiode}
-Mit Hilfe einer \textsc{Zener}diode kann ein Strom auf einen bestimmten Wert stabilisiert werden.
-Da es die \textsc{Zener}diode erlaubt einen Strom in die Sperrrichtung zu leiten, steigt die Stromstärke ab einer gewissen Spannung nicht mehr an.
-Diese Spannung wird auch \textsc{Zener}--Spannung genannt.
-Es wird nun der Stromkreis mittels einer \textsc{Zener}diode einmal unstabilisiert und einmal stabilisiert betrachtet.
-\begin{figure}[h]
-        \centering
-        \includegraphics[width=0.7\textwidth]{spannungsstabilisierung.png}
-        \caption{Spannungsstabilisierung mittels \textsc{Zener}diode}
-\end{figure}\\
-Die eingehende Spannung $U_0$ ist die Bummspannung erzeugt duch einen Zweiweggleichrichter.
-Zudem ist ein Kondensator verbaut, der die Spannung genau wie in Versuchsaufgabe 3 glättet.
-\begin{figure}[h]
-        \centering
-        \includegraphics[width=0.6\textwidth]{plot/5_beides_crop.pdf}
-        \caption{Lastabhängigkeit der Spannung $U'$ mit und ohne Spannungsstabilisierung}
-\end{figure}\\
-Die Spannung ohne Stabilisierung fällt über einen Widerstand ab und variiert linear je nach Einstellung des Potentiometers.
-Die Spannung mit Stabilisierung zeigt dieses Verhalten auch, allerdings flacht hier der Strom ab, wenn die Sperrspannung der \textsc{Zener}diode erreicht ist.
-Zudem ist der Betrag der Stromstärke viel niedriger, als der Betrag der Stromstärke bei fehlender Spannungsstabilisierung.
-Aus dem Plot ist zu entnehmen, dass diese Stabilisierung in einem Bereich von $R \in \left[\SI{0}{\ohm},\SI{102}{\ohm}\right]$.
-\\\indent Das Restbrummen auf dem Oszillographen glättet bei zunehmendem Widerstand. 
-
+%}}}
+\clearpage
+%{{{ 2
 \subsection{Versuchsaufgabe 2: Oszillogramm der Diodenkennlinie}
 Wir zeichen die Kennlinie als Oszillogramm von der Silizium-, Schottky- und Zener-Diode auf. Dies wird mithilfe einer Schaltung, die im Abschnitt "Versuchsaufgabe 2: Oszillogramm der Diodenkennlinie" \cite{Praktikumsanleitung} beschrieben wird, aufgebaut. An dieser Stelle sei angemerkt, dass es starke Probleme bezüglich des Aufbaus gab und uns von Asistenten geholfen wurde. Das Hauptproblem hat sich als eine Defekte "Black Box" \cite{Praktikumsanleitung} herrausgestellt, welche eigentlich den Strom wiedergeben sollte. Die Kennlinien sind für die Siliziumdiode in Abb. \ref{fig:2.1}, für die Schottkyiode in Abb. \ref{fig:2.2} und für die Zenerdiode Abb. \ref{fig:2.3} und \ref{fig:2.4} zu sehen.
-
-\newpage
+Wir erkennen, dass die Schottkydiode eine deutlich früher anfangende Durchlassspannung von ca. 60(12) mV hat, wobei die Siliziumdiode und Zenerdiode eine Durchlassspannung von ca. 560(12) mV haben. Dies ist ein deutliches Merkmal jeder Schottkydiode, da diese aus einem Halbleiter und einem Metall besteht, anstelle von zwei verschieden dotierten Halbleitern. Den zweiten Unterschied erkennen wir, wenn wir die Abb. \ref{fig:2.4} betrachten. Dort können wir einen Durchbruch bei der Zenerspannung von -800(12) mV erkennen. Ein praktisch wertvolles Merkmal ist hierbei, dass die Diode nicht zerstört wird. Ein verkleinertes Bild der Siliziumdiode, sowie Schottkydiode ist an dieser Stelle sinfrei, da wir die Sperrspannung von -400 V und -15 V mit einer Maximalausgangsspannung von 15 V nicht erreichen.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.6\textwidth]{data/Kennlinie_a1_d1.BMP.png}
@@ -338,9 +277,51 @@ Wir zeichen die Kennlinie als Oszillogramm von der Silizium-, Schottky- und Zene
 	\caption{Kennlinie der Zenerdiode mit 10-facher Verkleinerung der x-Achse}
 	\label{fig:2.4}
 \end{figure}
-Wir erkennen, dass die Schottkydiode eine deutlich früher anfangende Durchlassspannung von ca. 60(12) mV hat, wobei die Siliziumdiode und Zenerdiode eine Durchlassspannung von ca. 560(12) mV haben. Dies ist ein deutliches Merkmal jeder Schottkydiode, da diese aus einem Halbleiter und einem Metall besteht, anstelle von zwei verschieden dotierten Halbleitern. Den zweiten Unterschied erkennen wir, wenn wir die Abb. \ref{fig:2.4} betrachten. Dort können wir einen Durchbruch bei der Zenerspannung von -800(12) mV erkennen. Ein praktisch wertvolles Merkmal ist hierbei, dass die Diode nicht zerstört wird. Ein verkleinertes Bild der Siliziumdiode, sowie Schottkydiode ist an dieser Stelle sinfrei, da wir die Sperrspannung von -400 V und -15 V mit einer Maximalausgangsspannung von 15 V nicht erreichen.
-
-
+%}}}
+\clearpage
+%{{{ 3
+\subsection{Versuchsaufgabe 3: Oszillogramm des Einweggleichrichters}
+Es wird nun der \hyperref[fig:diodenschaltbrett_unten]{untere Teil des Diodenschaltbretts} verwendet.
+\begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.6\textwidth]{diodenschaltbrett_unten.png}
+        \caption{Der untere Teil des Diodenschaltbretts} \label{fig:diodenschaltbrett_unten}
+\end{figure}\\
+Der Einweggleichrichter wird eingeschalten und das Potentiometer vollständig erhöht ($\SI{8}{\kilo \ohm}$).
+Die sich daraus ergebende Spannung sieht \hyperref[fig:einweggleichrichter]{wie folgt} aus
+\begin{figure}[h]
+        \centering
+        \includegraphics[width=0.6\textwidth]{data/a3_a.BMP.png}
+        \caption{Oszillogramm des Einweggleichrichters; $\SI{15}{V}$ Wechselspannung} \label{fig:einweggleichrichter}
+\end{figure}\\
+Nun wird diese Brummspannung mit verschiedenen Kondensatoren geglättet.
+Es ist zu erkennen, dass die Kondensatoren in Abhängigkeit ihrer Kapazität verschieden stark Glätten.
+\begin{enumerate}[label=--]
+        \item $\SI{2.2}{\micro F}$: $U_\text{eff}=\SI{13.6}{V}$ und $U_\text{pp}=\SI{18.0}{V}$ 
+        \item $\SI{22}{\micro F}$: $U_\text{eff}=\SI{20.6}{V}$ und $U_\text{pp}=\SI{3.59}{V}$ 
+        \item $\SI{1000}{\micro F}$: $U_\text{eff}=\SI{22.0}{V}$ und $U_\text{pp}=\SI{0.8}{V}$ 
+\end{enumerate}
+Dies ist auch an der peak--peak Spannung zu erkennen, da diese die Differenz zwischen dem höchsten und niedrigsten Wert einer Spannung angibt.
+Man erkennt auch, dass mit steigender Kapazität die Effektivspannung zunimmt, da die Spannung zwischen den peaks weniger stark abfällt.
+Die Kapazität des Kondensators spiest also weiter die Ausgangsspannung, obwohl die Spannung auf Grund des Wechselspannungsanteils eigentlich abfällt.
+\begin{figure}[h]
+        \centering
+        \includegraphics[width=0.6\textwidth]{data/a3_b.BMP.png}
+        \caption{$\SI{2.2}{\micro F}$ Kondensator zur Glättung einer $\SI{15}{V}$ Brummspannung}
+\end{figure}
+\begin{figure}[h]
+        \centering
+        \includegraphics[width=0.6\textwidth]{data/a3_c.BMP.png}
+        \caption{$\SI{22}{\micro F}$ Kondensator zur Glättung einer $\SI{15}{V}$ Brummspannung}
+\end{figure}
+\begin{figure}[h]
+        \centering
+        \includegraphics[width=0.6\textwidth]{data/a3_d.BMP.png}
+        \caption{$\SI{1000}{\micro F}$ Kondensator zur Glättung einer $\SI{15}{V}$ Brummspannung}
+\end{figure}
+%}}}
+\clearpage
+%{{{ 4
 \subsection{Versuchsaufgabe 4: Oszillogramm des Zweiweggleichrichters}
 Wir verbauen im Vergleich zu Versuchsaufgabe 3 nun aber anstatt des Einweggleichrichters den Zweiwegleichrichter. Wir erhalten die in Abb. \ref{fig:4.1} gezeigte Spannung ohne den Kondensator, Abb. \ref{fig:4.2} mit 2.2µF, Abb. \ref{fig:4.3} mit 22 µF und Abb. \ref{fig:4.4} mit 1000µF.
 \begin{figure}[h]
@@ -366,14 +347,13 @@ Wir verbauen im Vergleich zu Versuchsaufgabe 3 nun aber anstatt des Einweggleich
 	\includegraphics[width=0.6\textwidth]{data/a4_d.BMP.png}
 	\caption{Oszillogramm eines Zweiweggleichrichters mit 1000 µF Kondensator}
 	\label{fig:4.4}
-\end{figure}
-Hier sei darauf Hingewiesen, dass die Zeitskalierung halbiert wurde, sodass es den fälschlichen Anschein erweckt, dass die Schwingung breiter geworden sei. Eigentlich sind aber jetzt die vorher beim Einweggleichrichter gesperrten und Ursprünglich negativen Spannungen umgepolt worden, sodass es zwischen jeder Ursprünglichen positiven Spannungsschwankung nun einen weiteren Spannungsberg gibt.
-Es ist deutlich zu erkennen, wie mit steigener Kapazität die Brummspannung sich verringert. Ohne Kondensator gibt es keine Abflachung und mit dem 1000 µF Kondensator gibt es volle Abflachung, also es ist kein Brumm mehr zu erkennen.
-
+\end{figure}\\
+Hier sei darauf hingewiesen, dass die Zeitskalierung halbiert wurde, sodass es den fälschlichen Anschein erweckt, dass die Schwingung breiter geworden sei. Eigentlich sind aber jetzt die vorher beim Einweggleichrichter gesperrten und ursprünglich negativen Spannungen umgepolt worden, sodass es zwischen jeder ursprünglichen positiven Spannungsschwankung nun einen weiteren Spannungsberg gibt.
+Es ist deutlich zu erkennen, wie mit steigener Kapazität die Brummspannung sich verringert. Ohne Kondensator gibt es keine Abflachung und mit dem $\SI{1000}{\micro F}$ Kondensator gibt es volle Abflachung, also es ist kein Brumm mehr zu erkennen.
 \begin{center}
 	\begin{tabular}{|c|c|c|}
 		\hline
-    \(C \) [µF] & \(U_{\text{PP}}\) [V] & \(U_{\text{avg}}\) [V]\\
+    \(C \) [µF] & \(U_{\text{pp}}\) [V] & \(U_{\text{avg}}\) [V]\\
 		\hline
     0.0 & 23.7 & 14.5\\
     2.2 & 6.4 & 20.7 \\
@@ -384,9 +364,34 @@ Es ist deutlich zu erkennen, wie mit steigener Kapazität die Brummspannung sich
 	\captionof{table}{Brummspannung und mittlere Höhe der Gleichspannung gegenüber der Kapazitäten der verschiedenen Kondensatoren}
 	\label{Tab:4.1}
 \end{center}
-
 Vergleichsweise zum Einweggleichrichter, sind die weiteren Spannungsberge durch die Invertierung des Signals, dank des Zweiweggleichrichters zu erklären. Es sind nochmal alle Brummspannungen, sowie die mittleren Höhen der Gleichspannungen mit der entsprechenden Kapazität in Tabell \ref{Tab:4.1} einzusehen.
-
+%}}}
+\clearpage
+%{{{ 5
+\subsection{Versuchsaufgabe 5: Stabilisierung mit Zenerdiode}
+Mit Hilfe einer \textsc{Zener}diode kann ein Strom auf einen bestimmten Wert stabilisiert werden.
+Da es die \textsc{Zener}diode erlaubt einen Strom in die Sperrrichtung zu leiten, steigt die Stromstärke ab einer gewissen Spannung nicht mehr an.
+Diese Spannung wird auch \textsc{Zener}--Spannung genannt.
+Es wird nun der \hyperref[fig:stromkreise_zener]{Stromkreis} mittels einer \textsc{Zener}diode einmal unstabilisiert und einmal stabilisiert betrachtet.
+\begin{figure}[h]
+        \centering
+        \includegraphics[width=0.7\textwidth]{spannungsstabilisierung.png}
+        \caption{Spannungsstabilisierung mittels \textsc{Zener}diode} \label{fig:stromkreise_zener}
+\end{figure}\\
+Die eingehende Spannung $U_0$ ist die Bummspannung erzeugt duch einen Zweiweggleichrichter.
+Zudem ist ein Kondensator verbaut, der die Spannung genau wie in Versuchsaufgabe 3 glättet.
+\begin{figure}[h]
+        \centering
+        \includegraphics[width=0.6\textwidth]{plot/5_beides_crop.pdf}
+        \caption{Lastabhängigkeit der Spannung $U'$ mit und ohne Spannungsstabilisierung}
+\end{figure}\\
+Die Spannung ohne Stabilisierung fällt über einen Widerstand ab und variiert linear je nach Einstellung des Potentiometers.
+Die Spannung mit Stabilisierung zeigt dieses Verhalten auch, allerdings flacht hier der Strom ab, wenn die Sperrspannung der \textsc{Zener}diode erreicht ist.
+Zudem ist der Betrag der Stromstärke viel niedriger, als der Betrag der Stromstärke bei fehlender Spannungsstabilisierung.
+Dieses Verhalten war zu erwarten, da die \textsc{Zener}diode die Spannung auf den Wert ihrer Sperrspannung stabilisiert.
+Aus der Steigung der Ausgleichsgeraden ist zu entnehmen, dass der Lastwiderstand mit und ohne Stabilisierung in einem Bereich von $R_\text{mit} \approx \SI{469}{\ohm}$ und $R_\text{ohne} \approx \SI{942}{\ohm}$ liegt.
+%}}}
+\clearpage
 \section{Fazit}
 Wir haben mit der ersten Versuchsaufgabe Kennlinien mittels Amperemeter und Voltmeter vermessen und konnten dort schon den späteren Anstieg der Durchlassspannung der Silizium- gegenüber der Schottky-Diode sehen. Dies konnten wir nochmal in der zweiten Versuchsaufgabe mittels Oszillogramms bestätigen, sowie bei der Zenerdiode eine Zenerspannung von -800(12) mV messen, die deutlich unter der Sperrspannung von -400V und -15V der anderen Dioden liegt. Desweiteren haben wir den Einweggleichrichter untersucht, bei dem wir auch stärkere Glättungen durch höhere Kapazitäten erzeugen konnten. Dieses Verhalten wurde dann nochmal in der nächsten Versuchsaufgabe mit dem Zweiweggleichrichter bestätigt, wobei wir zudem noch die negativen Spannungen invertiert haben. Im letzten Versuchsteil haben wir dann mithilfe einer Zenerdiode ein Singal stabilisiert.
  

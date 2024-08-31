@@ -2,9 +2,9 @@ set terminal epslatex color
 set output "output_5_beides.tex"
 set notitle
 set xlabel '$I$ [A]'
-set ylabel '$U$ [V]'
+set ylabel "$U'$ [V]"
 set grid
-set key box top left width -7 # 'samplen x' sets how much space the symbol takes
+set key box top left width -6 # 'samplen x' sets how much space the symbol takes
 
 set style line 1 lt rgb "#1f78b4" pt 13 ps 1 # blue
 set style line 2 lt rgb "#33a02c" pt 13 ps 1 # green
@@ -21,10 +21,10 @@ f(x) = m*x+n
 fit f(x) '../data/data_5' u 2:1 every ::0::14 via m,n
 g(x) = a*x+b
 fit g(x) '../data/data_5' u 2:1 every ::15::28 via a,b
-plot '../data/data_5' u 2:1 every ::0::14 title 'Ohne Spannungsstabilisierung' ls 1,\
-        '../data/data_5' u 2:1 every ::15::28 title 'Mit Spannungsstabilisierung' ls 2,\
-        f(x) title 'straight fit: ohne Spannungsstabilisierung',\
-        g(x) title 'straight fit: mit Spannungsstabilisierung'
+plot '../data/data_5' u 2:1 every ::0::14 title 'Ohne Stabilisierung' ls 1,\
+        '../data/data_5' u 2:1 every ::15::28 title 'Mit *' ls 2,\
+        f(x) title 'straight fit: ohne *' ls 1 lw 1,\
+        g(x) title 'straight fit: mit *' ls 2 lw 2
 # NaN with points / lines title '' ls 1 # fake legend
 
 # pt 0 pixel
