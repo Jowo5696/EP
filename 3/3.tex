@@ -82,11 +82,11 @@
 	\section{Theorie}
 	Es gibt zwei verschiedene Arten von Transistoren; Bipolar-- und Feldeffekttransistor.
 	Der Bipolartransistor
-	\begin{figure}[h]
+	\begin{Figure}
 		\centering
 		\includegraphics[width=0.3\textwidth]{bipolartransistor.png}
-		\caption{Schaltbild und Aufbau eines Bipolartransistors; Abbildung 3/4.1 a) \cite{Praktikumsanleitung}}
-	\end{figure}\\
+                \captionof{figure}{Schaltbild und Aufbau eines Bipolartransistors; Abbildung 3/4.1 a) \cite{Praktikumsanleitung}}
+	\end{Figure}
 	ist aufgebaut aus zwei n--dotierten Materialien (Emitter und Kollektor), wobei der Emitter deutlich stärker n--dotiert ist als der Kollektor.
 	Die Basis ist nur sehr dünn und leicht p--dotiert.
 	\\\indent Wird nun an der Basis ein geringer Strom angeschlossen und es herrscht eine Spannung zwischen Emitter und Kollektor, so fließen Elektronen aus dem Emitter in die Basis und füllen dort die p--Löcher auf.
@@ -96,11 +96,11 @@
 	\\\\ Der FET (\textbf{F}eld\textbf{e}ffekt\textbf{t}ransistor) ist ein Transistor der ein elektrisches Feld als Analogon zum Basisstrom des Bipolartransistors verwendet.
 	Er ist Aufgebaut aus Source, Drain, Gate und Bulk.
 	Source und Drain sind beide n--dotiert und Bulk ist p--dotiert.
-	\begin{figure}[h]
+	\begin{Figure}
 		\centering
 		\includegraphics[width=0.6\textwidth]{fet.png}
-		\caption{Aufbau eines FET; Abbildung 3/4.8 \cite{Praktikumsanleitung}}
-	\end{figure}\\
+                \captionof{figure}{Aufbau eines FET; Abbildung 3/4.8 \cite{Praktikumsanleitung}}
+	\end{Figure}
 	Zwischen Gate und Bulk ist eine dünne isolierende Schicht, welche den Transistor vor der am Gate anliegenden Spannung isoliert.
 	Die Spannung am Gate sort dafür, dass ein Feld zwischen Source und Drain entsteht, welches die Elektronen dicht unterhalb der Isolierschicht passieren lässt.
 	So kann durch Regulation der Gatespannung der Stromfluss kontrolliert werden.
@@ -109,7 +109,7 @@
 
 	\section{Voraufgaben}
 	\subsection{A}
-	\begin{Figure}[h]
+	\begin{Figure}
 		\centering
 		\includegraphics[width=0.9\textwidth]{A_crop.pdf}
 		\captionof{figure}[Potentialverlauf ohne und mit äußerer Spannung]{Potentialverlauf ohne (links) und mit (rechts) äußerer Spannung}
@@ -139,18 +139,18 @@
 
 	\subsection{D}
 	Ein vereinfachtes Schaltbild zum Kennlinienschreiber könnte sein
-	\begin{figure}[h]
+	\begin{Figure}
 		\begin{minipage}{0.5\textwidth}
 			\centering
 			\includegraphics[width=\textwidth]{kennlinienschreiber.png}
-			\caption{Schaltbild Kennlinienschreiber; Abbildung 3.1 \cite{Praktikumsanleitung}}
+			\captionof{figure}{Schaltbild Kennlinienschreiber; Abbildung 3.1 \cite{Praktikumsanleitung}}
 		\end{minipage}
 		\begin{minipage}{0.5\textwidth}
 			\centering
 			\includegraphics[width=\textwidth]{D_crop.pdf}
-			\caption{Vereinfachtes Schaltbild Kennlinienschreiber}
+			\captionof{figure}{Vereinfachtes Schaltbild Kennlinienschreiber}
 		\end{minipage}
-	\end{figure}\\
+	\end{Figure}
 	Die 16 verschiedenen Basisströme erhält man aus den vier verschiedenen Widerständen, mit denen binär gezählt wird.
 	\\\indent Um die Kennlinie eines Feldeffekttransistors zu vermessen muss nach dem Hochpass eine variable Spannung anliegen, die mit einem Potentiometer erreicht werden kann.
 	Da der Aufbau des Feldeffekttransistors analog zu dem des Bipolartransistors ist, lässt sich hier \textit{Basis} durch \textit{Gate}, \textit{Emitter} durch \textit{Source} und \textit{Kollektor} durch \textit{Drain} einfach tauschen.
@@ -168,13 +168,13 @@
 	\end{align}
 
 	\subsection{F WIP Schaltkreis}
-	\begin{figure}[h]
+	\begin{Figure}
 		\centering
 		\includegraphics[width=0.5\textwidth]{F_crop.pdf}
-		\caption{Ausgangskennlinienfeld Bipolartransistor mit EIN und AUS Schaltung}
-	\end{figure}
+		\captionof{figure}{Ausgangskennlinienfeld Bipolartransistor mit EIN und AUS Schaltung}
+	\end{Figure}
 
-	\begin{Figure}[h]
+	\begin{Figure}
 		\centering
 		\begin{circuitikz}
 			\draw
