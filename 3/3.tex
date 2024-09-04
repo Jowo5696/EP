@@ -85,7 +85,7 @@
 	\begin{Figure}
 		\centering
 		\includegraphics[width=0.3\textwidth]{bipolartransistor.png}
-                \captionof{figure}{Schaltbild und Aufbau eines Bipolartransistors; Abbildung 3/4.1 a) \cite{Praktikumsanleitung}}
+		\captionof{figure}{Schaltbild und Aufbau eines Bipolartransistors; Abbildung 3/4.1 a) \cite{Praktikumsanleitung}}
 	\end{Figure}
 	ist aufgebaut aus zwei n--dotierten Materialien (Emitter und Kollektor), wobei der Emitter deutlich stärker n--dotiert ist als der Kollektor.
 	Die Basis ist nur sehr dünn und leicht p--dotiert.
@@ -99,7 +99,7 @@
 	\begin{Figure}
 		\centering
 		\includegraphics[width=0.6\textwidth]{fet.png}
-                \captionof{figure}{Aufbau eines FET; Abbildung 3/4.8 \cite{Praktikumsanleitung}}
+		\captionof{figure}{Aufbau eines FET; Abbildung 3/4.8 \cite{Praktikumsanleitung}}
 	\end{Figure}
 	Zwischen Gate und Bulk ist eine dünne isolierende Schicht, welche den Transistor vor der am Gate anliegenden Spannung isoliert.
 	Die Spannung am Gate sort dafür, dass ein Feld zwischen Source und Drain entsteht, welches die Elektronen dicht unterhalb der Isolierschicht passieren lässt.
@@ -213,8 +213,8 @@
 	\end{center}
 	Gemittelt erhalten wir 1.64(6)\;V, wobei die Standartabweichung 0.035\;V beträgt, diese aber kleine ist, als die geschätzten 0.06\;V Messunsicherheit. Somit folgt
 	\begin{align*}
-    \beta = \frac{dI_C}{dI_B} &= 547(27) \\
-                              &\text{mit } dI_B = 6\text{\;µA und }dI_C=\frac{dU_C}{500 \Omega} = 3.28(16) \text{\;mA.}
+		\beta = \frac{dI_C}{dI_B} & = 547(27)                                                                                \\
+		                          & \text{mit } dI_B = 6\text{\;µA und }dI_C=\frac{dU_C}{500 \Omega} = 3.28(16) \text{\;mA.}
 	\end{align*}
 	\begin{Figure}
 		\centering\includegraphics[width=1\textwidth]{data/Kennlinie1_npn.png}
@@ -236,20 +236,27 @@
 		\captionof{figure}{Oszillogramm für \# = 4}
 		\label{fig:1.5}
 	\end{Figure}
+
+  Legen wir nun die Arbeitsgerade durch eines der Oszillogramme, so können wir dessen Arbeitspunkt bestimmten. Dafür legen wir eine Gerade von ($U_{CE} = 0$\;V; $I_C = 19.2$\;mA $\hat{=}$ $U_C=$ 9.61\;V) bis ($U_{CE} = 10$\;V; $I_C = 6.4$\;mA $\hat{=}$ $U_C=$ 3.2\;V), wobei wir mit 500\;$\Omega$ geeicht haben. Die Gerade lästt sich mathematisch beschreiben mit
+  \begin{align*}
+    I_C &= \frac{U_0 - U_{CE}}{R_C + R_E} \\
+        & \text{mit } R_C=R_E=390\text{\;}\Omega \text{ und } U_0 = 15\text{\;V.}
+  \end{align*}
+
 	\begin{Figure}
 		\centering\includegraphics[width=1\textwidth]{data/Kennlinie4_npn.png}
 		\begin{tikzpicture}[overlay]
-			\draw (-4.1,6.5) --(2.6,3.2);
+			\draw (-4.1,5.1) --(2.6,3);
 
 		\end{tikzpicture}
-		\captionof{figure}{Oszillogramm für \# = 4}
+		\captionof{figure}{}
 		\label{fig:1.6}
 	\end{Figure}
 
 
 	\begin{Figure}
 		\centering\includegraphics[width=1\textwidth]{data/DS0000.png}
-		\captionof{figure}{Oszillogramm für \# = 1}
+		\captionof{figure}{FET}
 		\label{fig:1.7}
 	\end{Figure}
 
