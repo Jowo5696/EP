@@ -26,7 +26,6 @@
 \hypersetup{colorlinks=true,allcolors=blue}
 \fancyhf[]{}
 
-
 % --- Jonas cringe --- begin
 \newcommand{\td}{\,\text{d}}
 \newcommand{\RN}[1]{\uppercase\expandafter{\romannumeral#1}}
@@ -78,6 +77,7 @@
 
 
 \begin{multicols}{2}
+	\sloppy
 	\section{Einleitung}
 	In diesem Versuch werden bipolare und Feldeffekttransistoren behandelt; ihr Aufbau, physikalische Funktionsweise und Integration in Schaltungen werden verstanden.
 	Konkreter soll die Ausgangskennlinie sowie Arbeitsgerade und Arbeitspunkt einen npn--Transistors und FETs mit Hilfe eines Kennlinienschreibers und Oszillographen vermessen werden.
@@ -350,8 +350,133 @@
 		\label{Tab:1.4}
 	\end{center}
 
-  \section{Fazit}
-  Die Kennlinien vom bipolaren Transistor, sowie von dem FET, konnten gut dargestellt werden. Dabei war leider die Ausführung etwas ungründlich, weswegen wir einen Wert nur spekulativ abschätzen konnten. Neben dem gab es allerdings bei der Bestimmung der Schwellspannung $U_{thr}=\SI{1.794+-0.017}{V}$ und Transkonduktanz $g_m=\SI{0.028+-0.018}{}$ bzw. experimentell: $g_m=\SI{0.022+-0.011}{}$, keine größeren Probleme und die Werte decken sich gut.
+	\subsection{Emitterfolger}
+	Es wird ein Emitterfolger aufgebaut
+	\begin{Figure}
+		\centering
+		\includegraphics[width=0.6\textwidth]{emitterfolger.png}
+		\captionof{figure}{Emitterfolgerschaltung; Abbildung 3/4.12\cite{Praktikumsanleitung}}
+	\end{Figure}
+	Hier entspricht Ausgang 1 einer Emitterfolgerschaltung.
+	Die Versorgungsspannung ist $\SI{15}{V}$ und wird vom Kennlinienschreiber bereitgestellt.
+	Die Widerstände sind $R_E=R_C=\SI{390}{\ohm}$.
+	Die gesamte Schaltung wird auf \hyperref[fig:schaltbrett_1]{Schaltbrett 1} aufgebaut.
+	\begin{Figure}
+		\centering
+		\includegraphics[width=0.6\textwidth]{schaltbrett_1.png}
+		\captionof{figure}{Schaltbrett 1; Abbildung 3.4\cite{Praktikumsanleitung}} \label{fig:schaltbrett_1}
+	\end{Figure}
+	Das angelegte Signal ist ein Sinussignal mit $\td U_B=\SI{2.1}{V_{SS}}$ und $f=\SI{500}{Hz}$ mit DC--Offset von $U=\SI{2}{V}$.
+	\begin{Figure}
+		\centering
+		\includegraphics[width=0.6\textwidth]{../data/DS0003.png}
+		\captionof{figure}{Phasenbeziehung zwischen Signalen vor und nach Emitterschaltung}
+	\end{Figure}
+	Es lässt sich erkennen, dass die beiden Signale nicht Phasenverschoben sind.
+	Aus der Abbildung geht auch hervor, dass die Spannungsverstärkung bei ungefährt eins liegt
+	\begin{align}
+		\diff[]{U_E}{U_B}\approx 1
+		.\end{align}\\\\
+	Aussteuergenzen sind die Grenzen der Amplitude eines Signals, bei der keine Verzerrung verursacht wird.
+	Zu erwarten ist hier also die minimale Amplitude von $U_{\text{min}}=\SI{0.6}{V}$, die benötigt wird, um das elektrische Feld zwischen der p--n--Grenzschicht zu überwinden.
+	\\\indent Während des Versuches wurde fälschlicherweise eine lineare Ausgangsspannung gesucht.
+	Diese ist natürlich trivialerweise für $U_{\text{out}}\approx \SI{0}{V}$ erreicht, was aber nicht dem gewünschten Versuchsergebnis entspricht.
+	\begin{Figure}
+		\centering
+		\includegraphics[width=0.6\textwidth]{../data/DS0005.png}
+		\captionof{figure}{Aussteuergrenzen des Emitterfolger}
+	\end{Figure}
+	Zur Arbeitspunkteinstellung wird der DC--Offset nun mit einem $\SI{27}{k\ohm}/\SI{10}{k\ohm}$ Spannungsteiler hergestellt. Dazu wird ein geeigneter Kondensator hinter dem $\SI{10}{k\ohm}$ Widerstand eingefügt.
+	\begin{Figure}
+		\centering
+		\includegraphics[width=0.6\textwidth]{../data/DS0006.png}
+		\captionof{figure}{Emitterfolger mit Kapazität von $\SI{1}{\micro F}$}
+	\end{Figure}
+	\begin{Figure}
+		\centering
+		\includegraphics[width=0.6\textwidth]{../data/DS0007.png}
+		\captionof{figure}{Emitterfolger mit Kapazität von $\SI{10}{\nano F}$}
+	\end{Figure}
+	\begin{Figure}
+		\centering
+		\includegraphics[width=0.6\textwidth]{../data/DS0008.png}
+		\captionof{figure}{Emitterfolger mit Kapazität von $\SI{1}{\nano F}$}
+	\end{Figure}
+	\begin{Figure}
+		\centering
+		\includegraphics[width=0.6\textwidth]{../data/DS0009.png}
+		\captionof{figure}{Emitterfolger mit Kapazität von $\SI{100}{\pico F}$}
+	\end{Figure}
+	Es lässt sich erkennen, dass die Phase in abhängigkeit der Kapazität verschoben wird.
+	Bei großer Kapazität bleibt die Phase gleich, mit kleiner werdender Kapazität steigt der Phasenunterschied zwischen Eingangs-- und Ausgangssignal.
+	Zudem sinkt die Amplitude des Ausgangssignals, wenn die Kapazität geringer wird.
+	Wird die Kapazität zu gering, dann wird das Ausgangssignal annähernd konstant.
+
+	\subsection{FET}
+	Auf \hyperref[fig:schaltbrett_2]{Schaltbrett 2} wird nun eine Emitterfolgerschaltung aufgebaut.
+	\begin{Figure}
+		\centering
+		\includegraphics[width=0.6\textwidth]{schaltbrett_2.png}
+		\captionof{figure}{Schaltbrett 2; Abbildung 3.5\cite{Praktikumsanleitung}} \label{fig:schaltbrett_2}
+	\end{Figure}
+	$R_C=\SI{0}{\ohm}$ und $R_E \in \left[\SI{1}{k\ohm},\SI{2}{k\ohm}\right]$.
+	Die Versorgungsspannung beträgt ca.\ $\SI{10}{V}$.
+	Aus dem Frequenzgenerator kommt ein Sinussignal mit $f=\SI{1}{kHz}$ und $U_{\text{SS}}=\SI{2.1}{V}$ mit DC--Offset $\SI{5}{V}$.
+	\begin{Figure}
+		\centering
+		\includegraphics[width=0.6\textwidth]{../data/DS0011.png}
+		\captionof{figure}{Vergleich Basis-- Emitterspannung}
+	\end{Figure}
+	Anhand des Oszillogramms kann man erkennen, dass zwischen Basis-- und Emitterspannung eine Spannung von $\SI{1}{V}$ liegt.
+	Es ist also $U_{BE}=\SI{1}{V}$.
+	Erwartet war eine Basis-- Emitterspannung von ca.\ $\SI{0.7}{V}$.
+	Dieser Wert besitzt eine Abweichung von ca.\ $43\%$.
+	Da Transistoren sehr genau dotiert werden müssen, sollte eine so hohe Abweichung nicht erwartet werden.
+	Fehler hierfür könnten im Transistor selbst liegen, z.B.\ durch fälschliche Bauweise bzw.\ falsche Behandlung oder Anschluss.\\\\
+	Verwendet man nun den FET als Sourcefolger kann die Thresholdspannung $U_{\text{thr}}$ bestimmt werden.
+	\begin{Figure}
+		\centering
+		\includegraphics[width=0.6\textwidth]{../data/DS0013.png}
+		\captionof{figure}{FET als Sourcefolger}
+	\end{Figure}
+	Man kann aus der Abbildung ablesen, dass die Spannungen eine Differenz von $\SI{1.5}{V}$ haben.
+	Diese Spannung ist genau die Thresholdspannung $U_{\text{thr}}=\SI{1.5}{V}$.
+	Der Wert der Messung aus 3.1.2 liegt bei $U_{\text{thr},3.1.2}=\SI{1.794+-0.017}{V}$ und ist mit einer Abweichung von $20\%$ nicht mit $U_{\text{thr}}$ vereinbar.
+	Grund hierfür könnte das ungenau oder falsche Ablesen der Thresholdspannung aus dem Oszillogramm sein.
+	Zum Beispiel hätte der Bereich, ab dem das Signal verzerrt, genauer eingestellt werden können.
+
+	\subsection{Eingangswiderstand}
+	Der Sinusgenerator und Transistor wird nun von Buchse B1 abgeklemmt und der Oszi direkt angeklemmt.
+	Der Kondensator $\SI{1}{\micro F}$ wird mit einer Drahtrbücke mit dem Schaltkreis verbunden.
+	\begin{Figure}
+		\centering
+		\includegraphics[width=0.6\textwidth]{../data/DS0015.png}
+		\captionof{figure}{Entladungskurve des $\SI{1}{\micro F}$ Kondensators über den Oszieingangswiderstand}
+	\end{Figure}
+	Die Entladungskurve dieses Kondensators wird berechnet mit $R=\SI{1}{M\ohm}$ und $C=\SI{1}{\micro F}$
+	\begin{align}
+		T_{1/2,\text{Lit}}=\dfrac{\ln\left(2\right)}{RC}\approx \SI{0.69}{s}
+		.\end{align}
+	Liest man aus dem Oszillogramm ab, ist $T_{1/2,\text{Oszi}}=\SI{0.8+-0.1}{s}$.
+	Die Abweichung vom berechneten Wert liegt bei $16\%$.
+	Grund dafür sind wahrscheinlich die nicht--idealen Eigenschaften der Bauteile im Versuch.
+	\\\indent Nun wird wieder ein Emitterfolger $\left(R_E \in \left[\SI{1}{k\ohm},\SI{2}{k\ohm}\right]\right)$ mit bipolarem Transistor aufgebaut.
+	\begin{Figure}
+		\centering
+		\includegraphics[width=0.6\textwidth]{../data/DS0017.png}
+		\captionof{figure}{Entladungskurve des $\SI{1}{\micro F}$ Kondensators über den Emitterfolger}
+	\end{Figure}
+	Liest man die Entladungszeit vom Oszillogramm ab, so ergibt sich $T_{1/2,\text{Emf}}=\SI{250+-50}{\milli s}$.
+	Die Stromverstärkung der Emitterfolgerschaltung ergibt sich dann aus dem Verhältnis der Entladungszeiten mit und ohne Emitterfolger.
+	\begin{align}
+		\gamma =\dfrac{T_{1/2,\text{Oszi}}}{T_{1/2,\text{Emf}}}=\SI{3.2+-7.5}{}
+		.\end{align}
+	Die Größe dieses Fehlers lässt sich auf die Größe des Fehlers von $T_{1/2,\text{Emf}}$ zurückführen.
+	Die Größenordnung der Verstärkung passt nicht zu typischen Emitterfolgerschaltungen, da diese im Bereich von ungefährt $\gamma _{\text{Lit}}\approx 100$ liegen.
+	Grund hierfür könnten Fehlerhafte Bauteile oder falsche Messung sein, da sich Abweichung in dieser Größenordnung nicht durch Ablesefehler ergeben sollten.
+
+	\section{Fazit}
+	Die Kennlinien vom bipolaren Transistor, sowie von dem FET, konnten gut dargestellt werden. Dabei war leider die Ausführung etwas ungründlich, weswegen wir einen Wert nur spekulativ abschätzen konnten. Neben dem gab es allerdings bei der Bestimmung der Schwellspannung $U_{thr}=\SI{1.794+-0.017}{V}$ und Transkonduktanz $g_m=\SI{0.028+-0.018}{}$ bzw. experimentell: $g_m=\SI{0.022+-0.011}{}$, keine größeren Probleme und die Werte decken sich gut.
 
 \end{multicols}{2}
 \clearpage
