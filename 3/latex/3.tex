@@ -20,7 +20,7 @@
 \usepackage[ISO]{diffcoeff}
 \usepackage{xcolor}
 \usepackage{csquotes}
-\usepackage{circuitikz}
+\usepackage[european]{circuitikz}
 \usepackage{hyperref}
 \usepackage[locale=US]{siunitx}
 \hypersetup{colorlinks=true,allcolors=blue}
@@ -143,16 +143,14 @@
 	\subsection{D}
 	Ein vereinfachtes Schaltbild zum Kennlinienschreiber könnte sein
 	\begin{Figure}
-		\begin{minipage}{0.5\textwidth}
-			\centering
-			\includegraphics[width=\textwidth]{kennlinienschreiber.png}
-			\captionof{figure}{Schaltbild Kennlinienschreiber; Abbildung 3.1 \cite{Praktikumsanleitung}}
-		\end{minipage}
-		\begin{minipage}{0.5\textwidth}
-			\centering
-			\includegraphics[width=\textwidth]{D_crop.pdf}
-			\captionof{figure}{Vereinfachtes Schaltbild Kennlinienschreiber}
-		\end{minipage}
+                \centering
+                \includegraphics[width=\textwidth]{kennlinienschreiber.png}
+                \captionof{figure}{Schaltbild Kennlinienschreiber; Abbildung 3.1 \cite{Praktikumsanleitung}}
+	\end{Figure}
+	\begin{Figure}
+                \centering
+                \includegraphics[width=\textwidth]{D_crop.pdf}
+                \captionof{figure}{Vereinfachtes Schaltbild Kennlinienschreiber}
 	\end{Figure}
 	Die 16 verschiedenen Basisströme erhält man aus den vier verschiedenen Widerständen, mit denen binär gezählt wird.
 	\\\indent Um die Kennlinie eines Feldeffekttransistors zu vermessen muss nach dem Hochpass eine variable Spannung anliegen, die mit einem Potentiometer erreicht werden kann.
@@ -170,7 +168,7 @@
 		\Leftrightarrow &  & U_B    & = U_0\dfrac{R_2}{R_1+R_2}-I_B\dfrac{R_1R_2}{R_1+R_2}. &  &
 	\end{align}
 
-	\subsection{F WIP Schaltkreis}
+	\subsection{F}
 	\begin{Figure}
 		\centering
 		\includegraphics[width=0.5\textwidth]{F_crop.pdf}
@@ -180,11 +178,18 @@
 	\begin{Figure}
 		\centering
 		\begin{circuitikz}
-			\draw
-			(0,0) node[anchor=east] {24V}
-			to [short, o-*] (2,0)
-			to (2,0) node[npn,anchor=C] (npn) {}
-			;
+			\draw (0,0)
+			to node[anchor=east] {24V} (0,0)
+			to [short, o-] (3,0)
+			to (3,0) node[npn,anchor=C] (npn) {};
+                        \draw (npn.B)
+                        to [R=$R_B$] (0,|-npn.B)
+                        to node[anchor=east] {5V} (0,|-npn.B)
+                        to [short, o-] (0,|-npn.B);
+                        \draw (npn.E)
+                        to [R=$R_L$] (5,|-npn.E)
+                        to [lamp] (7,|-npn.E)
+                        to node[ground]{} (7,|-npn.E);
 		\end{circuitikz}
 		\captionof{figure}{Schaltkreis zum Steuern einer Lampe}
 	\end{Figure}
@@ -477,8 +482,16 @@
 
 	\section{Fazit}
 	Die Kennlinien vom bipolaren Transistor, sowie von dem FET, konnten gut dargestellt werden. Dabei war leider die Ausführung etwas ungründlich, weswegen wir einen Wert nur spekulativ abschätzen konnten. Neben dem gab es allerdings bei der Bestimmung der Schwellspannung $U_{thr}=\SI{1.794+-0.017}{V}$ und Transkonduktanz $g_m=\SI{0.028+-0.018}{}$ bzw. experimentell: $g_m=\SI{0.022+-0.011}{}$, keine größeren Probleme und die Werte decken sich gut.
+        \\\indent Die Emitterfolgerschaltung hat wie erwartet eine Spannungsverstärkung von ca.\ 1 und es ist möglich mit einem Kondensator die Phase sowie die Amplitude (nur Ausgang) von Eingangs-- und Ausgangssignal zu ändern.
+        Die Basis--Emitterspannung des Bipolartransistors liegt mit $U_{BE}=\SI{1}{V}$ bei einer Abweichung von $43\%$ vom typischen Wert $\SI{0.7}{V}$.
+        Dieses Verhalten ist wahrscheinlich auf eine fälschliche Bauweise oder vorherige falsche Behandlung zurückzuführen.
+        Auch die Thresholdspannung des FETs stimmt nicht mit dem berechneten Wert überein; Abweichung $20\%$.
+        Hier könnte das Problem allerdings auch einer ungenauen Messung geschuldet sein.
+        \\\indent Die Verstärkung der Emitterfolgerschaltung hat auch nicht gut funktioniert, da hier mit Hilfe der Entladungszeit eines Kondensators nur eine Verstärkung von $\SI{3.2+-7.5}{}$ errechnet wurde.
+        Eigentlich sollten Verstärkungen von Emitterfolgern im bereich von 100 liegen.
+        Hier ist es auch möglich, dass der Transistor nicht mehr richtig funktioniert hat.
 
-\end{multicols}{2}
+\end{multicols}
 \clearpage
 \listoffigures
 \listoftables
