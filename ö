@@ -249,11 +249,11 @@
 		\centering\includegraphics[width=1\textwidth]{data/Kennlinie4_npn.png}
 		\begin{tikzpicture}[overlay]
 			\draw (-4.1,5.1) --(2.6,3);
-
 		\end{tikzpicture}
-		\captionof{figure}{}
+		\captionof{figure}{Kennlinien mit Arbeitsgerade (schwarze linie)}
 		\label{fig:1.6}
 	\end{Figure}
+  An diesem Punkt stellt sich herraus, dass es wohl von Vorteil gewesen wäre das Bild des Oszillographen zu verkleinert dargestellt zu haben. Außerdem müssten wir die 10. Kennlinie identifizieren können, wenn wir $I_B = 60 \SI{60}{\milli A}
 
 
 	\begin{Figure}

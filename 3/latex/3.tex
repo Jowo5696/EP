@@ -1,0 +1,292 @@
+\documentclass[10pt]{article}
+\usepackage[a4paper, left=1.5cm, right=1.5cm, top=3.5cm]{geometry}
+\usepackage[ngerman]{babel}
+\usepackage[]{graphicx}
+\usepackage{multicol}
+\usepackage{amssymb}
+\usepackage{breqn}
+\usepackage{titlesec}
+\usepackage{wrapfig}
+\usepackage{blindtext}
+\usepackage{lipsum}
+\usepackage{caption}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{nopageno}
+\usepackage{authblk}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage[ISO]{diffcoeff}
+\usepackage{xcolor}
+\usepackage{csquotes}
+\usepackage{circuitikz}
+\usepackage{hyperref}
+\usepackage[locale=US]{siunitx}
+\hypersetup{colorlinks=true,allcolors=blue}
+\fancyhf[]{}
+
+
+% --- Jonas cringe --- begin
+\newcommand{\td}{\,\text{d}}
+\newcommand{\RN}[1]{\uppercase\expandafter{\romannumeral#1}}
+\newcommand{\zz}{\mathrm{Z\kern-.3em\raise-0.5ex\hbox{Z} }}
+\newcommand{\id}{1\kern-.258em1}
+
+\newcommand\inlineeqno{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnoa{(\theequation.\text{a})}
+\newcommand\inlineeqnob{(\theequation.\text{b})}
+\newcommand\inlineeqnoc{(\theequation.\text{c})}
+
+\newcommand\inlineeqnowo{\stepcounter{equation}\ {(\theequation)}}
+\newcommand\inlineeqnowoa{\theequation.\text{a}}
+\newcommand\inlineeqnowob{\theequation.\text{b}}
+\newcommand\inlineeqnowoc{\theequation.\text{c}}
+
+\renewcommand{\refname}{Source}
+\renewcommand{\sfdefault}{phv}
+% --- Jonas cringe --- end
+
+
+
+\newenvironment{Figure}
+  {\par\medskip\noindent\minipage{\linewidth}}
+  {\endminipage\par\medskip}
+
+\begin{titlepage}
+        \title{3/4 (1.\ Halbtag) $|$ Transistor und Transistorverstärker}
+        \author[1]{Angelo Brade\thanks{s72abrad@uni-bonn.de}}
+        \author[1]{Jonas Wortmann\thanks{s02jwort@uni-bonn.de}}
+        \affil[1]{Rheinische Friedrich--Wilhelms--Universität Bonn}
+        \date{\today}
+\end{titlepage}
+
+
+\begin{document}
+\pagenumbering{gobble}
+\maketitle
+\newpage
+
+\tableofcontents
+\newpage
+
+\pagenumbering{arabic}
+
+\pagestyle{fancy}
+\fancyhead[R]{\thepage}
+\fancyhead[L]{\leftmark}
+
+
+\begin{multicols}{2}
+	\section{Einleitung}
+	In diesem Versuch werden bipolare und Feldeffekttransistoren behandelt; ihr Aufbau, physikalische Funktionsweise und Integration in Schaltungen werden verstanden.
+	Konkreter soll die Ausgangskennlinie sowie Arbeitsgerade und Arbeitspunkt einen npn--Transistors und FETs mit Hilfe eines Kennlinienschreibers und Oszillographen vermessen werden.
+
+	\section{Theorie}
+	Es gibt zwei verschiedene Arten von Transistoren; Bipolar-- und Feldeffekttransistor.
+	Der Bipolartransistor
+	\begin{Figure}
+		\centering
+		\includegraphics[width=0.3\textwidth]{bipolartransistor.png}
+		\captionof{figure}{Schaltbild und Aufbau eines Bipolartransistors; Abbildung 3/4.1 a) \cite{Praktikumsanleitung}}
+	\end{Figure}
+	ist aufgebaut aus zwei n--dotierten Materialien (Emitter und Kollektor), wobei der Emitter deutlich stärker n--dotiert ist als der Kollektor.
+	Die Basis ist nur sehr dünn und leicht p--dotiert.
+	\\\indent Wird nun an der Basis ein geringer Strom angeschlossen und es herrscht eine Spannung zwischen Emitter und Kollektor, so fließen Elektronen aus dem Emitter in die Basis und füllen dort die p--Löcher auf.
+	Da die Basis allerdings nicht alle Elektronen des Emitters aufnehmen kann, und eine Spannung zwischen Emitter und Kollektor anliegt, fließen die Elektronen des Emitters direkt weiter in den Kollektor.
+	Obwohl zwischen Basis und Kollektor die Sperrrichtung ist, fließen die Elektronen trotzdem, da die Sperrung bereits durch den Strom aus dem Emitter in die Basis aufgehoben worden ist.
+	Zudem wirkt eine Kraft auf die Elektronen in Richtung Kollektor durch das starke Feld zwischen Basis und Kollektor.
+	\\\\ Der FET (\textbf{F}eld\textbf{e}ffekt\textbf{t}ransistor) ist ein Transistor der ein elektrisches Feld als Analogon zum Basisstrom des Bipolartransistors verwendet.
+	Er ist Aufgebaut aus Source, Drain, Gate und Bulk.
+	Source und Drain sind beide n--dotiert und Bulk ist p--dotiert.
+	\begin{Figure}
+		\centering
+		\includegraphics[width=0.6\textwidth]{fet.png}
+		\captionof{figure}{Aufbau eines FET; Abbildung 3/4.8 \cite{Praktikumsanleitung}}
+	\end{Figure}
+	Zwischen Gate und Bulk ist eine dünne isolierende Schicht, welche den Transistor vor der am Gate anliegenden Spannung isoliert.
+	Die Spannung am Gate sort dafür, dass ein Feld zwischen Source und Drain entsteht, welches die Elektronen dicht unterhalb der Isolierschicht passieren lässt.
+	So kann durch Regulation der Gatespannung der Stromfluss kontrolliert werden.
+	FET mit typischem Isolierschichtmaterial Metall--Oxid--Silizium werden MOSFET genannt.
+	\\\\ Sowohl der Bipolartransistor als auch der FET sind beide fähig den Stromfluss zu verstärken (über Basisstrom und Gatespannung), sowie ein-- und auszuschalten.
+
+	\section{Voraufgaben}
+	\subsection{A}
+	\begin{Figure}
+		\centering
+		\includegraphics[width=0.9\textwidth]{A_crop.pdf}
+		\captionof{figure}[Potentialverlauf ohne und mit äußerer Spannung]{Potentialverlauf ohne (links) und mit (rechts) äußerer Spannung}
+	\end{Figure}
+
+	\subsection{B}
+	Im Emitter ist eine hohe Elektronendichte; in der Basis ist nur eine geringe Löcherdichte; im Kollektor ist eine weniger starke Elektronendichte als im Emitter.
+
+	\subsection{C}
+	Es gilt
+	\begin{align}
+		I_E & =I_B+I_C & \beta & =\diff[]{I_C}{I_B} & \alpha & =\diff[]{I_C}{I_E} & \gamma & =\diff[]{I_E}{I_B}
+		.\end{align}
+	Leitet man nach $I_B$ ab folgt
+	\begin{align}
+		                &  & \diff[]{I_E}{I_B} & =\diff[]{I_B}{I_B}+\diff[]{I_C}{I_B} &  & \\
+		\Leftrightarrow &  & \gamma            & =1+\beta .                           &  &
+	\end{align}
+	Leitet man nach $I_E$ ab folgt
+	\begin{align}
+		                &  & \diff[]{I_E}{I_E}          & =\diff[]{I_B}{I_E}+\diff[]{I_C}{I_E} &  &           \\
+		\Leftrightarrow &  & 1                          & =\dfrac{1}{\gamma }+\alpha           &  & \nonumber \\
+		\Leftrightarrow &  & \dfrac{1}{1-\alpha }       & =\gamma                              &  & \nonumber \\
+		\Leftrightarrow &  & \dfrac{1}{1-\alpha }-1     & =\beta                               &  & \nonumber \\
+		\Leftrightarrow &  & \dfrac{\alpha }{1-\alpha } & =\beta .                             &  &
+	\end{align}
+
+	\subsection{D}
+	Ein vereinfachtes Schaltbild zum Kennlinienschreiber könnte sein
+	\begin{Figure}
+		\begin{minipage}{0.5\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{kennlinienschreiber.png}
+			\captionof{figure}{Schaltbild Kennlinienschreiber; Abbildung 3.1 \cite{Praktikumsanleitung}}
+		\end{minipage}
+		\begin{minipage}{0.5\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{D_crop.pdf}
+			\captionof{figure}{Vereinfachtes Schaltbild Kennlinienschreiber}
+		\end{minipage}
+	\end{Figure}
+	Die 16 verschiedenen Basisströme erhält man aus den vier verschiedenen Widerständen, mit denen binär gezählt wird.
+	\\\indent Um die Kennlinie eines Feldeffekttransistors zu vermessen muss nach dem Hochpass eine variable Spannung anliegen, die mit einem Potentiometer erreicht werden kann.
+	Da der Aufbau des Feldeffekttransistors analog zu dem des Bipolartransistors ist, lässt sich hier \textit{Basis} durch \textit{Gate}, \textit{Emitter} durch \textit{Source} und \textit{Kollektor} durch \textit{Drain} einfach tauschen.
+
+	\subsection{E}
+	$\zz\ U_B=U_0\tfrac{R_2}{R_1+R_2}-I_B\tfrac{R_1R_2}{R_1+R_2}$.\\
+	Nach Maschen-- und Knotenregel: $U_0=U_1+U_B$ und $I_1=I_B+I_2$
+	\begin{align}
+		                &  & U_B    & = U_0-U_1                                             &  &           \\
+		\Leftrightarrow &  & U_B    & = U_0-R_1I_1                                          &  & \nonumber \\
+		\Leftrightarrow &  & U_B    & = U_0-\left(I_B+I_2\right)R_1                         &  & \nonumber \\
+		\Leftrightarrow &  & U_B    & = U_0-I_BR_1-R_1\dfrac{U_B}{R_2}                      &  & \nonumber \\
+		\Leftrightarrow &  & R_2U_B & = U_0R_2-I_BR_1R_2-R_1U_B                             &  & \nonumber \\
+		\Leftrightarrow &  & U_B    & = U_0\dfrac{R_2}{R_1+R_2}-I_B\dfrac{R_1R_2}{R_1+R_2}. &  &
+	\end{align}
+
+	\subsection{F WIP Schaltkreis}
+	\begin{Figure}
+		\centering
+		\includegraphics[width=0.5\textwidth]{F_crop.pdf}
+		\captionof{figure}{Ausgangskennlinienfeld Bipolartransistor mit EIN und AUS Schaltung}
+	\end{Figure}
+
+	\begin{Figure}
+		\centering
+		\begin{circuitikz}
+			\draw
+			(0,0) node[anchor=east] {24V}
+			to [short, o-*] (2,0)
+			to (2,0) node[npn,anchor=C] (npn) {}
+			;
+		\end{circuitikz}
+		\captionof{figure}{Schaltkreis zum Steuern einer Lampe}
+	\end{Figure}
+
+	\section{Auswertung}
+	\subsection{Kennlinien und Arbeitspunkt}
+	Um die Kennlinien eines Bipolartransistors und FETs zu erhalten, wird zuerst ein Kennlinienschreiber auf einem Schaltbrett nach Abb. \ref{fig:1.1} verkabelt.
+	\begin{Figure}
+		\centering\includegraphics[width=1\textwidth]{kennlinienschreiber.png}
+		\captionof{figure}{Schaltbild Kennlinienschrieber}
+		\label{fig:1.1}
+	\end{Figure}
+	Die genaue Verschaltung lässt sich unter 3.1.2 Kennlinien und Arbeitspunkt\cite{Praktikumsanleitung} inder Praktikumsanleitung nachlesen.
+	Kurzgefasst, benutzen wir Wechselspannung, um ein Bereich der Kollektor-Spannung für verschiedene Basis-Ströme, welchen wir mithilfe eines Binär-Zählers der einen DAC durchschaltet variieren, abzutasten.
+
+	\subsubsection*{Bipolarer Transistor}
+	Zuerst wird der Kennlinienschrieber für den bipolaren Transistor verwendet. Aus den Oszillogrammen aus Abb. \ref{fig:1.2}, \ref{fig:1.3}, \ref{fig:1.4} und \ref{fig:1.5} lassen sich die Kollektorströme ablesen und sind in Tab. \ref{Tab:1.1} dargestellt. Diese müssen noch mit $ 20$\;mA$/15$\;V umgewandelt werden.
+	\begin{center}
+		\begin{tabular}{|c|c|}
+			\hline
+			\# & d$U_C$  \\
+			\hline
+			1  & 1.67\;V \\
+			2  & 1.67\;V \\
+			3  & 1.60\;V \\
+			4  & 1.60\;V \\
+			\hline
+		\end{tabular}
+		\captionof{table}{Differenzen der Kollektorströme.}
+		\label{Tab:1.1}
+	\end{center}
+	Gemittelt erhalten wir 1.64(6)\;V, wobei die Standartabweichung 0.035\;V beträgt, diese aber kleine ist, als die geschätzten 0.06\;V Messunsicherheit. Somit folgt
+	\begin{align*}
+		\beta = \frac{dI_C}{dI_B} & = 547(27)                                                                                \\
+		                          & \text{mit } dI_B = 6\text{\;µA und }dI_C=\frac{dU_C}{500 \Omega} = 3.28(16) \text{\;mA.}
+	\end{align*}
+	\begin{Figure}
+		\centering\includegraphics[width=1\textwidth]{../data/Kennlinie1_npn.png}
+		\captionof{figure}{Oszillogramm für \# = 1}
+		\label{fig:1.2}
+	\end{Figure}
+	\begin{Figure}
+		\centering\includegraphics[width=1\textwidth]{../data/Kennlinie2_npn.png}
+		\captionof{figure}{Oszillogramm für \# = 2}
+		\label{fig:1.3}
+	\end{Figure}
+	\begin{Figure}
+		\centering\includegraphics[width=1\textwidth]{../data/Kennlinie3_npn.png}
+		\captionof{figure}{Oszillogramm für \# = 3}
+		\label{fig:1.4}
+	\end{Figure}
+	\begin{Figure}
+		\centering\includegraphics[width=1\textwidth]{../data/Kennlinie4_npn.png}
+		\captionof{figure}{Oszillogramm für \# = 4}
+		\label{fig:1.5}
+	\end{Figure}
+
+	Legen wir nun die Arbeitsgerade durch eines der Oszillogramme, so können wir dessen Arbeitspunkt bestimmten. Dafür legen wir eine Gerade von ($U_{CE} = 0$\;V; $I_C = 19.2$\;mA $\hat{=}$ $U_C=$ 9.61\;V) bis ($U_{CE} = 10$\;V; $I_C = 6.4$\;mA $\hat{=}$ $U_C=$ 3.2\;V), wobei wir mit 500\;$\Omega$ geeicht haben. Die Gerade lästt sich mathematisch beschreiben mit
+	\begin{align*}
+		I_C & = \frac{U_0 - U_{CE}}{R_C + R_E}                                        \\
+		    & \text{mit } R_C=R_E=390\text{\;}\Omega \text{ und } U_0 = 15\text{\;V.}
+	\end{align*}
+
+	\begin{Figure}
+		\centering\includegraphics[width=1\textwidth]{../data/Kennlinie4_npn.png}
+		\begin{tikzpicture}[overlay]
+			\draw (-4.1,5.1) --(2.6,3);
+		\end{tikzpicture}
+		\captionof{figure}{Kennlinien mit Arbeitsgerade (schwarze linie)}
+		\label{fig:1.6}
+	\end{Figure}
+	An diesem Punkt stellt sich herraus, dass es wohl von Vorteil gewesen wäre das Bild des Oszillographen verkleinert dargestellt zu haben. Außerdem müssten wir die 10. Kennlinie identifizieren können, wenn wir den Arbeitspunkt bei $I_B = \SI{60}{\micro A}$ ablesen wollten. Dies geht bei uns leider nicht. Anhand von vorheriegen Protokollen und vergleichen der 5. Linie spekulieren wir aber, dass wir ein Spannung $U_{CE} \approx \SI{2}{V}$ \dots $\SI{4}{V}$ haben.
+
+	\subsubsection*{FET}
+  Nun nehmen wir mit einem Vorwiederstand und dem Kennlinienschreiber die Kennlinen eines FETs (Feldeffekttransistors) auf. Zusätzlich verwenden wir ein Potentiomenter, um die Spannung an dem Gate einzustellten. So wird nun mit dem Potentiometer ein Oszillogramm so eingestellt, dass möglichst viele Linien und die letzte Linie zu sehen ist. Die letzte Linie ist daran zu identifizieren, dass es keine Abzweigung nach oben mehr gibt. Diese Bedingung wurde erfüllt und in Abb. \ref{fig:1.7}.
+	\begin{Figure}
+		\centering\includegraphics[width=1\textwidth]{../data/DS0000.png}
+		\captionof{figure}{FET}
+		\label{fig:1.7}
+	\end{Figure}
+  Wir erhalten für das vorliegende Oszillogramm einen Widerstand an dem Potentiomenter von $R=\SI{30.6+-0.9}{\kilo\Omega}$ und somit d$U_{GS}=R\cdot \SI{6}{\micro A}=\SI{183.6+-5.4}{\milli V}$
+
+  Nun lassen sich die Drainspannungen $U_D$ ablesen und mit dem Eichwiderstand $R = \SI{500}{\Omega}$ in den Drainstrom umrechnen. Genauso lässt sich ein 
+
+	\begin{Figure}
+		\centering\resizebox{\textwidth}{!}{\input{FET_THR.tex}}
+		\captionof{figure}{FET}
+		\label{fig:1.8}
+	\end{Figure}
+
+	\begin{Figure}
+		\centering\resizebox{\textwidth}{!}{\input{FET_THR_sqrt.tex}}
+		\captionof{figure}{FET}
+		\label{fig:1.9}
+	\end{Figure}
+\end{multicols}{2}
+\clearpage
+\listoffigures
+\listoftables
+\bibliographystyle{plain}
+\bibliography{refs}
+
+%}}}
+
+\end{document}
