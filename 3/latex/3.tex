@@ -259,27 +259,57 @@
 	An diesem Punkt stellt sich herraus, dass es wohl von Vorteil gewesen wäre das Bild des Oszillographen verkleinert dargestellt zu haben. Außerdem müssten wir die 10. Kennlinie identifizieren können, wenn wir den Arbeitspunkt bei $I_B = \SI{60}{\micro A}$ ablesen wollten. Dies geht bei uns leider nicht. Anhand von vorheriegen Protokollen und vergleichen der 5. Linie spekulieren wir aber, dass wir ein Spannung $U_{CE} \approx \SI{2}{V}$ \dots $\SI{4}{V}$ haben.
 
 	\subsubsection*{FET}
-  Nun nehmen wir mit einem Vorwiederstand und dem Kennlinienschreiber die Kennlinen eines FETs (Feldeffekttransistors) auf. Zusätzlich verwenden wir ein Potentiomenter, um die Spannung an dem Gate einzustellten. So wird nun mit dem Potentiometer ein Oszillogramm so eingestellt, dass möglichst viele Linien und die letzte Linie zu sehen ist. Die letzte Linie ist daran zu identifizieren, dass es keine Abzweigung nach oben mehr gibt. Diese Bedingung wurde erfüllt und in Abb. \ref{fig:1.7}.
+	Nun nehmen wir mit einem Vorwiederstand und dem Kennlinienschreiber die Kennlinen eines FETs (Feldeffekttransistors) auf. Zusätzlich verwenden wir ein Potentiomenter, um die Spannung an dem Gate einzustellten. So wird nun mit dem Potentiometer ein Oszillogramm so eingestellt, dass möglichst viele Linien und die letzte Linie zu sehen ist. Die letzte Linie ist daran zu identifizieren, dass es keine Abzweigung nach oben mehr gibt. Diese Bedingung wurde erfüllt und in Abb. \ref{fig:1.7}.
 	\begin{Figure}
 		\centering\includegraphics[width=1\textwidth]{../data/DS0000.png}
 		\captionof{figure}{FET}
 		\label{fig:1.7}
 	\end{Figure}
-  Wir erhalten für das vorliegende Oszillogramm einen Widerstand an dem Potentiomenter von $R=\SI{30.6+-0.9}{\kilo\Omega}$ und somit d$U_{GS}=R\cdot \SI{6}{\micro A}=\SI{183.6+-5.4}{\milli V}$
+	Wir erhalten für das vorliegende Oszillogramm einen Widerstand an dem Potentiomenter von $R=\SI{30.6+-0.9}{\kilo\Omega}$ und somit d$U_{GS}=R\cdot \SI{6}{\micro A}=\SI{183.6+-5.4}{\milli V}$
 
-  Nun lassen sich die Drainspannungen $U_D$ ablesen und mit dem Eichwiderstand $R = \SI{500}{\Omega}$ in den Drainstrom umrechnen. Genauso lässt sich ein 
-
+	Nun lässt sich die Drainspannungen $U_D$ ablesen und mit dem Eichwiderstand $R = \SI{500}{\Omega}$ in den Drainstrom
+	\begin{align*}
+		I_D = \frac{U_D}{R}
+	\end{align*}
+	umrechnen. Die Drainspannung ist an dem Oszillogramm auf der x-Achse ablsesen, sobald sie konstant ist, wobei die unterste Linie bei \SI{0}{V} liegt. So lässt sich jetzt auch eine Spannung über Gate-Source berechnen:
+	\begin{align*}
+		U_{GS} & = R_P \cdot n \cdot \SI{6}{\micro A} - I_D \cdot \SI{100}{\Omega} \\
+		       & \text{mit } R_P:=\text{ Widerstand am Potentiometer}              \\
+		       & \text{und } n:=\text{ n-te Linie von unten.}
+	\end{align*}
+	Hierbei wurde die Gate-Source-Spannung um den Term $I_D \cdot \SI{100}{\Omega}$ korregiert, da diese an der Source abfällt. Wir haben das Ergebnis Graphisch in Abb. \ref{fig:1.8} dargestellt. Ein Plot mit der Wurzel in Abb. \ref{fig:1.9} zeigt die Liniearität im Quadrat für höhere n.
 	\begin{Figure}
 		\centering\resizebox{\textwidth}{!}{\input{FET_THR.tex}}
 		\captionof{figure}{FET}
 		\label{fig:1.8}
 	\end{Figure}
-
 	\begin{Figure}
 		\centering\resizebox{\textwidth}{!}{\input{FET_THR_sqrt.tex}}
 		\captionof{figure}{FET}
 		\label{fig:1.9}
 	\end{Figure}
+
+	Mit einem Fit der Form
+	\begin{align*}
+    I_D=k\cdot(U_{GS} - U_{thr})^2
+	\end{align*}
+	erhalten wir folgende Werte der Paramter:
+	\begin{center}
+		\begin{tabular}{|c|c|}
+			\hline
+			Paramter & Wert                          \\
+			\hline
+			k        & \SI{0.0424+-0.0046}{A/V^2} \\
+			$U_{thr}$ & \SI{-0.060+-0.017}{V}    \\
+			\hline
+		\end{tabular}
+		\captionof{table}{Fit-Paramter und Werte}
+		\label{Tab:1.2}
+	\end{center}
+  Hierbei viel die Konvergenz mit $\chi/\text{dof}=0.077$ überraschend gut aus.
+
+
+
 \end{multicols}{2}
 \clearpage
 \listoffigures
