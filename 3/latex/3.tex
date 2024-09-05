@@ -285,7 +285,7 @@
 	\end{Figure}
 	\begin{Figure}
 		\centering\resizebox{\textwidth}{!}{\input{FET_THR_sqrt.tex}}
-    \captionof{figure}{Schwellspannung des FETs mit Wurzel. Werte sind Tab. \ref{Tab:1.4} zu entnehmen.}
+		\captionof{figure}{Schwellspannung des FETs mit Wurzel. Werte sind Tab. \ref{Tab:1.4} zu entnehmen.}
 		\label{fig:1.9}
 	\end{Figure}
 
@@ -300,13 +300,14 @@
 			Paramter  & Wert                       \\
 			\hline
 			k         & \SI{0.0425+-0.0047}{A/V^2} \\
-			$U_{thr}$ & \SI{1.794+-0.017}{V}      \\
+			$U_{thr}$ & \SI{1.794+-0.017}{V}       \\
 			\hline
 		\end{tabular}
 		\captionof{table}{Fit-Paramter und Werte}
 		\label{Tab:1.2}
 	\end{center}
-  Hierbei konvergierte unsere Minimierungsfunktion mit $\chi/\text{dof}=0.077$ überraschend gut.
+	Hierbei konvergierte unsere Minimierungsfunktion mit $\chi/\text{dof}=0.077$ überraschend gut.
+	Um nun die Transkonduktanz zu berechnen wird über die Differenzen der Drain-Ströme und Gate-Source-Spannungen genommen und über deren Quotient gemittelt. Hierbei erbibt sich der Fehler aus der Varianz. Somit erhalten wir eine Transkonduktanz von $g_m=0.028(18)$. Diese lässt sich allerdings auch Experimentell mit $g_m\approx2 \cdot \sqrt{k\cdot I_D}$ berechnen und ergibt so gemittelt $g_m=\SI{0.022+-0.011}{}$. Die beiden Ergebnisse sind aufgrund der relativ großen Unsicherheiten ($\approx 50\%$) verträglich.
 
 
 
@@ -315,15 +316,15 @@
 			\hline
 			\multicolumn{2}{|c|}{Schwellspannung des FETs} \\
 			\hline
-      $U_{GS}$[V]$\cdot 10^{3}$ & $I_D$[A]$\cdot 10^{5}$   \\
+			$U_{GS}$$\cdot 10^{2}$ & $I_D$$\cdot 10^{5}$   \\
 					\hline
-			$-6.0\pm40.0$          & $6.0\pm 40.0$         \\
-			$79.0\pm40.0$          & $106.0\pm 40.0$       \\
-			$165.0\pm41.0$         & $206.0\pm 40.0$       \\
-			$230.0\pm43.0$         & $326.0\pm 40.0$       \\
-			$276.0\pm45.0$         & $466.0\pm 40.0$       \\
-			$321.0\pm48.0$         & $606.0\pm 40.0$       \\
-			$346.0\pm51.0$         & $766.0\pm 40.0$       \\
+			$184.8\pm4.0$          & $6.0\pm 40.0$         \\
+			$193.3\pm4.0$          & $106.0\pm 40.0$       \\
+			$201.9\pm4.1$          & $206.0\pm 40.0$       \\
+			$208.4\pm4.3$          & $326.0\pm 40.0$       \\
+			$213.0\pm4.5$          & $466.0\pm 40.0$       \\
+			$217.5\pm4.8$          & $606.0\pm 40.0$       \\
+			$220.0\pm5.1$          & $766.0\pm 40.0$       \\
 			\hline
 		\end{tabular}
 		\captionof{table}{Werte für die Schwellspannung des FETs}
@@ -334,15 +335,15 @@
 			\hline
 			\multicolumn{2}{|c|}{Schwellspannung des FETs mit Wurzel}                   \\
 			\hline
-			$U_{GS}$ [V]$\cdot 10^{3}$ & $\sqrt{I_D}$ [$\sqrt{\text{A}}$]$\cdot 10^{4}$ \\
+			$U_{GS}$ [V]$\cdot 10^{2}$ & $\sqrt{I_D}$ [$\sqrt{\text{A}}$]$\cdot 10^{4}$ \\
 			\hline
-			$-6.0\pm40.0$              & $80.0\pm 260.0$                                \\
-			$79.0\pm40.0$              & $326.0\pm 61.0$                                \\
-			$165.0\pm41.0$             & $454.0\pm 44.0$                                \\
-			$230.0\pm43.0$             & $571.0\pm 35.0$                                \\
-			$276.0\pm45.0$             & $683.0\pm 29.0$                                \\
-			$321.0\pm48.0$             & $778.0\pm 26.0$                                \\
-			$346.0\pm51.0$             & $875.0\pm 23.0$                                \\
+			$184.8\pm4.0$              & $80.0\pm 260.0$                                \\
+			$193.3\pm4.0$              & $326.0\pm 61.0$                                \\
+			$201.9\pm4.1$              & $454.0\pm 44.0$                                \\
+			$208.4\pm4.3$              & $571.0\pm 35.0$                                \\
+			$213.0\pm4.5$              & $683.0\pm 29.0$                                \\
+			$217.5\pm4.8$              & $778.0\pm 26.0$                                \\
+			$220.0\pm5.1$              & $875.0\pm 23.0$                                \\
 			\hline
 		\end{tabular}
 		\captionof{table}{Werte für die Schwellspannung des FETs mit Wurzel}

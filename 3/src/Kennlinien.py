@@ -7,12 +7,26 @@ dU_D = 0.2 + np.zeros(U_D.shape[0])
 I_D = U_D/500
 sqrtI_D = I_D**(1/2)
 dI_D = dU_D/500
+diffI = (np.append(I_D, 0) - np.insert(I_D, 0, [0]))[1:-1]
+print(diffI.mean(), diffI.std())
 d_sqrtI_D = 1/2*I_D**(-1/2)*dI_D
 R_p = 30.9e3
 dR_p = 0.9e3
 
 U_GS = R_p * (np.arange(U_D.shape[0]) + 10) * 6e-6 - I_D * 100
 dU_GS = ((dI_D * 100)**2 + (dR_p * np.arange(U_D.shape[0]) * 6e-6)**2)**(1/2)
+
+diffU = (np.append(U_GS, 0) - np.insert(U_GS, 0, [0]))[1:-1]
+print(diffU.mean(), diffU.std())
+
+
+g=(diffI/diffU)
+print(g)
+print(g.mean())
+print(g.std())
+
+g2 = 2*(0.0425 * I_D)**(1/2)
+print(g2.mean(), g2.std())
 
 import olib
 table = olib.Table(U_GS, I_D, Xerr=dU_GS, Yerr=dI_D, title="Schwellspannung_des_FETs",  xlabel="$U_{GS}$", ylabel="$I_D$")
