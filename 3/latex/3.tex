@@ -197,11 +197,11 @@
 		\captionof{figure}{Schaltbild Kennlinienschrieber}
 		\label{fig:1.1}
 	\end{Figure}
-	Die genaue Verschaltung lässt sich unter 3.1.2 Kennlinien und Arbeitspunkt\cite{Praktikumsanleitung} inder Praktikumsanleitung nachlesen.
+	Die genaue Verschaltung lässt sich unter 3.1.2 Kennlinien und Arbeitspunkt\cite{Praktikumsanleitung} in der Praktikumsanleitung nachlesen.
 	Kurzgefasst, benutzen wir Wechselspannung, um ein Bereich der Kollektor-Spannung für verschiedene Basis-Ströme, welchen wir mithilfe eines Binär-Zählers der einen DAC durchschaltet variieren, abzutasten.
 
 	\subsubsection*{Bipolarer Transistor}
-	Zuerst wird der Kennlinienschrieber für den bipolaren Transistor verwendet. Aus den Oszillogrammen aus Abb. \ref{fig:1.2}, \ref{fig:1.3}, \ref{fig:1.4} und \ref{fig:1.5} lassen sich die Kollektorströme ablesen und sind in Tab. \ref{Tab:1.1} dargestellt. Diese müssen noch mit $ 20$\;mA$/15$\;V umgewandelt werden.
+	Zuerst wird der Kennlinienschrieber für den bipolaren Transistor verwendet. Aus den Oszillogrammen aus Abb. \ref{fig:1.2}, \ref{fig:1.3}, \ref{fig:1.4} und \ref{fig:1.5} lassen sich die Kollektorströme ablesen und sind in Tab. \ref{Tab:1.1} dargestellt.
 	\begin{center}
 		\begin{tabular}{|c|c|}
 			\hline
@@ -242,7 +242,7 @@
 		\label{fig:1.5}
 	\end{Figure}
 
-	Legen wir nun die Arbeitsgerade durch eines der Oszillogramme, so können wir dessen Arbeitspunkt bestimmten. Dafür legen wir eine Gerade von ($U_{CE} = 0$\;V; $I_C = 19.2$\;mA $\hat{=}$ $U_C=$ 9.61\;V) bis ($U_{CE} = 10$\;V; $I_C = 6.4$\;mA $\hat{=}$ $U_C=$ 3.2\;V), wobei wir mit 500\;$\Omega$ geeicht haben. Die Gerade lästt sich mathematisch beschreiben mit
+	Legen wir nun die Arbeitsgerade durch eines der Oszillogramme, so können wir dessen Arbeitspunkt bestimmen. Dafür legen wir eine Gerade von ($U_{CE} = 0$\;V; $I_C = 19.2$\;mA $\hat{=}$ $U_C=$ 9.61\;V) bis ($U_{CE} = 10$\;V; $I_C = 6.4$\;mA $\hat{=}$ $U_C=$ 3.2\;V), wobei wir mit 500\;$\Omega$ geeicht haben. Die Gerade lästt sich mathematisch beschreiben mit
 	\begin{align*}
 		I_C & = \frac{U_0 - U_{CE}}{R_C + R_E}                                        \\
 		    & \text{mit } R_C=R_E=390\text{\;}\Omega \text{ und } U_0 = 15\text{\;V.}
@@ -256,10 +256,10 @@
 		\captionof{figure}{Kennlinien mit Arbeitsgerade (schwarze linie)}
 		\label{fig:1.6}
 	\end{Figure}
-	An diesem Punkt stellt sich herraus, dass es wohl von Vorteil gewesen wäre das Bild des Oszillographen verkleinert dargestellt zu haben. Außerdem müssten wir die 10. Kennlinie identifizieren können, wenn wir den Arbeitspunkt bei $I_B = \SI{60}{\micro A}$ ablesen wollten. Dies geht bei uns leider nicht. Anhand von vorheriegen Protokollen und vergleichen der 5. Linie spekulieren wir aber, dass wir ein Spannung $U_{CE} \approx \SI{2}{V}$ \dots $\SI{4}{V}$ haben.
+	An diesem Punkt stellt sich herraus, dass es wohl von Vorteil gewesen wäre das Bild des Oszillographen verkleinert dargestellt zu haben. Außerdem müssten wir die 10. Kennlinie identifizieren können, wenn wir den Arbeitspunkt bei $I_B = \SI{60}{\micro A}$ ablesen wollten. Dies geht bei uns leider nicht. Anhand von vorheriegen Protokollen und vergleichen der 5. Linie spekulieren wir aber, dass wir eine Spannung $U_{CE} \approx \SI{2}{V}$ \dots $\SI{4}{V}$ haben.
 
 	\subsubsection*{FET}
-	Nun nehmen wir mit einem Vorwiederstand und dem Kennlinienschreiber die Kennlinen eines FETs (Feldeffekttransistors) auf. Zusätzlich verwenden wir ein Potentiomenter, um die Spannung an dem Gate einzustellten. So wird nun mit dem Potentiometer ein Oszillogramm so eingestellt, dass möglichst viele Linien und die letzte Linie zu sehen ist. Die letzte Linie ist daran zu identifizieren, dass es keine Abzweigung nach oben mehr gibt. Diese Bedingung wurde erfüllt und in Abb. \ref{fig:1.7}.
+	Nun nehmen wir mit einem Vorwiederstand und dem Kennlinienschreiber die Kennlinen eines FETs (Feldeffekttransistors) auf. Zusätzlich verwenden wir ein Potentiomenter, um die Spannung an dem Gate einzustellten. So wird nun mit dem Potentiometer ein Oszillogramm so eingestellt, dass möglichst viele Linien und die letzte Linie zu sehen ist. Die letzte Linie ist daran zu identifizieren, dass es keine Abzweigung nach oben mehr gibt. Diese Bedingung wurde erfüllt und in Abb. \ref{fig:1.7} präsentiert.
 	\begin{Figure}
 		\centering\includegraphics[width=1\textwidth]{../data/DS0000.png}
 		\captionof{figure}{FET}
@@ -271,13 +271,13 @@
 	\begin{align*}
 		I_D = \frac{U_D}{R}
 	\end{align*}
-	umrechnen. Die Drainspannung ist an dem Oszillogramm auf der x-Achse ablsesen, sobald sie konstant ist, wobei die unterste Linie bei \SI{0}{V} liegt. So lässt sich jetzt auch eine Spannung über Gate-Source berechnen:
+	umrechnen. Die Drainspannung ist an dem Oszillogramm auf der x-Achse abzulesen, sobald sie konstant ist, wobei die unterste Linie bei \SI{0}{V} liegt. So lässt sich jetzt auch eine Spannung über Gate-Source berechnen:
 	\begin{align*}
 		U_{GS} & = R_P \cdot n \cdot \SI{6}{\micro A} - I_D \cdot \SI{100}{\Omega} \\
 		       & \text{mit } R_P:=\text{ Widerstand am Potentiometer}              \\
 		       & \text{und } n:=\text{ n-te Linie von unten.}
 	\end{align*}
-	Hierbei wurde die Gate-Source-Spannung um den Term $I_D \cdot \SI{100}{\Omega}$ korregiert, da diese an der Source abfällt. Wir haben das Ergebnis Graphisch in Abb. \ref{fig:1.8} dargestellt. Ein Plot mit der Wurzel in Abb. \ref{fig:1.9} zeigt die Liniearität im Quadrat für höhere n.
+	Hierbei wurde die Gate-Source-Spannung um den Term $I_D \cdot \SI{100}{\Omega}$ korregiert, da diese an der Source abfällt. Wir haben das Ergebnis Graphisch in Abb. \ref{fig:1.8} dargestellt. Ein Plot mit der Wurzel in Abb. \ref{fig:1.9} zeigt die Linearität im Quadrat für höhere n.
 	\begin{Figure}
 		\centering\resizebox{\textwidth}{!}{\input{FET_THR.tex}}
 		\captionof{figure}{Schwellspannung des FETs. Werte sind Tab. \ref{Tab:1.3} zu entnehmen.}
@@ -299,14 +299,15 @@
 			\hline
 			Paramter  & Wert                       \\
 			\hline
-			k         & \SI{0.0424+-0.0046}{A/V^2} \\
-			$U_{thr}$ & \SI{-0.060+-0.017}{V}      \\
+			k         & \SI{0.0425+-0.0047}{A/V^2} \\
+			$U_{thr}$ & \SI{1.794+-0.017}{V}      \\
 			\hline
 		\end{tabular}
 		\captionof{table}{Fit-Paramter und Werte}
 		\label{Tab:1.2}
 	\end{center}
-	Hierbei viel die Konvergenz mit $\chi/\text{dof}=0.077$ überraschend gut aus.
+  Hierbei konvergierte unsere Minimierungsfunktion mit $\chi/\text{dof}=0.077$ überraschend gut.
+
 
 
 	\begin{center}

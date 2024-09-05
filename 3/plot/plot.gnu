@@ -1,8 +1,8 @@
 #!/usr/local/bin/gnuplot -persist
 set term cairolatex 
 
-#set grid
-#set key right top
+set grid
+set key left top
 
 glw = 4 # global standard linewidth
 # colors from the gruvbox theme

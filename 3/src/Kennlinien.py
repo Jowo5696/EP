@@ -11,7 +11,7 @@ d_sqrtI_D = 1/2*I_D**(-1/2)*dI_D
 R_p = 30.9e3
 dR_p = 0.9e3
 
-U_GS = R_p * np.arange(U_D.shape[0]) * 6e-6 - I_D * 100
+U_GS = R_p * (np.arange(U_D.shape[0]) + 10) * 6e-6 - I_D * 100
 dU_GS = ((dI_D * 100)**2 + (dR_p * np.arange(U_D.shape[0]) * 6e-6)**2)**(1/2)
 
 import olib
