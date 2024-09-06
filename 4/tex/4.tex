@@ -96,35 +96,33 @@
                 v &= \diff[]{U_E}{U_B}\approx 1 & \gamma &= \diff[]{I_E}{I_B}\approx 100
         .\end{align} 
         This is why sometimes an emitter follower is called an impedance changer.
-        \\\\ The negative feedback factor $k$ denotes, which fraction of the output voltage is 
+        \\\\ The negative feedback factor $k$ denotes, which fraction of the output voltage is used for the negative feedback
         \begin{align} 
                 \dfrac{1}{v} &= \dfrac{1}{v_0}+k
         .\end{align} 
-        Die Verstärkung mit Gegenkopplung $v$ ist hier zwar kleiner als die Leerlaufverstärkung $v_0$, allerdings hängt diese nur noch von der äußeren Beschaltungen und nicht mehr von $v_0$, also dem Transistor, ab.
-        Diese Verstärkung kann man beschreiben wie
+        Though the amplification with negative feedback $v$ is lower than the open--loop gain $v_0$, $v$ is only dependent on the circuit and not on the transistor itself.
+        This amplification can be described as follows
         \begin{align} 
                 \dfrac{\td v}{v} &= \dfrac{\td v_0}{v_0}\dfrac{v}{v_0}
         .\end{align} 
-        \\Die Bandbreite einer Verstärkerschaltung ist der Frequenzbereich, innerhalb dessen die Verstärkung konstant ist.
-        Für die Erhöhung der Bandbreite wird eine Kaskodenschaltung verwendet.
-        Um solch eine Vergrößerung zu erzielen wird die wechselspannungsmäßige Rückkopplung des Kollektors auf die Basis verringert, indem ein großer Spannungshub durch die Verwendung eines zweiten Transistors vermieden wird.
-        Existiert nun ein Eingangssignal, so ist die daraus resultierende Spannungsänderung im Spannungshub viel geringer als die Änderung der Ausgangsspannung.
-        Dadurch ist die Bandbreite einer solchen Kaskodenschaltung größer.
-        \\\\Arbeitspunktstabilisierung kann mit Hilfe von Gegenkopplung erzielt werden.
-        Eine Möglichkeit dafür ist die Spannungsgegenkopplung.
-        \begin{figure}[h]
+        The bandwidth of the amplifier circuit is the frequency band, in which the amplification is constant.
+        To increase the bandwidth, one can use a cascode circuit.
+        To achieve such an amplification, the alternating voltage feedback of the collector on the basis is reduced by utilizing a second transistor to prevent a voltage swing.
+        Given an input signal, the resulting change in voltage will be significantly lower than the change in the output signal.
+        This results in a higher bandwidth.
+        \\\\ Stabilization of the operating point can be achieved by using negative feedback, in particular negative feedback of voltage.
+        \begin{Figure}
                 \centering
                 \includegraphics[width=0.6\textwidth]{spannungsgegenkopplung.png}
-                \caption{Transistorverstärker in Emitterschaltung mit Spannungsgegenkopplung; Abbildung 2/4.16 \cite{Praktikumsanleitung}}
-                \vspace{100cm}
-        \end{figure}\\
-        Hier stellt der Wiederstand $R$ das Basispotential und damit den Arbeitspunkt ein und er koppelt die Spannung am Kollektor zurück zur Basis.
-        Durch diese Gegenkopplung verkleinert sich der Basisstrom bei konstanter Eingangsspannung.
+                \captionof{figure}{Transistor amplifier as common collector with negative feedback (voltage); figure 3/4.16 \cite{Praktikumsanleitung}}
+        \end{Figure}
+        In this figure the resistor $R$ sets the base potential as well as the operating point and cupples the voltage from the collector back to the base.
+        Due to this negative feedback the base current is reduced although the input current remains constant.
 
 	\newpage
 	\section{Preliminary Tasks}
 	\subsection{G}
-	$\zz\ v=\tfrac{\gamma R_E}{r_{BE}+\gamma R_E}$ mit $\gamma =\diff[]{I_E}{I_B}$ und $r_{BE}=\diff[]{U_{BE}}{I_B}$.
+	$\zz\ v=\tfrac{\gamma R_E}{r_{BE}+\gamma R_E}$ with $\gamma =\diff[]{I_E}{I_B}$ and $r_{BE}=\diff[]{U_{BE}}{I_B}$.
 	\begin{align}
 		                &  & v & = \diff[]{U_E}{U_B}                                                    &  &           \\
 		\Leftrightarrow &  &   & = \dfrac{\td I_ER_E}{\td U_{BE}+\td U_E}                               &  & \nonumber \\
@@ -133,7 +131,7 @@
 	\end{align}
 
 	\subsection{H}
-	Es gilt
+        The equation applies
 	\begin{align}
 		                &  & \dfrac{r_\text{out}}{r_\text{in}} & = \dfrac{\diff[]{U_E}{I_E}}{\diff[]{U_B}{I_B}} &  &           \\
 		\Leftrightarrow &  &                                   & = \diff[]{U_E}{I_E}\diff[]{I_B}{U_B}           &  & \nonumber \\
@@ -142,7 +140,7 @@
 	\end{align}
 
 	\subsection{I}
-	Es ist
+        The equation applies
 	\begin{align}
 		                &  & v & = \diff[]{U_C}{U_B}                                                    &  &           \\
 		\Leftrightarrow &  &   & = \dfrac{\td I_CR_C}{\td U_{BE}+\td U_E}                               &  & \nonumber \\
@@ -151,7 +149,7 @@
 	\end{align}
 
 	\subsection{J}
-	Es gilt
+        The equation applies
 	\begin{align}
 		                &  & \dfrac{1}{v}     & = \tfrac{1+kv_0}{v_0}                   &  &           \\
 		\Leftrightarrow &  & v                & = \dfrac{v_0}{1+kv_0}                   &  & \nonumber \\
@@ -162,20 +160,20 @@
 	\end{align}
 
 	\subsection{K}
-	Der parallel geschaltete Kondensator mit Kapazität $C_{CB}$ bildet mit dem Transistor einen Hochpass.
-Wird also eine hochfrequente Wechselspannnug angeschlossen, so läuft wenig Strom durch den Transistor, was dazu führt, dass die Verstärkung von hochfrequenten Signalen nicht erreicht wird.
+        The parallel capacitor with capacitance $C_{CB}$ and transistor form a high--pass filter.
+        This means that high frequency signals will run through the capacitor and not the transistor, resulting in them not being amplified.
 
 	\subsection{L}
-	Am Punkt P findet sich keine Spannungsänderung, da die Eingangsspannung $U_B$ des Transistors T2 konstant ist.
-	Somit hat die Stromänderung $\td I_E\left(T_2\right)$, bestimmt durch die Spannungsänderung am Transistor, keine Wirkung.
+        There is no voltage change at point P, because the input signal to the transistor T2 is constant.
+        The change in current $\td I_E\left(T_2\right)$ is in return also zero.
 
 	\subsection{M}
-	Es ist bei Transitfrequenz unter Gegenkopplung $f_\text{grenz gk}v\left(f=0\right)=f_\text{grenz}v_0$.
-	Daraus folgt $f_\text{grenz gk}=f_\text{grenz}\tfrac{v_0}{v\left(f=0\right)}$.
+        For any transit frequency the equation holds $f_\text{grenz gk}v\left(f=0\right)=f_\text{grenz}v_0$.
+	Thus $f_\text{grenz gk}=f_\text{grenz}\tfrac{v_0}{v\left(f=0\right)}$.
 
 	\subsection{N}
-	Erhöht sich der Basisstrom $I_B$, so erhöht sich auch die Kollektorspannung $U_C$ und die Spannung über den Widerstand $U_{R_C}$.
-	Hier soll aber $U_0$ konstant sein, also sinkt die Spannung über den Widerstand $R$ ab, was dazu führt, dass der Arbeitspunkt des Transistors stabil bleibt.
+        For increasing base current $I_B$, the collector voltage $U_C$ and the voltage across the resistor $U_{R_C}$ also increases.
+        Because $U_0$ should be constant, the voltage drops across the resistor $R$, which in turn stabilizes the operating point.
 
 	\clearpage
 	\section{Analysis}
