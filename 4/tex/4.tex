@@ -52,11 +52,11 @@
 %{{{ Titelseite
 
 \begin{titlepage}
-        \title{3/4 (2. Halbtag) $|$ Transistor und Transistorverstärker}
-        \author[1]{Angelo Brade\thanks{s72abrad@uni-bonn.de}}
-        \author[1]{Jonas Wortmann\thanks{s02jwort@uni-bonn.de}}
-        \affil[1]{Rheinische Friedrich--Wilhelms--Universität Bonn}
-        \date{\today}
+	\title{3/4 (2. Halbtag) $|$ Transistor und Transistorverstärker}
+	\author[1]{Angelo Brade\thanks{s72abrad@uni-bonn.de}}
+	\author[1]{Jonas Wortmann\thanks{s02jwort@uni-bonn.de}}
+	\affil[1]{Rheinische Friedrich--Wilhelms--Universität Bonn}
+	\date{\today}
 \end{titlepage}
 
 \maketitle
@@ -121,64 +121,98 @@
         Hier stellt der Wiederstand $R$ das Basispotential und damit den Arbeitspunkt ein und er koppelt die Spannung am Kollektor zurück zur Basis.
         Durch diese Gegenkopplung verkleinert sich der Basisstrom bei konstanter Eingangsspannung.
 
-        \newpage
-        \section{Preliminary Tasks}
-        \subsection{G}
-        $\zz\ v=\tfrac{\gamma R_E}{r_{BE}+\gamma R_E}$ mit $\gamma =\diff[]{I_E}{I_B}$ und $r_{BE}=\diff[]{U_{BE}}{I_B}$.
-        \begin{align} 
-                && v &= \diff[]{U_E}{U_B} &&\\
-                \Leftrightarrow && &= \dfrac{\td I_ER_E}{\td U_{BE}+\td U_E} &&\nonumber \\
-                \Leftrightarrow && &= \dfrac{\diff[]{I_ER_E}{I_B}}{\diff[]{U_{BE}}{I_B}+\diff[]{U_E}{I_B}} &&\nonumber \\
-                \Leftrightarrow && &= \dfrac{\gamma R_E}{r_{BE}+\gamma R_E}. &&
-        \end{align} 
+	\newpage
+	\section{Preliminary Tasks}
+	\subsection{G}
+	$\zz\ v=\tfrac{\gamma R_E}{r_{BE}+\gamma R_E}$ mit $\gamma =\diff[]{I_E}{I_B}$ und $r_{BE}=\diff[]{U_{BE}}{I_B}$.
+	\begin{align}
+		                &  & v & = \diff[]{U_E}{U_B}                                                    &  &           \\
+		\Leftrightarrow &  &   & = \dfrac{\td I_ER_E}{\td U_{BE}+\td U_E}                               &  & \nonumber \\
+		\Leftrightarrow &  &   & = \dfrac{\diff[]{I_ER_E}{I_B}}{\diff[]{U_{BE}}{I_B}+\diff[]{U_E}{I_B}} &  & \nonumber \\
+		\Leftrightarrow &  &   & = \dfrac{\gamma R_E}{r_{BE}+\gamma R_E}.                               &  &
+	\end{align}
 
-        \subsection{H}
-        Es gilt
-        \begin{align} 
-                && \dfrac{r_\text{out}}{r_\text{in}} &= \dfrac{\diff[]{U_E}{I_E}}{\diff[]{U_B}{I_B}} &&\\
-                \Leftrightarrow && &= \diff[]{U_E}{I_E}\diff[]{I_B}{U_B} &&\nonumber \\
-                \Leftrightarrow && &= \diff[]{U_E}{U_B}\diff[]{I_B}{I_E} &&\nonumber \\
-                \Leftrightarrow && &\approx 1\cdot \dfrac{1}{\gamma }. &&
-        \end{align} 
+	\subsection{H}
+	Es gilt
+	\begin{align}
+		                &  & \dfrac{r_\text{out}}{r_\text{in}} & = \dfrac{\diff[]{U_E}{I_E}}{\diff[]{U_B}{I_B}} &  &           \\
+		\Leftrightarrow &  &                                   & = \diff[]{U_E}{I_E}\diff[]{I_B}{U_B}           &  & \nonumber \\
+		\Leftrightarrow &  &                                   & = \diff[]{U_E}{U_B}\diff[]{I_B}{I_E}           &  & \nonumber \\
+		\Leftrightarrow &  &                                   & \approx 1\cdot \dfrac{1}{\gamma }.             &  &
+	\end{align}
 
-        \subsection{I}
-        Es ist
-        \begin{align} 
-                && v &= \diff[]{U_C}{U_B} &&\\
-                \Leftrightarrow && &= \dfrac{\td I_CR_C}{\td U_{BE}+\td U_E} &&\nonumber \\
-                \Leftrightarrow && &= \dfrac{\diff[]{I_CR_C}{I_B}}{\diff[]{U_{BE}}{I_B}+\diff[]{U_E}{I_B}} &&\nonumber \\
-                \Leftrightarrow && &= \dfrac{\beta R_C}{r_{BE}+\gamma R_E}. &&
-        \end{align} 
+	\subsection{I}
+	Es ist
+	\begin{align}
+		                &  & v & = \diff[]{U_C}{U_B}                                                    &  &           \\
+		\Leftrightarrow &  &   & = \dfrac{\td I_CR_C}{\td U_{BE}+\td U_E}                               &  & \nonumber \\
+		\Leftrightarrow &  &   & = \dfrac{\diff[]{I_CR_C}{I_B}}{\diff[]{U_{BE}}{I_B}+\diff[]{U_E}{I_B}} &  & \nonumber \\
+		\Leftrightarrow &  &   & = \dfrac{\beta R_C}{r_{BE}+\gamma R_E}.                                &  &
+	\end{align}
 
-        \subsection{J}
-        Es gilt
-        \begin{align} 
-                && \dfrac{1}{v} &= \tfrac{1+kv_0}{v_0} && \\
-                \Leftrightarrow && v &= \dfrac{v_0}{1+kv_0} &&\nonumber \\
-                \Leftrightarrow && \diff[]{v}{v_0} &= \dfrac{1}{\left(1+kv_0\right)^2} &&\nonumber \\
-                \Leftrightarrow && &= \dfrac{v}{v_0}\dfrac{1}{1+kv_0} &&\nonumber \\
-                \Leftrightarrow && \dfrac{\td v}{v} &= \dfrac{\td v_0}{v_0}\dfrac{1}{1+kv_0}&&\nonumber \\
-                \Leftrightarrow && &= \dfrac{\td v_0}{v_0}\dfrac{v}{v_0}. &&
-        \end{align} 
+	\subsection{J}
+	Es gilt
+	\begin{align}
+		                &  & \dfrac{1}{v}     & = \tfrac{1+kv_0}{v_0}                   &  &           \\
+		\Leftrightarrow &  & v                & = \dfrac{v_0}{1+kv_0}                   &  & \nonumber \\
+		\Leftrightarrow &  & \diff[]{v}{v_0}  & = \dfrac{1}{\left(1+kv_0\right)^2}      &  & \nonumber \\
+		\Leftrightarrow &  &                  & = \dfrac{v}{v_0}\dfrac{1}{1+kv_0}       &  & \nonumber \\
+		\Leftrightarrow &  & \dfrac{\td v}{v} & = \dfrac{\td v_0}{v_0}\dfrac{1}{1+kv_0} &  & \nonumber \\
+		\Leftrightarrow &  &                  & = \dfrac{\td v_0}{v_0}\dfrac{v}{v_0}.   &  &
+	\end{align}
 
-        \subsection{K}
-        Der parallel geschaltete Kondensator mit Kapazität $C_{CB}$ bildet mit dem Transistor einen Hochpass.
-        Wird also eine hochfrequente Wechselspannnug angeschlossen, so läuft wenig Strom durch den Transistor, was dazu führt, dass die Verstärkung von hochfrequenten Signalen nicht erreicht wird.
+	\subsection{K}
+	Der parallel geschaltete Kondensator mit Kapazität $C_{CB}$ bildet mit dem Transistor einen Hochpass.
+Wird also eine hochfrequente Wechselspannnug angeschlossen, so läuft wenig Strom durch den Transistor, was dazu führt, dass die Verstärkung von hochfrequenten Signalen nicht erreicht wird.
 
-        \subsection{L}
-        Am Punkt P findet sich keine Spannungsänderung, da die Eingangsspannung $U_B$ des Transistors T2 konstant ist.
-        Somit hat die Stromänderung $\td I_E\left(T_2\right)$, bestimmt durch die Spannungsänderung am Transistor, keine Wirkung.
+	\subsection{L}
+	Am Punkt P findet sich keine Spannungsänderung, da die Eingangsspannung $U_B$ des Transistors T2 konstant ist.
+	Somit hat die Stromänderung $\td I_E\left(T_2\right)$, bestimmt durch die Spannungsänderung am Transistor, keine Wirkung.
 
-        \subsection{M}
-        Es ist bei Transitfrequenz unter Gegenkopplung $f_\text{grenz gk}v\left(f=0\right)=f_\text{grenz}v_0$.
-        Daraus folgt $f_\text{grenz gk}=f_\text{grenz}\tfrac{v_0}{v\left(f=0\right)}$.
+	\subsection{M}
+	Es ist bei Transitfrequenz unter Gegenkopplung $f_\text{grenz gk}v\left(f=0\right)=f_\text{grenz}v_0$.
+	Daraus folgt $f_\text{grenz gk}=f_\text{grenz}\tfrac{v_0}{v\left(f=0\right)}$.
 
-        \subsection{N}
-        Erhöht sich der Basisstrom $I_B$, so erhöht sich auch die Kollektorspannung $U_C$ und die Spannung über den Widerstand $U_{R_C}$.
-        Hier soll aber $U_0$ konstant sein, also sinkt die Spannung über den Widerstand $R$ ab, was dazu führt, dass der Arbeitspunkt des Transistors stabil bleibt.
+	\subsection{N}
+	Erhöht sich der Basisstrom $I_B$, so erhöht sich auch die Kollektorspannung $U_C$ und die Spannung über den Widerstand $U_{R_C}$.
+	Hier soll aber $U_0$ konstant sein, also sinkt die Spannung über den Widerstand $R$ ab, was dazu führt, dass der Arbeitspunkt des Transistors stabil bleibt.
 
-        \clearpage
-        \section{Analysis}
+	\clearpage
+	\section{Analysis}
+	\subsection{Voltageamplifier of the common collector}
+	On Circut Board 1 (Fig. \ref{fig:cb1}) we construct a common collector with d$U_B=\SI{2.1}{V_{PP}}$ and $U_B\approx \SI{2}{V}$. To test the voltage ampilification we chose a variety of diffrent resistor combinations. The messurements are displayed in Tab. \ref{tab:voltage_amplification}. We expect no change for diffrent $R_E$.
+	\begin{Figure}
+		\centering
+		\includegraphics[width=1\textwidth]{circut_board_1.png}
+		\captionof{figure}{Circut Board 1\cite{Praktikumsanleitung}}
+		\label{fig:cb1}
+	\end{Figure}
+	\begin{center}
+		\begin{tabular}{|c|c|c|}
+			\hline
+			$R_C$            & $R_E$            & amplification $\nu$    \\
+			\hline
+      \SI{360}{\Omega} & \SI{1}{k\Omega}  & \SI{1+-0.025}{}     \\
+      \SI{360}{\Omega} & \SI{22}{k\Omega} & \SI{1.025+-0.025}{} \\
+      \SI{360}{\Omega} & \SI{47}{k\Omega} & \SI{1.015+-0.025}{} \\
+			\hline
+      \SI{1}{k\Omega}  & \SI{360}{\Omega} & \SI{0.945+-0.025}{} \\
+      \SI{22}{k\Omega} & \SI{360}{\Omega} & \SI{0.114+-0.025}{} \\
+      \SI{47}{k\Omega} & \SI{360}{\Omega} & \SI{0.12+-0.025}{}  \\
+			\hline
+		\end{tabular}
+		\captionof{table}{Voltage amplification for diffrent resistor combinations}
+		\label{tab:voltage_amplification}
+	\end{center}
+  As we see, there is no significant variation of the amplification for diffrent $R_E$. Though we can clearly see a lowering of the amplification for higher $R_C$, wich is plausible since we have less current that can be amplified.
+
+  \subsection{Common Collector as Buffer Amplifier}
+  Here we are tasked to match the impedance of a speaker, so we are able to hear a output. For this we firstly construct a Inverted Amplifiert and test the speaker solely without a Common Collector. We observe, that the speaker does not produce any sound, because we havent matched the impedance. Now we add a Common Collecter as a Buffer Amplifier, wich in theroy should be able to match the impedance of the speaker. Unfortunatly we could not get the circut running and test the hypothisis. 
+  \subsection{Inverted Amplifier}
+  \subsubsection{Phaserelation}
+
+
+
 
 \end{multicols}{2}
 
