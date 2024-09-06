@@ -52,11 +52,11 @@
 %{{{ Titelseite
 
 \begin{titlepage}
-        \title{3/4 (2. Halbtag) $|$ Transistor und Transistorverstärker}
-        \author[1]{Angelo Brade\thanks{s72abrad@uni-bonn.de}}
-        \author[1]{Jonas Wortmann\thanks{s02jwort@uni-bonn.de}}
-        \affil[1]{Rheinische Friedrich--Wilhelms--Universität Bonn}
-        \date{\today}
+	\title{3/4 (2. Halbtag) $|$ Transistor und Transistorverstärker}
+	\author[1]{Angelo Brade\thanks{s72abrad@uni-bonn.de}}
+	\author[1]{Jonas Wortmann\thanks{s02jwort@uni-bonn.de}}
+	\affil[1]{Rheinische Friedrich--Wilhelms--Universität Bonn}
+	\date{\today}
 \end{titlepage}
 
 \maketitle
@@ -84,101 +84,119 @@
 \pagenumbering{arabic}
 
 \begin{multicols}{2}
-        \sloppy
-        \section{Einleitung}
-        In diesem Versuch wird wieder der Bipolartransistor behandelt, hier allerdings eingesetzt als eine Emitterfolge zur Spannungsverstärkung und als Impedanzwandler.
-        Zudem wird die Gegenkopplung bei Wechselstrom und das Frequenzverhalten bei Kaskodenschaltungen betrachtet.
+	\sloppy
+	\section{Einleitung}
+	In diesem Versuch wird wieder der Bipolartransistor behandelt, hier allerdings eingesetzt als eine Emitterfolge zur Spannungsverstärkung und als Impedanzwandler.
+	Zudem wird die Gegenkopplung bei Wechselstrom und das Frequenzverhalten bei Kaskodenschaltungen betrachtet.
 
-        \section{Theorie}
-        Es wird weiterhin alle Theorie zu den verschiedenen Arten von Transistoren benötigt.
-        \\\\ Ein Emitterfolger ist ein elektronisches Bauteil, mit dem ein Strom verstärkt werden kann (Stromverstärkung $\gamma $), ohne dass sich die Ausgangsspannung (Spannnugsverstärkung $v$) ändert.
-        \begin{align} 
-                v &= \diff[]{U_E}{U_B}\approx 1 & \gamma &= \diff[]{I_E}{I_B}\approx 100
-        .\end{align} 
-        Deswegen wird eine Emitterfolge auch Impedanzwandler genannt.
-        \\\\ Der Gegenkopplungsfaktor $k$ beschreibt, welcher Bruchteil der Ausgangsspannung entgegen wirkt.
-        \begin{align} 
-                \dfrac{1}{v} &= \dfrac{1}{v_0}+k
-        .\end{align} 
-        Die Verstärkung mit Gegenkopplung $v$ ist hier zwar kleiner als die Leerlaufverstärkung $v_0$, allerdings hängt diese nur noch von der äußeren Beschaltungen und nicht mehr von $v_0$, also dem Transistor, ab.
-        Diese Verstärkung kann man beschreiben wie
-        \begin{align} 
-                \dfrac{\td v}{v} &= \dfrac{\td v_0}{v_0}\dfrac{v}{v_0}
-        .\end{align} 
-        \\Die Bandbreite einer Verstärkerschaltung ist der Frequenzbereich, innerhalb dessen die Verstärkung konstant ist.
-        Für die Erhöhung der Bandbreite wird eine Kaskodenschaltung verwendet.
-        Um solch eine Vergrößerung zu erzielen wird die wechselspannungsmäßige Rückkopplung des Kollektors auf die Basis verringert, indem ein großer Spannungshub durch die Verwendung eines zweiten Transistors vermieden wird.
-        Existiert nun ein Eingangssignal, so ist die daraus resultierende Spannungsänderung im Spannungshub viel geringer als die Änderung der Ausgangsspannung.
-        Dadurch ist die Bandbreite einer solchen Kaskodenschaltung größer.
-        \\\\Arbeitspunktstabilisierung kann mit Hilfe von Gegenkopplung erzielt werden.
-        Eine Möglichkeit dafür ist die Spannungsgegenkopplung.
-        \begin{figure}[h]
-                \centering
-                \includegraphics[width=0.6\textwidth]{spannungsgegenkopplung.png}
-                \caption{Transistorverstärker in Emitterschaltung mit Spannungsgegenkopplung; Abbildung 2/4.16 \cite{Praktikumsanleitung}}
-                \vspace{100cm}
-        \end{figure}\\
-        Hier stellt der Wiederstand $R$ das Basispotential und damit den Arbeitspunkt ein und er koppelt die Spannung am Kollektor zurück zur Basis.
-        Durch diese Gegenkopplung verkleinert sich der Basisstrom bei konstanter Eingangsspannung.
+	\section{Theorie}
+	Es wird weiterhin alle Theorie zu den verschiedenen Arten von Transistoren benötigt.
+	\\\\ Ein Emitterfolger ist ein elektronisches Bauteil, mit dem ein Strom verstärkt werden kann (Stromverstärkung $\gamma $), ohne dass sich die Ausgangsspannung (Spannnugsverstärkung $v$) ändert.
+	\begin{align}
+		v & = \diff[]{U_E}{U_B}\approx 1 & \gamma & = \diff[]{I_E}{I_B}\approx 100
+		.\end{align}
+	Deswegen wird eine Emitterfolge auch Impedanzwandler genannt.
+	\\\\ Der Gegenkopplungsfaktor $k$ beschreibt, welcher Bruchteil der Ausgangsspannung entgegen wirkt.
+	\begin{align}
+		\dfrac{1}{v} & = \dfrac{1}{v_0}+k
+		.\end{align}
+	Die Verstärkung mit Gegenkopplung $v$ ist hier zwar kleiner als die Leerlaufverstärkung $v_0$, allerdings hängt diese nur noch von der äußeren Beschaltungen und nicht mehr von $v_0$, also dem Transistor, ab.
+	Diese Verstärkung kann man beschreiben wie
+	\begin{align}
+		\dfrac{\td v}{v} & = \dfrac{\td v_0}{v_0}\dfrac{v}{v_0}
+		.\end{align}
+	\\Die Bandbreite einer Verstärkerschaltung ist der Frequenzbereich, innerhalb dessen die Verstärkung konstant ist.
+	Für die Erhöhung der Bandbreite wird eine Kaskodenschaltung verwendet.
+	Um solch eine Vergrößerung zu erzielen wird die wechselspannungsmäßige Rückkopplung des Kollektors auf die Basis verringert, indem ein großer Spannungshub durch die Verwendung eines zweiten Transistors vermieden wird.
+	Existiert nun ein Eingangssignal, so ist die daraus resultierende Spannungsänderung im Spannungshub viel geringer als die Änderung der Ausgangsspannung.
+	Dadurch ist die Bandbreite einer solchen Kaskodenschaltung größer.
+	\\\\Arbeitspunktstabilisierung kann mit Hilfe von Gegenkopplung erzielt werden.
+	Eine Möglichkeit dafür ist die Spannungsgegenkopplung.
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.6\textwidth]{spannungsgegenkopplung.png}
+		\caption{Transistorverstärker in Emitterschaltung mit Spannungsgegenkopplung; Abbildung 2/4.16 \cite{Praktikumsanleitung}}
+		\vspace{100cm}
+	\end{figure}\\
+	Hier stellt der Wiederstand $R$ das Basispotential und damit den Arbeitspunkt ein und er koppelt die Spannung am Kollektor zurück zur Basis.
+	Durch diese Gegenkopplung verkleinert sich der Basisstrom bei konstanter Eingangsspannung.
 
-        \newpage
-        \section{Voraufgaben}
-        \subsection{G}
-        $\zz\ v=\tfrac{\gamma R_E}{r_{BE}+\gamma R_E}$ mit $\gamma =\diff[]{I_E}{I_B}$ und $r_{BE}=\diff[]{U_{BE}}{I_B}$.
-        \begin{align} 
-                && v &= \diff[]{U_E}{U_B} &&\\
-                \Leftrightarrow && &= \dfrac{\td I_ER_E}{\td U_{BE}+\td U_E} &&\nonumber \\
-                \Leftrightarrow && &= \dfrac{\diff[]{I_ER_E}{I_B}}{\diff[]{U_{BE}}{I_B}+\diff[]{U_E}{I_B}} &&\nonumber \\
-                \Leftrightarrow && &= \dfrac{\gamma R_E}{r_{BE}+\gamma R_E}. &&
-        \end{align} 
+	\newpage
+	\section{Voraufgaben}
+	\subsection{G}
+	$\zz\ v=\tfrac{\gamma R_E}{r_{BE}+\gamma R_E}$ mit $\gamma =\diff[]{I_E}{I_B}$ und $r_{BE}=\diff[]{U_{BE}}{I_B}$.
+	\begin{align}
+		                &  & v & = \diff[]{U_E}{U_B}                                                    &  &           \\
+		\Leftrightarrow &  &   & = \dfrac{\td I_ER_E}{\td U_{BE}+\td U_E}                               &  & \nonumber \\
+		\Leftrightarrow &  &   & = \dfrac{\diff[]{I_ER_E}{I_B}}{\diff[]{U_{BE}}{I_B}+\diff[]{U_E}{I_B}} &  & \nonumber \\
+		\Leftrightarrow &  &   & = \dfrac{\gamma R_E}{r_{BE}+\gamma R_E}.                               &  &
+	\end{align}
 
-        \subsection{H}
-        Es gilt
-        \begin{align} 
-                && \dfrac{r_\text{out}}{r_\text{in}} &= \dfrac{\diff[]{U_E}{I_E}}{\diff[]{U_B}{I_B}} &&\\
-                \Leftrightarrow && &= \diff[]{U_E}{I_E}\diff[]{I_B}{U_B} &&\nonumber \\
-                \Leftrightarrow && &= \diff[]{U_E}{U_B}\diff[]{I_B}{I_E} &&\nonumber \\
-                \Leftrightarrow && &\approx 1\cdot \dfrac{1}{\gamma }. &&
-        \end{align} 
+	\subsection{H}
+	Es gilt
+	\begin{align}
+		                &  & \dfrac{r_\text{out}}{r_\text{in}} & = \dfrac{\diff[]{U_E}{I_E}}{\diff[]{U_B}{I_B}} &  &           \\
+		\Leftrightarrow &  &                                   & = \diff[]{U_E}{I_E}\diff[]{I_B}{U_B}           &  & \nonumber \\
+		\Leftrightarrow &  &                                   & = \diff[]{U_E}{U_B}\diff[]{I_B}{I_E}           &  & \nonumber \\
+		\Leftrightarrow &  &                                   & \approx 1\cdot \dfrac{1}{\gamma }.             &  &
+	\end{align}
 
-        \subsection{I}
-        Es ist
-        \begin{align} 
-                && v &= \diff[]{U_C}{U_B} &&\\
-                \Leftrightarrow && &= \dfrac{\td I_CR_C}{\td U_{BE}+\td U_E} &&\nonumber \\
-                \Leftrightarrow && &= \dfrac{\diff[]{I_CR_C}{I_B}}{\diff[]{U_{BE}}{I_B}+\diff[]{U_E}{I_B}} &&\nonumber \\
-                \Leftrightarrow && &= \dfrac{\beta R_C}{r_{BE}+\gamma R_E}. &&
-        \end{align} 
+	\subsection{I}
+	Es ist
+	\begin{align}
+		                &  & v & = \diff[]{U_C}{U_B}                                                    &  &           \\
+		\Leftrightarrow &  &   & = \dfrac{\td I_CR_C}{\td U_{BE}+\td U_E}                               &  & \nonumber \\
+		\Leftrightarrow &  &   & = \dfrac{\diff[]{I_CR_C}{I_B}}{\diff[]{U_{BE}}{I_B}+\diff[]{U_E}{I_B}} &  & \nonumber \\
+		\Leftrightarrow &  &   & = \dfrac{\beta R_C}{r_{BE}+\gamma R_E}.                                &  &
+	\end{align}
 
-        \subsection{J}
-        Es gilt
-        \begin{align} 
-                && \dfrac{1}{v} &= \tfrac{1+kv_0}{v_0} && \\
-                \Leftrightarrow && v &= \dfrac{v_0}{1+kv_0} &&\nonumber \\
-                \Leftrightarrow && \diff[]{v}{v_0} &= \dfrac{1}{\left(1+kv_0\right)^2} &&\nonumber \\
-                \Leftrightarrow && &= \dfrac{v}{v_0}\dfrac{1}{1+kv_0} &&\nonumber \\
-                \Leftrightarrow && \dfrac{\td v}{v} &= \dfrac{\td v_0}{v_0}\dfrac{1}{1+kv_0}&&\nonumber \\
-                \Leftrightarrow && &= \dfrac{\td v_0}{v_0}\dfrac{v}{v_0}. &&
-        \end{align} 
+	\subsection{J}
+	Es gilt
+	\begin{align}
+		                &  & \dfrac{1}{v}     & = \tfrac{1+kv_0}{v_0}                   &  &           \\
+		\Leftrightarrow &  & v                & = \dfrac{v_0}{1+kv_0}                   &  & \nonumber \\
+		\Leftrightarrow &  & \diff[]{v}{v_0}  & = \dfrac{1}{\left(1+kv_0\right)^2}      &  & \nonumber \\
+		\Leftrightarrow &  &                  & = \dfrac{v}{v_0}\dfrac{1}{1+kv_0}       &  & \nonumber \\
+		\Leftrightarrow &  & \dfrac{\td v}{v} & = \dfrac{\td v_0}{v_0}\dfrac{1}{1+kv_0} &  & \nonumber \\
+		\Leftrightarrow &  &                  & = \dfrac{\td v_0}{v_0}\dfrac{v}{v_0}.   &  &
+	\end{align}
 
-        \subsection{K}
-        Der parallel geschaltete Kondensator mit Kapazität $C_{CB}$ bildet mit dem Transistor einen Hochpass.
-        Wird also eine hochfrequente Wechselspannnug angeschlossen, so läuft wenig Strom durch den Transistor, was dazu führt, dass die Verstärkung von hochfrequenten Signalen nicht erreicht wird.
+	\subsection{K}
+	Der parallel geschaltete Kondensator mit Kapazität $C_{CB}$ bildet mit dem Transistor einen Hochpass.
+	Wird also eine hochfrequente Wechselspannnug angeschlossen, so läuft wenig Strom durch den Transistor, was dazu führt, dass die Verstärkung von hochfrequenten Signalen nicht erreicht wird.
 
-        \subsection{L}
-        Am Punkt P findet sich keine Spannungsänderung, da die Eingangsspannung $U_B$ des Transistors T2 konstant ist.
-        Somit hat die Stromänderung $\td I_E\left(T_2\right)$, bestimmt durch die Spannungsänderung am Transistor, keine Wirkung.
+	\subsection{L}
+	Am Punkt P findet sich keine Spannungsänderung, da die Eingangsspannung $U_B$ des Transistors T2 konstant ist.
+	Somit hat die Stromänderung $\td I_E\left(T_2\right)$, bestimmt durch die Spannungsänderung am Transistor, keine Wirkung.
 
-        \subsection{M}
-        Es ist bei Transitfrequenz unter Gegenkopplung $f_\text{grenz gk}v\left(f=0\right)=f_\text{grenz}v_0$.
-        Daraus folgt $f_\text{grenz gk}=f_\text{grenz}\tfrac{v_0}{v\left(f=0\right)}$.
+	\subsection{M}
+	Es ist bei Transitfrequenz unter Gegenkopplung $f_\text{grenz gk}v\left(f=0\right)=f_\text{grenz}v_0$.
+	Daraus folgt $f_\text{grenz gk}=f_\text{grenz}\tfrac{v_0}{v\left(f=0\right)}$.
 
-        \subsection{N}
-        Erhöht sich der Basisstrom $I_B$, so erhöht sich auch die Kollektorspannung $U_C$ und die Spannung über den Widerstand $U_{R_C}$.
-        Hier soll aber $U_0$ konstant sein, also sinkt die Spannung über den Widerstand $R$ ab, was dazu führt, dass der Arbeitspunkt des Transistors stabil bleibt.
+	\subsection{N}
+	Erhöht sich der Basisstrom $I_B$, so erhöht sich auch die Kollektorspannung $U_C$ und die Spannung über den Widerstand $U_{R_C}$.
+	Hier soll aber $U_0$ konstant sein, also sinkt die Spannung über den Widerstand $R$ ab, was dazu führt, dass der Arbeitspunkt des Transistors stabil bleibt.
 
-        \clearpage
-        \section{Auswertung}
+	\clearpage
+	\section{Auswertung}
+  \subsection{Voltageamplifier of the common collector}
+  On Circut Board 1 (Fig. \ref{fig:cb1}) we construct a common collector with d$U_B=\SI{2.1}{V_{PP}}$ and $U_B\approx \SI{2}{V}$. To test the voltage ampilification we chose a variety of diffrent resistor combinations. The messurements are displayed in Tab. \ref{tab:voltage_amplification}.
+	\begin{Figure}
+		\centering
+		\includegraphics[width=1\textwidth]{circut_board_1.png}
+		\captionof{figure}{Circut Board 1\cite{Praktikumsanleitung}}
+    \label{fig:cb1}
+	\end{Figure}
+	\end{center}
+	\begin{center}
+    \begin{tabular}{|c|c|c|}
+
+		\end{tabular}
+		\captionof{table}{voltage amplification for diffrent resistor combinations}
+		\label{tab:voltage_amplification}
+	\end{center}
+  
+
 
 \end{multicols}{2}
 
