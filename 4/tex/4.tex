@@ -84,42 +84,42 @@
 \pagenumbering{arabic}
 
 \begin{multicols}{2}
-        \sloppy
-        \section{Introduction}
-        In this experiment, the bipolar transistor is used, but here as an emitter sequence for voltage amplification and as an impedance converter (buffer).
-        Also, the negative feedback of alternating current and the behavior of different frequencies will be observed via a cascode circuit.
+	\sloppy
+	\section{Introduction}
+	In this experiment, the bipolar transistor is used, but here as an emitter sequence for voltage amplification and as an impedance converter (buffer).
+	Also, the negative feedback of alternating current and the behavior of different frequencies will be observed via a cascode circuit.
 
-        \section{Theory}
-        The whole theory of different kinds of transistors is still needed.
-        \\\\An emitter follower is an electronic component, with which a current can be amplified (factor $\gamma $), without any change in voltage (factor $v$).
-        \begin{align} 
-                v &= \diff[]{U_E}{U_B}\approx 1 & \gamma &= \diff[]{I_E}{I_B}\approx 100
-        .\end{align} 
-        This is why sometimes an emitter follower is called an impedance changer.
-        \\\\ The negative feedback factor $k$ denotes, which fraction of the output voltage is 
-        \begin{align} 
-                \dfrac{1}{v} &= \dfrac{1}{v_0}+k
-        .\end{align} 
-        Die Verstärkung mit Gegenkopplung $v$ ist hier zwar kleiner als die Leerlaufverstärkung $v_0$, allerdings hängt diese nur noch von der äußeren Beschaltungen und nicht mehr von $v_0$, also dem Transistor, ab.
-        Diese Verstärkung kann man beschreiben wie
-        \begin{align} 
-                \dfrac{\td v}{v} &= \dfrac{\td v_0}{v_0}\dfrac{v}{v_0}
-        .\end{align} 
-        \\Die Bandbreite einer Verstärkerschaltung ist der Frequenzbereich, innerhalb dessen die Verstärkung konstant ist.
-        Für die Erhöhung der Bandbreite wird eine Kaskodenschaltung verwendet.
-        Um solch eine Vergrößerung zu erzielen wird die wechselspannungsmäßige Rückkopplung des Kollektors auf die Basis verringert, indem ein großer Spannungshub durch die Verwendung eines zweiten Transistors vermieden wird.
-        Existiert nun ein Eingangssignal, so ist die daraus resultierende Spannungsänderung im Spannungshub viel geringer als die Änderung der Ausgangsspannung.
-        Dadurch ist die Bandbreite einer solchen Kaskodenschaltung größer.
-        \\\\Arbeitspunktstabilisierung kann mit Hilfe von Gegenkopplung erzielt werden.
-        Eine Möglichkeit dafür ist die Spannungsgegenkopplung.
-        \begin{figure}[h]
-                \centering
-                \includegraphics[width=0.6\textwidth]{spannungsgegenkopplung.png}
-                \caption{Transistorverstärker in Emitterschaltung mit Spannungsgegenkopplung; Abbildung 2/4.16 \cite{Praktikumsanleitung}}
-                \vspace{100cm}
-        \end{figure}\\
-        Hier stellt der Wiederstand $R$ das Basispotential und damit den Arbeitspunkt ein und er koppelt die Spannung am Kollektor zurück zur Basis.
-        Durch diese Gegenkopplung verkleinert sich der Basisstrom bei konstanter Eingangsspannung.
+	\section{Theory}
+	The whole theory of different kinds of transistors is still needed.
+	\\\\An emitter follower is an electronic component, with which a current can be amplified (factor $\gamma $), without any change in voltage (factor $v$).
+	\begin{align}
+		v & = \diff[]{U_E}{U_B}\approx 1 & \gamma & = \diff[]{I_E}{I_B}\approx 100
+		.\end{align}
+	This is why sometimes an emitter follower is called an impedance changer.
+	\\\\ The negative feedback factor $k$ denotes, which fraction of the output voltage is
+	\begin{align}
+		\dfrac{1}{v} & = \dfrac{1}{v_0}+k
+		.\end{align}
+	Die Verstärkung mit Gegenkopplung $v$ ist hier zwar kleiner als die Leerlaufverstärkung $v_0$, allerdings hängt diese nur noch von der äußeren Beschaltungen und nicht mehr von $v_0$, also dem Transistor, ab.
+	Diese Verstärkung kann man beschreiben wie
+	\begin{align}
+		\dfrac{\td v}{v} & = \dfrac{\td v_0}{v_0}\dfrac{v}{v_0}
+		.\end{align}
+	\\Die Bandbreite einer Verstärkerschaltung ist der Frequenzbereich, innerhalb dessen die Verstärkung konstant ist.
+	Für die Erhöhung der Bandbreite wird eine Kaskodenschaltung verwendet.
+	Um solch eine Vergrößerung zu erzielen wird die wechselspannungsmäßige Rückkopplung des Kollektors auf die Basis verringert, indem ein großer Spannungshub durch die Verwendung eines zweiten Transistors vermieden wird.
+	Existiert nun ein Eingangssignal, so ist die daraus resultierende Spannungsänderung im Spannungshub viel geringer als die Änderung der Ausgangsspannung.
+	Dadurch ist die Bandbreite einer solchen Kaskodenschaltung größer.
+	\\\\Arbeitspunktstabilisierung kann mit Hilfe von Gegenkopplung erzielt werden.
+	Eine Möglichkeit dafür ist die Spannungsgegenkopplung.
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.6\textwidth]{spannungsgegenkopplung.png}
+		\caption{Transistorverstärker in Emitterschaltung mit Spannungsgegenkopplung; Abbildung 2/4.16 \cite{Praktikumsanleitung}}
+		\vspace{100cm}
+	\end{figure}\\
+	Hier stellt der Wiederstand $R$ das Basispotential und damit den Arbeitspunkt ein und er koppelt die Spannung am Kollektor zurück zur Basis.
+	Durch diese Gegenkopplung verkleinert sich der Basisstrom bei konstanter Eingangsspannung.
 
 	\newpage
 	\section{Preliminary Tasks}
@@ -163,7 +163,7 @@
 
 	\subsection{K}
 	Der parallel geschaltete Kondensator mit Kapazität $C_{CB}$ bildet mit dem Transistor einen Hochpass.
-Wird also eine hochfrequente Wechselspannnug angeschlossen, so läuft wenig Strom durch den Transistor, was dazu führt, dass die Verstärkung von hochfrequenten Signalen nicht erreicht wird.
+	Wird also eine hochfrequente Wechselspannnug angeschlossen, so läuft wenig Strom durch den Transistor, was dazu führt, dass die Verstärkung von hochfrequenten Signalen nicht erreicht wird.
 
 	\subsection{L}
 	Am Punkt P findet sich keine Spannungsänderung, da die Eingangsspannung $U_B$ des Transistors T2 konstant ist.
@@ -180,38 +180,84 @@ Wird also eine hochfrequente Wechselspannnug angeschlossen, so läuft wenig Stro
 	\clearpage
 	\section{Analysis}
 	\subsection{Voltageamplifier of the common collector}
-	On Circut Board I (Fig. \ref{fig:cb1}) we construct a common collector with d$U_B=\SI{2.1}{V_{PP}}$ and $U_B\approx \SI{2}{V}$. To test the voltage ampilification we chose a variety of diffrent resistor combinations. The messurements are displayed in Tab. \ref{tab:voltage_amplification}. We expect no change for diffrent $R_E$.
+	On circut board I (Fig. \ref{fig:cb1}) we construct a common collector with d$U_B=\SI{2.1}{V_{PP}}$ and $U_B\approx \SI{2}{V}$. To test the voltage ampilification we chose a variety of diffrent resistor combinations. The messurements are displayed in Tab. \ref{tab:voltage_amplification}. We expect no change for diffrent $R_E$.
 	\begin{Figure}
 		\centering
 		\includegraphics[width=1\textwidth]{circut_board_1.png}
-		\captionof{figure}{Circut Board 1\cite{Praktikumsanleitung}}
+		\captionof{figure}{Circut board 1\cite{Praktikumsanleitung}}
 		\label{fig:cb1}
 	\end{Figure}
 	\begin{center}
 		\begin{tabular}{|c|c|c|}
 			\hline
-			$R_C$            & $R_E$            & amplification $\nu$    \\
+			$R_C$            & $R_E$            & amplification $\nu$ \\
 			\hline
-      \SI{360}{\Omega} & \SI{1}{k\Omega}  & \SI{1+-0.025}{}     \\
-      \SI{360}{\Omega} & \SI{22}{k\Omega} & \SI{1.025+-0.025}{} \\
-      \SI{360}{\Omega} & \SI{47}{k\Omega} & \SI{1.015+-0.025}{} \\
+			\SI{360}{\Omega} & \SI{1}{k\Omega}  & \SI{1+-0.025}{}     \\
+			\SI{360}{\Omega} & \SI{22}{k\Omega} & \SI{1.025+-0.025}{} \\
+			\SI{360}{\Omega} & \SI{47}{k\Omega} & \SI{1.015+-0.025}{} \\
 			\hline
-      \SI{1}{k\Omega}  & \SI{360}{\Omega} & \SI{0.945+-0.025}{} \\
-      \SI{22}{k\Omega} & \SI{360}{\Omega} & \SI{0.114+-0.025}{} \\
-      \SI{47}{k\Omega} & \SI{360}{\Omega} & \SI{0.12+-0.025}{}  \\
+			\SI{1}{k\Omega}  & \SI{360}{\Omega} & \SI{0.945+-0.025}{} \\
+			\SI{22}{k\Omega} & \SI{360}{\Omega} & \SI{0.114+-0.025}{} \\
+			\SI{47}{k\Omega} & \SI{360}{\Omega} & \SI{0.12+-0.025}{}  \\
 			\hline
 		\end{tabular}
 		\captionof{table}{Voltage amplification for diffrent resistor combinations}
 		\label{tab:voltage_amplification}
 	\end{center}
-  As we see, there is no significant variation of the amplification for diffrent $R_E$. Though we can clearly see a lowering of the amplification for higher $R_C$, wich is plausible since we have less current that can be amplified.
+	As we see, there is no significant variation of the amplification for diffrent $R_E$. Though we can clearly see a lowering of the amplification for higher $R_C$, wich is plausible since we have less current that can be amplified.
 
-  \subsection{Common Collector as Buffer Amplifier}
-  Here we are tasked to match the impedance of a speaker, so we are able to hear an output. For this we firstly construct an Inverted Amplifiert and test the speaker solely without a Common Collector. We observe, that the speaker does not produce any sound, because we havent matched the impedance. Now we add a Common Collecter as a Buffer Amplifier, wich in theroy should be able to match the impedance of the speaker. Unfortunatly we could not get the circut running and test the hypothisis. 
-  \subsection{Inverted Amplifier}
-  \subsubsection{Phasere Relationship between input and output}
-  Now we build a Common Emitter on Circut Board I 
+	\subsection{Common collector as buffer amplifier}
+	Here we are tasked to match the impedance of a speaker, so we are able to hear an output. For this we firstly construct an Inverted Amplifiert and test the speaker solely without a common collector. We observe, that the speaker does not produce any sound, because we havent matched the impedance. Now we add a common collecter as a buffer amplifier, wich in theroy should be able to match the impedance of the speaker. Unfortunatly we could not get the circut running and test the hypothisis.
 
+	\subsection{Inverted amplifier}
+	\subsubsection{Phasere relationship between input and output}
+	Now we build a common emitter on circut board I with $R_C=R_E=\SI{390}{\Omega}$, d$U_B=\SI{0.5}{V_{PP}}$, $U_B=\SI{1.5}{V}$ and we choose a capacity prior to the input signal of \SI{0.1}{\micro F}. As we can see in the xy (CH1, CH2) configuration in fig. \ref{fig:phasexy}, the phase is not linear, but eliptic. Thus we have not the same phase. We found out through experimenting, that the multiple elipsis come from noise. The phase relationship and especially the noise is also visible in fig. \ref{fig:phase}, as the lines are rather thicc. We can see that the phase diffrence is between $\frac{1}{2}\pi$ and $1\pi$, because we now have coupled the capacitor.
+	\begin{Figure}
+		\centering
+		\includegraphics[width=1\textwidth]{../data/DS0020.png}
+		\captionof{figure}{Phase relationship in phase space}
+		\label{fig:phasexy}
+	\end{Figure}
+	\begin{Figure}
+		\centering
+		\includegraphics[width=1\textwidth]{../data/DS0021.png}
+		\captionof{figure}{Phase relationship in voltage/time space}
+		\label{fig:phase}
+	\end{Figure}
+	\subsubsection{Voltage amplification of the inverted amplifier}
+	We measure the voltage amplification with diffrent values for the resistors $R_E$ and $R_C$. The results are display in tab. \ref{tab:voltage_amplification2}.
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			$R_C$             & $R_E$             & amplification $\nu$ & $\nu = -\frac{R_C}{R_E}$ \\
+			\hline
+			\SI{360}{\Omega}  & \SI{470}{\Omega}  & \SI{-0.686+-0.024}{} & -0.830                   \\
+			\SI{360}{\Omega}  & \SI{1}{k\Omega}   & \SI{-0.437+-0.024}{} & -0.390                   \\
+			\SI{360}{\Omega}  & \SI{4.7}{k\Omega} & \SI{-0.25+-0.025}{}  & -0.083                   \\
+			\SI{360}{\Omega}  & \SI{33}{k\Omega}  & \SI{-0.196+-0.025}{} & -0.012                   \\
+			\SI{360}{\Omega}  & \SI{47}{k\Omega}  & \SI{-0.18+-0.025}{}  & -0.008                   \\
+			\hline
+			\SI{470}{\Omega}  & \SI{360}{\Omega}  & \SI{-0.857+-0.024}{} & -1.205                   \\
+			\SI{1}{k\Omega}   & \SI{360}{\Omega}  & \SI{-1.491+-0.025}{} & -2.564                   \\
+			\SI{4.7}{k\Omega} & \SI{360}{\Omega}  & \SI{-2.284+-0.022}{} & -12.05                   \\
+			\SI{33}{k\Omega}  & \SI{360}{\Omega}  & \SI{-0.234+-0.027}{} & -84.62                   \\
+			\SI{47}{k\Omega}  & \SI{360}{\Omega}  & \SI{-0.234+-0.027}{} & -120.5                   \\
+			\hline
+		\end{tabular}
+		\captionof{table}{Voltage amplification for diffrent resistor combinations}
+		\label{tab:voltage_amplification2}
+	\end{center}
+  We notice that the part, where $R_C$ stays constant, the experimental values follow the theoretical ones in thier generall trend, but are not exactly the same. For the part where $R_E$ stays constant we observe that first the data follows the calculations, but to the end, with the highest restance, just drop. It seems that there is a sweetspot for an optimal amplification. Then it should have to do something with resonace, so the amplification is frequency dependent.
+
+  \subsubsection{Resistance of a Transistor}
+  Now with the special case, that $R_E=\SI{0}{\Omega}$ and $E_C=\SI{390}{\Omega}$, we can read the peak-to-peak voltage from oscillogramm and calculate the amplification and $\beta=\frac{I_C}{I_E}$ with $I=\frac{U}{R}$.
+
+	\begin{Figure}
+		\centering
+		\includegraphics[width=1\textwidth]{../data/DS0022.png}
+		\captionof{figure}{Phase relationship in phase space}
+		\label{fig:rn}
+	\end{Figure}
 
 
 
