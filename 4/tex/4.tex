@@ -89,49 +89,49 @@
 	In this experiment, the bipolar transistor is used, but here as an emitter sequence for voltage amplification and as an impedance converter (buffer).
 	Also, the negative feedback of alternating current and the behavior of different frequencies will be observed via a cascode circuit.
 
-        \section{Theory}
-        The whole theory of different kinds of transistors is still needed.
-        \\\\An emitter follower is an electronic component, with which a current can be amplified (factor $\gamma $), without any change in voltage (factor $\nu $).
-        \begin{align} 
-                \nu  &= \diff[]{U_E}{U_B}\approx 1 & \gamma &= \diff[]{I_E}{I_B}\approx 100
-        .\end{align} 
-        This is why sometimes an emitter follower is called an impedance changer.
-        \\\\ The negative feedback factor $k$ denotes, which fraction of the output voltage is used for the negative feedback
-        \begin{align} 
-                \dfrac{1}{\nu } &= \dfrac{1}{\nu _0}+k
-        .\end{align} 
-        Though the amplification with negative feedback $\nu $ is lower than the open--loop gain $\nu _0$, $\nu $ is only dependent on the circuit and not on the transistor itself.
-        This amplification can be described as follows
-        \begin{align} 
-                \dfrac{\td \nu }{\nu } &= \dfrac{\td \nu _0}{\nu _0}\dfrac{\nu }{\nu _0}
-        .\end{align} 
-        The bandwidth of the amplifier circuit is the frequency band, in which the amplification is constant.
-        To increase the bandwidth, one can use a cascode circuit.
-        To achieve such an amplification, the alternating voltage feedback of the collector on the basis is reduced by utilizing a second transistor to prevent a voltage swing.
-        Given an input signal, the resulting change in voltage will be significantly lower than the change in the output signal.
-        This results in a higher bandwidth.
-        \\\\ Stabilization of the operating point can be achieved by using negative feedback, in particular negative feedback of voltage.
-        \begin{Figure}
-                \centering
-                \includegraphics[width=0.6\textwidth]{spannungsgegenkopplung.png}
-                \captionof{figure}{Transistor amplifier as common collector with negative feedback (voltage); figure 3/4.16 \cite{Praktikumsanleitung}}
-        \end{Figure}
-        In this figure the resistor $R$ sets the base potential as well as the operating point and cupples the voltage from the collector back to the base.
-        Due to this negative feedback the base current is reduced although the input current remains constant.
+	\section{Theory}
+	The whole theory of different kinds of transistors is still needed.
+	\\\\An emitter follower is an electronic component, with which a current can be amplified (factor $\gamma $), without any change in voltage (factor $\nu $).
+	\begin{align}
+		\nu & = \diff[]{U_E}{U_B}\approx 1 & \gamma & = \diff[]{I_E}{I_B}\approx 100
+		.\end{align}
+	This is why sometimes an emitter follower is called an impedance changer.
+	\\\\ The negative feedback factor $k$ denotes, which fraction of the output voltage is used for the negative feedback
+	\begin{align}
+		\dfrac{1}{\nu } & = \dfrac{1}{\nu _0}+k
+		.\end{align}
+	Though the amplification with negative feedback $\nu $ is lower than the open--loop gain $\nu _0$, $\nu $ is only dependent on the circuit and not on the transistor itself.
+	This amplification can be described as follows
+	\begin{align}
+		\dfrac{\td \nu }{\nu } & = \dfrac{\td \nu _0}{\nu _0}\dfrac{\nu }{\nu _0}
+		.\end{align}
+	The bandwidth of the amplifier circuit is the frequency band, in which the amplification is constant.
+	To increase the bandwidth, one can use a cascode circuit.
+	To achieve such an amplification, the alternating voltage feedback of the collector on the basis is reduced by utilizing a second transistor to prevent a voltage swing.
+	Given an input signal, the resulting change in voltage will be significantly lower than the change in the output signal.
+	This results in a higher bandwidth.
+	\\\\ Stabilization of the operating point can be achieved by using negative feedback, in particular negative feedback of voltage.
+	\begin{Figure}
+		\centering
+		\includegraphics[width=0.6\textwidth]{spannungsgegenkopplung.png}
+		\captionof{figure}{Transistor amplifier as common collector with negative feedback (voltage); figure 3/4.16 \cite{Praktikumsanleitung}}
+	\end{Figure}
+	In this figure the resistor $R$ sets the base potential as well as the operating point and cupples the voltage from the collector back to the base.
+	Due to this negative feedback the base current is reduced although the input current remains constant.
 
 	\newpage
 	\section{Preliminary Tasks}
 	\subsection{G}
 	$\zz\ \nu =\tfrac{\gamma R_E}{r_{BE}+\gamma R_E}$ with $\gamma =\diff[]{I_E}{I_B}$ and $r_{BE}=\diff[]{U_{BE}}{I_B}$.
 	\begin{align}
-		                &  & \nu  & = \diff[]{U_E}{U_B}                                                    &  &           \\
-		\Leftrightarrow &  &   & = \dfrac{\td I_ER_E}{\td U_{BE}+\td U_E}                               &  & \nonumber \\
-		\Leftrightarrow &  &   & = \dfrac{\diff[]{I_ER_E}{I_B}}{\diff[]{U_{BE}}{I_B}+\diff[]{U_E}{I_B}} &  & \nonumber \\
-		\Leftrightarrow &  &   & = \dfrac{\gamma R_E}{r_{BE}+\gamma R_E}.                               &  &
+		                &  & \nu & = \diff[]{U_E}{U_B}                                                    &  &           \\
+		\Leftrightarrow &  &     & = \dfrac{\td I_ER_E}{\td U_{BE}+\td U_E}                               &  & \nonumber \\
+		\Leftrightarrow &  &     & = \dfrac{\diff[]{I_ER_E}{I_B}}{\diff[]{U_{BE}}{I_B}+\diff[]{U_E}{I_B}} &  & \nonumber \\
+		\Leftrightarrow &  &     & = \dfrac{\gamma R_E}{r_{BE}+\gamma R_E}.                               &  &
 	\end{align}
 
 	\subsection{H}
-        The equation applies
+	The equation applies
 	\begin{align}
 		                &  & \dfrac{r_\text{out}}{r_\text{in}} & = \dfrac{\diff[]{U_E}{I_E}}{\diff[]{U_B}{I_B}} &  &           \\
 		\Leftrightarrow &  &                                   & = \diff[]{U_E}{I_E}\diff[]{I_B}{U_B}           &  & \nonumber \\
@@ -140,40 +140,40 @@
 	\end{align}
 
 	\subsection{I}
-        The equation applies
+	The equation applies
 	\begin{align}
-		                &  & \nu  & = \diff[]{U_C}{U_B}                                                    &  &           \\
-		\Leftrightarrow &  &   & = \dfrac{\td I_CR_C}{\td U_{BE}+\td U_E}                               &  & \nonumber \\
-		\Leftrightarrow &  &   & = \dfrac{\diff[]{I_CR_C}{I_B}}{\diff[]{U_{BE}}{I_B}+\diff[]{U_E}{I_B}} &  & \nonumber \\
-		\Leftrightarrow &  &   & = \dfrac{\beta R_C}{r_{BE}+\gamma R_E}.                                &  &
+		                &  & \nu & = \diff[]{U_C}{U_B}                                                    &  &           \\
+		\Leftrightarrow &  &     & = \dfrac{\td I_CR_C}{\td U_{BE}+\td U_E}                               &  & \nonumber \\
+		\Leftrightarrow &  &     & = \dfrac{\diff[]{I_CR_C}{I_B}}{\diff[]{U_{BE}}{I_B}+\diff[]{U_E}{I_B}} &  & \nonumber \\
+		\Leftrightarrow &  &     & = \dfrac{\beta R_C}{r_{BE}+\gamma R_E}.                                &  &
 	\end{align}
 
 	\subsection{J}
-        The equation applies
+	The equation applies
 	\begin{align}
-		                &  & \dfrac{1}{\nu}     & = \tfrac{1+k\nu _0}{\nu _0}                   &  &           \\
-		\Leftrightarrow &  & \nu                & = \dfrac{\nu_0}{1+k\nu_0}                   &  & \nonumber \\
-		\Leftrightarrow &  & \diff[]{\nu}{\nu_0}  & = \dfrac{1}{\left(1+k\nu_0\right)^2}      &  & \nonumber \\
-		\Leftrightarrow &  &                  & = \dfrac{\nu}{\nu_0}\dfrac{1}{1+k\nu_0}       &  & \nonumber \\
+		                &  & \dfrac{1}{\nu}       & = \tfrac{1+k\nu _0}{\nu _0}                   &  &           \\
+		\Leftrightarrow &  & \nu                  & = \dfrac{\nu_0}{1+k\nu_0}                     &  & \nonumber \\
+		\Leftrightarrow &  & \diff[]{\nu}{\nu_0}  & = \dfrac{1}{\left(1+k\nu_0\right)^2}          &  & \nonumber \\
+		\Leftrightarrow &  &                      & = \dfrac{\nu}{\nu_0}\dfrac{1}{1+k\nu_0}       &  & \nonumber \\
 		\Leftrightarrow &  & \dfrac{\td \nu}{\nu} & = \dfrac{\td \nu_0}{\nu_0}\dfrac{1}{1+k\nu_0} &  & \nonumber \\
-		\Leftrightarrow &  &                  & = \dfrac{\td \nu_0}{\nu_0}\dfrac{\nu}{\nu_0}.   &  &
+		\Leftrightarrow &  &                      & = \dfrac{\td \nu_0}{\nu_0}\dfrac{\nu}{\nu_0}. &  &
 	\end{align}
 
 	\subsection{K}
-        The parallel capacitor with capacitance $C_{CB}$ and transistor form a high--pass filter.
-        This means that high frequency signals will run through the capacitor and not the transistor, resulting in them not being amplified.
+	The parallel capacitor with capacitance $C_{CB}$ and transistor form a high--pass filter.
+	This means that high frequency signals will run through the capacitor and not the transistor, resulting in them not being amplified.
 
 	\subsection{L}
-        There is no voltage change at point P, because the input signal to the transistor T2 is constant.
-        The change in current $\td I_E\left(T_2\right)$ is in return also zero.
+	There is no voltage change at point P, because the input signal to the transistor T2 is constant.
+	The change in current $\td I_E\left(T_2\right)$ is in return also zero.
 
 	\subsection{M}
-        For any transit frequency the equation holds $f_\text{grenz gk}\nu\left(f=0\right)=f_\text{grenz}\nu_0$.
+	For any transit frequency the equation holds $f_\text{grenz gk}\nu\left(f=0\right)=f_\text{grenz}\nu_0$.
 	Thus $f_\text{grenz gk}=f_\text{grenz}\tfrac{\nu_0}{\nu\left(f=0\right)}$.
 
 	\subsection{N}
-        For increasing base current $I_B$, the collector voltage $U_C$ and the voltage across the resistor $U_{R_C}$ also increases.
-        Because $U_0$ should be constant, the voltage drops across the resistor $R$, which in turn stabilizes the operating point.
+	For increasing base current $I_B$, the collector voltage $U_C$ and the voltage across the resistor $U_{R_C}$ also increases.
+	Because $U_0$ should be constant, the voltage drops across the resistor $R$, which in turn stabilizes the operating point.
 
 	\clearpage
 	\section{Analysis}
@@ -209,7 +209,7 @@
 	Here we are tasked to match the impedance of a speaker, so we are able to hear an output. For this we firstly construct an Inverted Amplifiert and test the speaker solely without a common collector. We observe, that the speaker does not produce any sound, because we havent matched the impedance. Now we add a common collecter as a buffer amplifier, wich in theroy should be able to match the impedance of the speaker. Unfortunatly we could not get the circut running and test the hypothisis.
 
 	\subsection{Inverted amplifier}
-	\subsubsection{Phasere relationship between input and output}
+	\subsubsection*{Phasere relationship between input and output}
 	Now we build a common emitter on circut board I with $R_C=R_E=\SI{390}{\Omega}$, d$U_B=\SI{0.5}{V_{PP}}$, $U_B=\SI{1.5}{V}$ and we choose a capacity prior to the input signal of \SI{0.1}{\micro F}. As we can see in the xy (CH1, CH2) configuration in fig. \ref{fig:phasexy}, the phase is not linear, but eliptic. Thus we have not the same phase. We found out through experimenting, that the multiple elipsis come from noise. The phase relationship and especially the noise is also visible in fig. \ref{fig:phase}, as the lines are rather thicc. We can see that the phase diffrence is between $\frac{1}{2}\pi$ and $1\pi$, because we now have coupled the capacitor.
 	\begin{Figure}
 		\centering
@@ -223,12 +223,12 @@
 		\captionof{figure}{Phase relationship in voltage/time space}
 		\label{fig:phase}
 	\end{Figure}
-	\subsubsection{Voltage amplification of the inverted amplifier}
+	\subsubsection*{Voltage amplification of the inverted amplifier}
 	We measure the voltage amplification with diffrent values for the resistors $R_E$ and $R_C$. The results are display in tab. \ref{tab:voltage_amplification2}.
 	\begin{center}
 		\begin{tabular}{|c|c|c|c|}
 			\hline
-			$R_C$             & $R_E$             & amplification $\nu$ & $\nu = -\frac{R_C}{R_E}$ \\
+			$R_C$             & $R_E$             & amplification $\nu$  & $\nu = -\frac{R_C}{R_E}$ \\
 			\hline
 			\SI{360}{\Omega}  & \SI{470}{\Omega}  & \SI{-0.686+-0.024}{} & -0.830                   \\
 			\SI{360}{\Omega}  & \SI{1}{k\Omega}   & \SI{-0.437+-0.024}{} & -0.390                   \\
@@ -246,50 +246,96 @@
 		\captionof{table}{Voltage amplification for diffrent resistor combinations}
 		\label{tab:voltage_amplification2}
 	\end{center}
-  We notice that the part, where $R_C$ stays constant, the experimental values follow the theoretical ones in thier generall trend, but are not exactly the same. For the part where $R_E$ stays constant we observe that first the data follows the calculations, but to the end, with the highest restance, just drop. It seems that there is a sweetspot for an optimal amplification. Then it should have to do something with resonace, so the amplification is frequency dependent.
+	We notice, where $R_C$ stays constant, the experimental values for the amplification follow the theoretical ones in thier generall trend, but are not exactly the same. Where $R_E$ stays constant we observe that first the data follows the calculations, but to the end, with the highest restance, they just drop. It seems that there is a sweetspot for an optimal amplification. Then it should have to do something with resonace, so the amplification is frequency dependent. But since we expect that the formular for the theoreticle values is correct, we assume we have made some mistake for the last two experimental values.
 
-  \subsubsection{Resistance of a Transistor}
-  Now with the special case, that $R_E=\SI{0}{\Omega}$ and $E_C=\SI{390}{\Omega}$, we can read the peak-to-peak voltage from oscillogramm and calculate the amplification and $\beta=\frac{I_C}{I_E}$ with $I=\frac{U}{R}$.
-
+	\subsubsection*{Resistance of a Transistor}
+	Now with the special case, that $R_E=\SI{0}{\Omega}$ and $E_C=\SI{390}{\Omega}$, we can read the peak-to-peak voltage from oscillogramm in fig. \ref{fig:rn} and calculate the amplification. We calculate the amplification to be $\nu_0=\SI{-26.8+-1.0}{}$. $\beta=\SI{547+-27}{}$ has allready been determent in the last lab course. Now we can calculate the differential resistance of the Emitter-Base-Diod $r_{BE}$:
+	\begin{align*}
+		\nu_0                  & =-\beta\frac{R_C}{r_{BE}}     \\
+		\Leftrightarrow r_{BE} & =-\beta\frac{R_C}{\nu_0}      \\
+		                       & =\SI{7.96+-0.49}{\kilo\Omega}
+	\end{align*}
+	.
 	\begin{Figure}
 		\centering
 		\includegraphics[width=1\textwidth]{../data/DS0022.png}
-		\captionof{figure}{Phase relationship in phase space}
+		\captionof{figure}{Voltage amplification}
 		\label{fig:rn}
 	\end{Figure}
-        \subsection{Common Collector as Buffer Amplifier}
-        Here we are tasked to match the impedance of a speaker, so we are able to hear an output. For this we firstly construct an Inverted Amplifiert and test the speaker solely without a Common Collector. We observe, that the speaker does not produce any sound, because we havent matched the impedance. Now we add a Common Collecter as a Buffer Amplifier, wich in theroy should be able to match the impedance of the speaker. Unfortunatly we could not get the circut running and test the hypothisis. 
-        \subsection{Inverted Amplifier}
-        \subsubsection{Phasere Relationship between input and output}
-        Now we build a Common Emitter on Circut Board I 
+	We now plot the data from tab. \ref{tab:voltage_amplification2} in fig. \ref{fig:rcconst} and \ref{fig:reconst}. At this point we are tasked to display the theoretical line in the figures, however they diverge to the extend, that one of them would not be readable anymore. So we choose not to display the theoretical line, but rather the fit we have done to our data. As mentioned previously, the two last data points are probably not representative in any way, so they will be left out.
+	\begin{Figure}
+		\centering\resizebox{\textwidth}{!}{\input{amp_res_relation.tex}}
+		\captionof{figure}{}
+		\label{fig:rcconst}
+	\end{Figure}
+	\begin{Figure}
+		\centering\resizebox{\textwidth}{!}{\input{amp_res_relation2.tex}}
+		\captionof{figure}{}
+		\label{fig:reconst}
+	\end{Figure}
+	\begin{center}
+		\begin{tabular}{|c|c|}
+			\hline
+			Paramter & Wert                       \\
+			\hline
+			$\nu_0$  & \SI{-0.639+-0.095}{}       \\
+			$R_C$    & \SI{9.5+-4.7}{\kilo\Omega} \\
+			\hline
+		\end{tabular}
+		\captionof{table}{Fit-Paramter und Werte}
+		\label{tab:1.1}
+	\end{center}
+	\begin{center}
+		\begin{tabular}{|c|c|}
+			\hline
+			Paramter & Wert                                 \\
+			\hline
+			k        & \SI{492+-58}{\micro\frac{1}{\Omega}} \\
+			\hline
+		\end{tabular}
+		\captionof{table}{Fit-Paramter und Werte}
+		\label{tab:1.2}
+	\end{center}
+	We have got the values for the parameters presented in tab. \ref{tab:1.1} and \ref{tab:1.2}. Here we use
+	\begin{align*}
+		\frac{1}{v}(R_E) & = \frac{1}{v_0} - \frac{1}{R_C} \cdot R_E \text{ and} \\
+		v(R_C)           & = - k \cdot R_C                                       \\
+                     & \text{with }k=\frac{\beta}{r_{BE} + \gamma R_E} \text{.}
+	\end{align*}
+When comparing $\nu_0$, $R_C$ and $k$ to the previous calculated/set values, it is obvius that no fittet values are anywhere near the expected range or order. This is probably a consequence of bad execution of the experiment. Now, without the constructed circut, it is not easy to tell afterwards where exact our mistake took place. We noticed a lot of noice thoughout the whole lab course, that sometimes could be fixed, or at least fixed to an extend, by moving our connections or holding them in spesific but seemingly random places. So another source of error could have been the equipment, though we think with the right execution we would have gotten significant better results.
 
-        \subsection{Alternating current cancellation of negative feedback}
-        In this task, the noise visible on the oszillograph is reduced by increasing the voltage of the input signal.
-        \\\\Changing $R_E$ to be zero, the amplification $|\nu |$ is maximised.
-        The range in which the transistor has enough voltage to output a sinusoidal signal, meaning the signal lies within the dynamic range, is between $R_P  \in  \left[\SI{1.359}{k\ohm},\SI{3.161}{k\ohm}\right]$.
-        $R_P$ is the potentiometer changing the offset voltage.
-        For $R_E=\SI{390}{\ohm}$ (which is $|\nu |=1$), the potentiometer has a range of $R_P  \in  \left[\SI{1.178}{k\ohm},\SI{10}{k\ohm}=\text{max}\left(R_P\right)\right]$.
-        \\\\Now a capacitor with capacitance $C=\SI{0.1}{\micro F}$ is connected in parallel with $R_E$.
-        The previous amplification of around $10$ is achieved for a signal with frequency $\SI{44}{kHz}$.
-        This makes sense, because the capacitor in parallel acts as a low pass, letting frequencies below $\SI{44}{kHz}$ pass through it, such that no amplification of 10 is achieved.
-        The resistance above $\SI{44}{kHz}$ is high enough so that the signal passes through the transistor and gets amplified.
 
-        \subsection{Frequency response of a cascode circuit}
-        A \hyperref[fig:transistorverstärker]{transistor amplifier circuit} is constructed on \hyperref[fig:schaltbrett_2]{circuit board 2}.
-        Output 2 is used here.
-        \begin{Figure}
-                \centering
-                \includegraphics[width=0.6\textwidth]{schaltbrett_2.png}
-                \captionof{figure}{Circuit board 2; Abb. 3.5\cite{Praktikumsanleitung}} \label{fig:schaltbrett_2}
-        \end{Figure}
-        \begin{Figure}
-                \centering
-                \includegraphics[width=0.6\textwidth]{transistorverstärker.png}
-                \captionof{figure}{Transistor amplifier circuit using output 2; Abb. 3/4.15\cite{Praktikumsanleitung}} \label{fig:transistorverstärker}
-        \end{Figure}
-        To achieve an amplification of 10, the emitter and collector resistors are chosen to be $R_E=\SI{100}{\ohm}$ and $R_C=\SI{1}{k\ohm}=10\cdot R_E$.
-        The input signal is a sinusoidal wave of $\SI{100}{Hz}$ with $U_{PP}=\SI{100}{mV}$.
-        The DC--offset is set via a voltage divider.
+
+
+
+
+	\subsection{Alternating current cancellation of negative feedback}
+	In this task, the noise visible on the oszillograph is reduced by increasing the voltage of the input signal.
+	\\\\Changing $R_E$ to be zero, the amplification $|\nu |$ is maximised.
+	The range in which the transistor has enough voltage to output a sinusoidal signal, meaning the signal lies within the dynamic range, is between $R_P  \in  \left[\SI{1.359}{k\ohm},\SI{3.161}{k\ohm}\right]$.
+	$R_P$ is the potentiometer changing the offset voltage.
+	For $R_E=\SI{390}{\ohm}$ (which is $|\nu |=1$), the potentiometer has a range of $R_P  \in  \left[\SI{1.178}{k\ohm},\SI{10}{k\ohm}=\text{max}\left(R_P\right)\right]$.
+	\\\\Now a capacitor with capacitance $C=\SI{0.1}{\micro F}$ is connected in parallel with $R_E$.
+	The previous amplification of around $10$ is achieved for a signal with frequency $\SI{44}{kHz}$.
+	This makes sense, because the capacitor in parallel acts as a low pass, letting frequencies below $\SI{44}{kHz}$ pass through it, such that no amplification of 10 is achieved.
+	The resistance above $\SI{44}{kHz}$ is high enough so that the signal passes through the transistor and gets amplified.
+
+	\subsection{Frequency response of a cascode circuit}
+	A \hyperref[fig:transistorverstärker]{transistor amplifier circuit} is constructed on \hyperref[fig:schaltbrett_2]{circuit board 2}.
+	Output 2 is used here.
+	\begin{Figure}
+		\centering
+		\includegraphics[width=0.6\textwidth]{schaltbrett_2.png}
+		\captionof{figure}{Circuit board 2; Abb. 3.5\cite{Praktikumsanleitung}} \label{fig:schaltbrett_2}
+	\end{Figure}
+	\begin{Figure}
+		\centering
+		\includegraphics[width=0.6\textwidth]{transistorverstärker.png}
+		\captionof{figure}{Transistor amplifier circuit using output 2; Abb. 3/4.15\cite{Praktikumsanleitung}} \label{fig:transistorverstärker}
+	\end{Figure}
+	To achieve an amplification of 10, the emitter and collector resistors are chosen to be $R_E=\SI{100}{\ohm}$ and $R_C=\SI{1}{k\ohm}=10\cdot R_E$.
+	The input signal is a sinusoidal wave of $\SI{100}{Hz}$ with $U_{PP}=\SI{100}{mV}$.
+	The DC--offset is set via a voltage divider.
 
 \end{multicols}
 
