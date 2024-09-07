@@ -116,7 +116,7 @@
 		\includegraphics[width=0.6\textwidth]{spannungsgegenkopplung.png}
 		\captionof{figure}{Transistor amplifier as common collector with negative feedback (voltage); figure 3/4.16 \cite{Praktikumsanleitung}}
 	\end{Figure}
-	In this figure the resistor $R$ sets the base potential as well as the operating point and cupples the voltage from the collector back to the base.
+	In this figure the resistor $R$ sets the base potential as well as the operating point and couples the voltage from the collector back to the base.
 	Due to this negative feedback the base current is reduced although the input current remains constant.
 
 	\newpage
@@ -265,18 +265,18 @@
 	We now plot the data from tab. \ref{tab:voltage_amplification2} in fig. \ref{fig:rcconst} and \ref{fig:reconst}. At this point we are tasked to display the theoretical line in the figures, however they diverge to the extend, that one of them would not be readable anymore. So we choose not to display the theoretical line, but rather the fit we have done to our data. As mentioned previously, the two last data points are probably not representative in any way, so they will be left out.
 	\begin{Figure}
 		\centering\resizebox{\textwidth}{!}{\input{amp_res_relation.tex}}
-		\captionof{figure}{}
+		\captionof{figure}{Amplification-Resistance-Relation for constant $R_C$}
 		\label{fig:rcconst}
 	\end{Figure}
 	\begin{Figure}
 		\centering\resizebox{\textwidth}{!}{\input{amp_res_relation2.tex}}
-		\captionof{figure}{}
+		\captionof{figure}{Amplification-Resistance-Relation for constant $R_E$}
 		\label{fig:reconst}
 	\end{Figure}
 	\begin{center}
 		\begin{tabular}{|c|c|}
 			\hline
-			Paramter & Wert                       \\
+			Paramter & Value                      \\
 			\hline
 			$\nu_0$  & \SI{-0.639+-0.095}{}       \\
 			$R_C$    & \SI{9.5+-4.7}{\kilo\Omega} \\
@@ -288,7 +288,7 @@
 	\begin{center}
 		\begin{tabular}{|c|c|}
 			\hline
-			Paramter & Wert                                 \\
+			Paramter & Value                                \\
 			\hline
 			k        & \SI{492+-58}{\micro\frac{1}{\Omega}} \\
 			\hline
@@ -298,16 +298,11 @@
 	\end{center}
 	We have got the values for the parameters presented in tab. \ref{tab:1.1} and \ref{tab:1.2}. Here we use
 	\begin{align*}
-		\frac{1}{v}(R_E) & = \frac{1}{v_0} - \frac{1}{R_C} \cdot R_E \text{ and} \\
-		v(R_C)           & = - k \cdot R_C                                       \\
-                     & \text{with }k=\frac{\beta}{r_{BE} + \gamma R_E} \text{.}
+		\frac{1}{v}(R_E) & = \frac{1}{v_0} - \frac{1}{R_C} \cdot R_E \text{ and}    \\
+		v(R_C)           & = - k \cdot R_C                                          \\
+		                 & \text{with }k=\frac{\beta}{r_{BE} + \gamma R_E} \text{.}
 	\end{align*}
-When comparing $\nu_0$, $R_C$ and $k$ to the previous calculated/set values, it is obvius that no fittet values are anywhere near the expected range or order. This is probably a consequence of bad execution of the experiment. Now, without the constructed circut, it is not easy to tell afterwards where exact our mistake took place. We noticed a lot of noice thoughout the whole lab course, that sometimes could be fixed, or at least fixed to an extend, by moving our connections or holding them in spesific but seemingly random places. So another source of error could have been the equipment, though we think with the right execution we would have gotten significant better results.
-
-
-
-
-
+	When comparing $\nu_0$, $R_C$ and $k$ to the previous calculated/set values, it is obvius that no fittet values are anywhere near the expected range or order. This is probably a consequence of bad execution of the experiment. Now, without the constructed circut, it is not easy to tell afterwards where exact our mistake took place. We noticed a lot of noice thoughout the whole lab course, that sometimes could be fixed, or at least fixed to an extend, by moving our connections or holding them in spesific but seemingly random places. So another source of error could have been the equipment, though we think with the right execution we would have gotten significant better results.
 
 	\subsection{Alternating current cancellation of negative feedback}
 	In this task, the noise visible on the oszillograph is reduced by increasing the voltage of the input signal.
@@ -334,8 +329,66 @@ When comparing $\nu_0$, $R_C$ and $k$ to the previous calculated/set values, it 
 		\captionof{figure}{Transistor amplifier circuit using output 2; Abb. 3/4.15\cite{Praktikumsanleitung}} \label{fig:transistorverstärker}
 	\end{Figure}
 	To achieve an amplification of 10, the emitter and collector resistors are chosen to be $R_E=\SI{100}{\ohm}$ and $R_C=\SI{1}{k\ohm}=10\cdot R_E$.
-	The input signal is a sinusoidal wave of $\SI{100}{Hz}$ with $U_{PP}=\SI{100}{mV}$.
+	The input signal is a sinusoidal wave of $\SI{100}{Hz}$ with $U_{PP}=\SI{200}{mV}$.
 	The DC--offset is set via a voltage divider.
+	\begin{Figure}
+		\centering
+		\includegraphics[width=\textwidth]{../plot/ex4_crop.pdf}
+		\captionof{figure}{Bode--plot of a transistor amplifier circuit} \label{plot:bode}
+	\end{Figure}
+	\begin{center}
+		\begin{tabular}{|c|c|c|}
+			\hline
+			frequency [Hz] & voltage [V] & $\nu$ [a.u.] \\
+			\hline
+			100            & 1.7         & 8.5          \\
+			1000           & 1.7         & 8.5          \\
+			10000          & 1.7         & 8.5          \\
+			100000         & 1.6         & 8.0          \\
+			200000         & 1.5         & 7.5          \\
+			500000         & 1.2         & 6.0          \\
+			800000         & 0.9         & 4.5          \\
+			1000000        & 0.8         & 4.0          \\
+			2000000        & 0.6         & 3.0          \\
+			5000000        & 0.2         & 1.0          \\
+			\hline
+		\end{tabular}
+		\captionof{table}{Values to \ref{plot:bode}}
+	\end{center}
+	The fit curve is given by $f\left(x\right)=x^m\cdot b$, with $m=\SI{-0.695813+-0.2463}{Hz^{-1}}$ and $b=\SI{62123.8+-2.149e+05}{}$.
+	As expected, the amplification stays the same until the cutoff frequency $f_\text{grenz}=\SI{355+-5}{kHz}$ is reached.
+	After that, the amplification decreases exponentially.
+	At an amplification of $\nu =1$ the input voltage of $\SI{200}{mV}$ is reached.
+	The transit frequency is calculated via
+	\begin{align}
+		f_T=f_\text{grenz}\nu _0=\SI{355+-5}{kHz}\cdot 8.5=\SI{3017.5+-42.5}{kHz}
+		.\end{align}
+	To calculate the bandwidth one can solve for $x$ in
+	\begin{align}
+		1=x^{m}\cdot b\quad \Leftrightarrow \quad x=B=\SI{7.73+-0.61}{MHz}
+		.\end{align}
+	Due to lack of time, it was not possible to construct the cacode circuit and measure the amplification--frequency relation again.
+	Though it was expected to see a decline in amplification for an increase in bandwidth.
+	The transit frequency would have still been the same.
+
+	\subsection{Amplifier with negative feedback}
+	Due to time contrains it was not possible to complete the final task.
+	\begin{Figure}
+		\centering
+		\includegraphics[width=\textwidth]{verstärker_mit_spannungsgegenkopplung}
+		\captionof{figure}{Amplifier with negative feedback; Abb. 4.1\cite{Praktikumsanleitung}}
+	\end{Figure}
+	With $R=\SI{100}{\kilo\ohm}$ as well as $R=\SI{33}{k\ohm}$ the voltage amplification $\diff[]{U_\text{out}}{U_\text{in}}$ should have been measured for an input frequency of $f=\SI{1}{kHz}$.
+	\\\indent Because $R_\text{in}$ reduces the amplification, measurements have to be taken after $R_\text{in}$ as well.
+	One would expect an increase in amplification because no voltage can drop across $R_\text{in}$.
+
+	\section{Conclusion}
+  In this lab course we have further explored the common collector as voltage amplifier. Furthermore we build a common collector as buffer amplifier with the example of a speaker. This was, due to some complications, sadly not possible to constuct, but the theory was still understood. After the common collector, we build a common emitter, wich acted as inverter amplifier. The inversion was nicely observed with Lissajous Figures. Aftwerards we treid to measure the amplification, wich was not quite possible. We took measuremnts but in the analysis it was quite quikly clear, that the results were not following the theory. But the measurements were still good enough to extract e.g. $\nu_0$ and directly see the discrepancy ($\nu_0=\SI{-26.8+-1.0}{}$ in comparison to the \SI{-0.639+-0.095}{} through the fitting). Also one could demonstrate the effect of an high--pass used in an amplifier, by connecting a capacitor in parallel and comparing the frequencies at which a similar amplification is achieved.
+	\\\indent The cutoff frequency of an amplifier circuit is demonstrated in a bode--plot (\ref{plot:bode}).
+	It can be seen that the amplification stays constant and suddenly falls at the cutoff frequency of $f_\text{grenz}=\SI{355+-5}{kHz}$.
+	One can now calculate the transit frequency to be $f_T=\SI{3017.5+-42.5}{kHz}$ and the bandwidth $B=\SI{7.73+-0.61}{MHz}$.
+	\\\indent Due to lack of time the comparison with a cascode circuit as well as the last task couldn't be completed.
+	The expected results have been discussed nevertheless.
 
 \end{multicols}
 
