@@ -1,8 +1,8 @@
 set terminal epslatex color
-set output "output.tex"
-set title 'Frequenzabhängige Verstärkung'
+set output "preE_output.tex"
+set notitle
 set xlabel '$f$ [Hz]'
-set ylabel '$v(f)$ [a.u.]'
+set ylabel '$\nu(f)$ [a.u.]'
 set grid
 unset key
 
