@@ -187,7 +187,25 @@
         \\\indent The input impedance is very high and the output impedance very low. 
 
         \subsection{F}
+        The first \textsc{Kirchhoff}'s law states (\textsc{Einstein} notation)
+        \begin{align} 
+                &&&& \sum_{i}^{}I_i &= -I_\text{out} &&&& \\
+                \Leftrightarrow  &&&& \dfrac{U_i}{R_i} &= -\dfrac{U_\text{out}}{R_0}&&&& \\
+                \Leftrightarrow  &&&& -\dfrac{R_0}{R_i}U_i &= U_\text{out} &&&& \\
+                \Leftrightarrow  &&&& c_iU_i &= U_\text{out}. &&&& 
+        \end{align} 
         
+        \subsection{G}
+        \begin{align} 
+                &&&& U_+ &= U_2\dfrac{R_2}{R_1+R_2} &&&& |\text{voltage divider}\\
+                &&&& U_- &= U_+ &&&& |\text{golden rule}\\
+                &&&& I_1 &= \dfrac{U_1-U_-}{R_1} &&&& |\text{\textsc{Ohm}'s law}\\
+                &&&& I_2 &= I_1 &&&& |\text{golden rule}\\
+                &&&& I_2 &= \dfrac{U_-U_\text{out}}{R_2} &&&& |\text{\textsc{Ohm}'s law}
+        .\end{align}
+        The final result $U_\text{out}=\tfrac{R_2}{R_1}\left(U_2-U_1\right)$ can be calculated using the above relations.
+
+        \subsection{H}
 
         \newpage
         \section{Auswertung}
