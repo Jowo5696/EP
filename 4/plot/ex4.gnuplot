@@ -2,7 +2,7 @@ set terminal epslatex color
 set output "ex4_output.tex"
 set notitle
 set xlabel '$f$ [Hz]'
-set ylabel '$\nu$ [a.u.]'
+set ylabel '$\nu=\frac{U_\mathrm{out}}{U_\mathrm{in}}=\frac{U_\mathrm{out}}{\SI{0.2}{V}}$ [a.u.]'
 set grid
 #set key box bottom left width -5 # 'samplen x' sets how much space the symbol takes
 unset key

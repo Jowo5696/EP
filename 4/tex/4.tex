@@ -293,8 +293,27 @@
         \begin{Figure}
                 \centering
                 \includegraphics[width=\textwidth]{../plot/ex4_crop.pdf}
-                \captionof{figure}{Bode--diagram of a transistor amplifier circuit}
+                \captionof{figure}{Bode--plot of a transistor amplifier circuit} \label{plot:bode}
         \end{Figure}
+        \begin{center}
+                \begin{tabular}{|c|c|c|}
+                        \hline
+                        frequency [Hz] & voltage [V] & $\nu$ [a.u.]\\
+                        \hline
+                        100&1.7&8.5\\
+                        1000&1.7&8.5\\
+                        10000&1.7&8.5\\
+                        100000&1.6&8.0\\
+                        200000&1.5&7.5\\
+                        500000&1.2&6.0\\
+                        800000&0.9&4.5\\
+                        1000000&0.8&4.0\\
+                        2000000&0.6&3.0\\
+                        5000000&0.2&1.0\\
+                        \hline
+                \end{tabular}
+                \captionof{table}{Values to \ref{plot:bode}}
+        \end{center}
         The fit curve is given by $f\left(x\right)=x^m\cdot b$, with $m=\SI{-0.695813+-0.2463}{Hz^{-1}}$ and $b=\SI{62123.8+-2.149e+05}{}$.
         As expected, the amplification stays the same until the cutoff frequency $f_\text{grenz}=\SI{355+-5}{kHz}$ is reached.
         After that, the amplification decreases exponentially.
@@ -321,6 +340,14 @@
         With $R=\SI{100}{\kilo\ohm}$ as well as $R=\SI{33}{k\ohm}$ the voltage amplification $\diff[]{U_\text{out}}{U_\text{in}}$ should have been measured for an input frequency of $f=\SI{1}{kHz}$.
         \\\indent Because $R_\text{in}$ reduces the amplification, measurements have to be taken after $R_\text{in}$ as well.
         One would expect an increase in amplification because no voltage can drop across $R_\text{in}$.
+
+        \section{Conclusion}
+        Also one could demonstrate the effect of an high--pass used in an amplifier, by connecting a capacitor in parallel and comparing the frequencies at which a similar amplification is achieved.
+        \\\indent The cutoff frequency of an amplifier circuit is demonstrated in a bode--plot (\ref{plot:bode}).
+        It can be seen that the amplification stays constant and suddenly falls at the cutoff frequency of $f_\text{grenz}=\SI{355+-5}{kHz}$.
+        One can now calculate the transit frequency to be $f_T=\SI{3017.5+-42.5}{kHz}$ and the bandwidth $B=\SI{7.73+-0.61}{MHz}$.
+        \\\indent Due to lack of time the comparison with a cascode circuit as well as the last task couldn't be completed.
+        The expected results have been discussed nevertheless.
 
 \end{multicols}
 
