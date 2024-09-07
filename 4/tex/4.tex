@@ -116,7 +116,7 @@
                 \includegraphics[width=0.6\textwidth]{spannungsgegenkopplung.png}
                 \captionof{figure}{Transistor amplifier as common collector with negative feedback (voltage); figure 3/4.16 \cite{Praktikumsanleitung}}
         \end{Figure}
-        In this figure the resistor $R$ sets the base potential as well as the operating point and cupples the voltage from the collector back to the base.
+        In this figure the resistor $R$ sets the base potential as well as the operating point and couples the voltage from the collector back to the base.
         Due to this negative feedback the base current is reduced although the input current remains constant.
 
 	\newpage
@@ -288,8 +288,39 @@
                 \captionof{figure}{Transistor amplifier circuit using output 2; Abb. 3/4.15\cite{Praktikumsanleitung}} \label{fig:transistorverstärker}
         \end{Figure}
         To achieve an amplification of 10, the emitter and collector resistors are chosen to be $R_E=\SI{100}{\ohm}$ and $R_C=\SI{1}{k\ohm}=10\cdot R_E$.
-        The input signal is a sinusoidal wave of $\SI{100}{Hz}$ with $U_{PP}=\SI{100}{mV}$.
+        The input signal is a sinusoidal wave of $\SI{100}{Hz}$ with $U_{PP}=\SI{200}{mV}$.
         The DC--offset is set via a voltage divider.
+        \begin{Figure}
+                \centering
+                \includegraphics[width=\textwidth]{../plot/ex4_crop.pdf}
+                \captionof{figure}{Bode--diagram of a transistor amplifier circuit}
+        \end{Figure}
+        The fit curve is given by $f\left(x\right)=x^m\cdot b$, with $m=\SI{-0.695813+-0.2463}{Hz^{-1}}$ and $b=\SI{62123.8+-2.149e+05}{}$.
+        As expected, the amplification stays the same until the cutoff frequency $f_\text{grenz}=\SI{355+-5}{kHz}$ is reached.
+        After that, the amplification decreases exponentially.
+        At an amplification of $\nu =1$ the input voltage of $\SI{200}{mV}$ is reached.
+        The transit frequency is calculated via
+        \begin{align} 
+                f_T=f_\text{grenz}\nu _0=\SI{355+-5}{kHz}\cdot 8.5=\SI{3017.5+-42.5}{kHz}
+        .\end{align} 
+        To calculate the bandwidth one can solve for $x$ in
+        \begin{align} 
+                1=x^{m}\cdot b\quad \Leftrightarrow \quad x=B=\SI{7.73+-0.61}{MHz}
+        .\end{align} 
+        Due to lack of time, it was not possible to construct the cacode circuit and measure the amplification--frequency relation again.
+        Though it was expected to see a decline in amplification for an increase in bandwidth.
+        The transit frequency would have still been the same.
+
+        \subsection{Amplifier with negative feedback}
+        Due to time contrains it was not possible to complete the final task.
+        \begin{Figure}
+                \centering
+                \includegraphics[width=\textwidth]{verstärker_mit_spannungsgegenkopplung}
+                \captionof{figure}{Amplifier with negative feedback; Abb. 4.1\cite{Praktikumsanleitung}}
+        \end{Figure}
+        With $R=\SI{100}{\kilo\ohm}$ as well as $R=\SI{33}{k\ohm}$ the voltage amplification $\diff[]{U_\text{out}}{U_\text{in}}$ should have been measured for an input frequency of $f=\SI{1}{kHz}$.
+        \\\indent Because $R_\text{in}$ reduces the amplification, measurements have to be taken after $R_\text{in}$ as well.
+        One would expect an increase in amplification because no voltage can drop across $R_\text{in}$.
 
 \end{multicols}
 
