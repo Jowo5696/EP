@@ -1,0 +1,51 @@
+# +-----------+
+# | bode plot |
+# +-----------+
+# out(9)[V] frequency[kHz] // signal 1 Vpp
+0.30 1000
+1.00 240 # transit ferquency
+1.20 200
+2.40 100
+3.12 75
+4.65 50
+6.50 35
+7.48 30
+8.69 25
+9.92 20
+10.9 10
+11.1 2
+11.1 1
+11.6 0.1
+11.5 0.01
+
+
+# +----------------------------+
+# | verschiedene verstärkungen |
+# +----------------------------+
+# gain v=101 -> Z2 = 470k\ohm Z1 = 4.7k\ohm
+# out(9)[V] frequency(2)[kHz] // signal 100 mVpp
+101 2.0
+80 5.4
+60 9.3
+40 15.9
+20 33.1
+10 70.7
+2 220.0
+1 600.0 # transit frequency
+
+
+# OSZI SHOWS DOUBLE FREQ 
+# +-----------+
+# | slew rate |
+# +-----------+
+# pic 0024 0025
+# increase frequency: slew rate stays the same
+#                       amplitude decreases as frequency increases
+#                       plateaus of constant voltage shorten
+
+
+# +---------------------+
+# | capacitor in series |
+# +---------------------+
+# R2 = 10k\ohm R1 = 1k\ohm C = 0.1\micro F (in series with R1)
+# expectation: high frequencies > low impedance > signal is not amplified
