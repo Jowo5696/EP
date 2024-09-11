@@ -125,7 +125,7 @@
         \begin{Figure}
                 \centering
                 \includegraphics[width=0.6\textwidth]{noninverting_amp.png}
-                \captionof{figure}{Non--inverting amplifier; Abb.\ 5/6.4\cite{Praktikumsanleitung}}
+                \captionof{figure}{Non--inverting amplifier; Abb.\ 5/6.4\cite{Praktikumsanleitung}} \label{fig:non--inverting amplifier}
         \end{Figure}
         \noindent The opamp can also be used as an adder.
         As discussed in \hyperref[pre:F]{preliminary task F} the output voltage is an addition of input voltages
@@ -327,7 +327,16 @@
         The output voltage can be modeled with an exponential function.
 
         \newpage
-        \section{Auswertung}
+        \section{Analysis}
+
+        \subsection{Non--inverting amplifier}
+        The \hyperref[fig:non--inverting amplifier]{non--inverting amplifier} is built with a gain of $\nu =11$ (i.e.\ $R_1=\SI{1}{k\ohm}$ and $R_2=\SI{10}{k\ohm}$).
+        A signal of $U_{p p}=\SI{1}{V}$ is applied to the circuit and the gain is observed for different frequencies.
+        \begin{Figure}
+                \centering
+                \includegraphics[width=0.6\textwidth]{../plot/5_1_2_crop.pdf}
+                \captionof{figure}{\textsc{Bode}--plot of a non--inverting amplifier with $\nu =11$}
+        \end{Figure}
 \end{multicols}
 
 \clearpage
