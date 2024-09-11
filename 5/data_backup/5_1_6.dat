@@ -1,0 +1,3 @@
+# R1 = 1k\ohm, R2 = 2.2k\ohm
+# 100Hz 1Vpp 0046
+# increasing DC: increases the offset of the signal. (under AC coupling the offset gets ignored)
