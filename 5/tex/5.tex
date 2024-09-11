@@ -335,8 +335,62 @@
         \begin{Figure}
                 \centering
                 \includegraphics[width=0.6\textwidth]{../plot/5_1_2_crop.pdf}
-                \captionof{figure}{\textsc{Bode}--plot of a non--inverting amplifier with $\nu =11$}
+                \captionof{figure}{\textsc{Bode}--plot of a non--inverting amplifier with $\nu =11$} \label{fig:bode-plot}
         \end{Figure}
+        \noindent As one can see, up to $f_\text{grenz}\approx \SI{18+-1}{kHz}$ the gain stays the same (at $\nu \approx 11.3$).
+        After $f_\text{grenz}$ the gain decreases exponentially and is 1 at $f_T=\SI{240}{kHz}$.
+        \begin{center}
+                \begin{tabular}{|c|c|}
+                        \hline
+                        frequency $f$ [kHz] & gain $\nu $ [a.u.]\\
+                        \hline
+                        0.30 & 1000\\
+                        1.00 & 240\\
+                        1.20 & 200\\
+                        2.40 & 100\\
+                        3.12 & 75\\
+                        4.65 & 50\\
+                        6.50 & 35\\
+                        7.48 & 30\\
+                        8.69 & 25\\
+                        9.92 & 20\\
+                        10.9 & 10\\
+                        11.1 & 2\\
+                        11.1 & 1\\
+                        11.6 & 0.1\\
+                        11.5 & 0.01\\
+                        \hline
+                \end{tabular}
+                \captionof{table}{Values for \hyperref[fig:bode-plot]{\textsc{Bode}--plot}}
+        \end{center}
+        \noindent
+        Because the opamp model LM301AP is not listed in the protocoll and has no onilne documentation it is not possible to compare the measured transit frequency to the exact value.
+        \\\\\noindent Now the gain is set to $\nu =101$ by using $R_2=\SI{470}{k\ohm}$ and $R_1=\SI{4.7}{k\ohm}$.
+        The signal has a peak to peak voltage of $\SI{100}{mV}$.
+        \begin{Figure}
+                \centering
+                \includegraphics[width=0.6\textwidth]{../plot/5_1_2_2_crop.pdf}
+                \captionof{figure}{\textsc{Bode}--plot for different gain}
+        \end{Figure}
+        The cutoff frequency lies at $f_\text{grenz}=\SI{7+-0.5}{kHz}$; the transit frequency lies at $f_T=\SI{600}{kHz}$.
+        For $\nu =2$ the frequency lies at $f_2=\SI{220}{kHz}$.
+        Due to the heavy negative feedback, the amplification decreases linear (in the loglog plot).
+        \\\\ For $\nu =101$ a square--wave signal with frequency of $f=\SI{1}{kHz}$ and $U_{p p}=\SI{20}{V}$ is set.
+        \begin{Figure}
+                \centering
+                \includegraphics[width=0.6\textwidth]{../data/DS0026_negate.png}
+                \captionof{figure}{Slew rate for said square--wave}
+        \end{Figure}
+        \noindent The slew rate is the time it takes the oscillograph to raise a signal from 10\% to 90\%.
+        From the cursors on the oszillogramm, one can see the time difference to be $\Delta =\SI{66}{\micro s}$.
+        \\\indent When increasing the frequency, the slew rate stays the same, because the slew rate is an intrinsic property of the oscillograph and should not change if any outside parameters change.
+        The amplitude decreases as the frequency increases because the plateaus of constant voltage shorten.
+        If the frequency is high enough, the signal will change polarity too fast for the circuit to be complete saturated.
+        There are no differences to the sine signal.
+        The slew rate is also not relevant for the sine signal, because it does not switch sign instantly.
+        \\\\ Now a gain of $\nu =11$ (with $R_1=\SI{10}{k\ohm}$ and $R_2=\SI{100}{k\ohm}$) is set and a capacitor with $C=\SI{0.1}{\micro F}$ is connected in series with $R_1$.
+        Due to different unkown reasons, like a loose connection in a cable, nothing seemed to have changend, when connecting the capacitor.
+        Our expectation was that the capacitor and resistor would behave like a high--pass, meaning that signals with high frequencies would rather run through the capacitor into ground than the opamp, resulting in high frequency signals not being amplified.
 \end{multicols}
 
 \clearpage

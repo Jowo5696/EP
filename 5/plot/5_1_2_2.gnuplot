@@ -1,6 +1,6 @@
 reset
 set terminal epslatex color
-set output "5_1_2_output.tex"
+set output "5_1_2_2_output.tex"
 unset title
 set xlabel '$f$ [kHz]'
 set ylabel '$\nu$ [a.u.]'
@@ -21,14 +21,15 @@ set style line 10 lt rgb "#cab2d6" pt 13 ps .5 # pastel purple
 
 set logscale xy 10
 
-set arrow from 20, graph 0 to 20, graph 1 nohead lw 3
-set label at 23,.2 '$f_{\mathrm{grenz}}=\SI{18+-1}{kHz}$'
-set label at .2,8 '$\nu=11.3$'
+set arrow from 7, graph 0 to 7, graph 1 nohead lw 3
+set label at 8,0.7 '$f_{\mathrm{grenz}}=\SI{7.0+-0.5}{kHz}$'
+set label at 1.2,120 '$\nu = 101$'
 
-set yrange[0:20]
-set xrange[0:1000]
-f(x)=x**m*n
-fit f(x) '../data/raw_5_1_2.dat' u 2:1 every ::0::7 via m,n
-plot '../data/raw_5_1_2.dat' u 2:1:(0.09) with xerrorbars ls 1 ps 1.5,\
-        11.3 ls 2 lw 3,\
+set xrange[1:1000]
+set yrange[0:200]
+
+f(x) = x**m*n
+fit f(x) '../data/raw_5_1_2_2.dat' u 2:1 every ::4::7 via m,n
+plot '../data/raw_5_1_2_2.dat' u 2:1:(0.09) with xerrorbars ls 1 ps 1.5,\
+        101 ls 2 lw 3,\
         f(x) ls 3 lw 3
