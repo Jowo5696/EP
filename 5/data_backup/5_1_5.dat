@@ -1,0 +1,14 @@
+# pic 0032 100Hz
+# pic 0033 300Hz
+# pic 0034 50Hz
+
+# pic 0035 2.0Vpp
+# pic 0036 1.0Vpp
+# pic 0037 0.5Vpp
+
+# pic 0038 w/o capacitor (0.5Vpp, 100Hz)
+
+# pic 0042/0043 phase relation
+
+# changing amplitude: does nothing to phase
+# changing frequency: shifts phase (40Hz: phase = pi/2) 0044/0045
