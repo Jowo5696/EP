@@ -8,3 +8,22 @@
 \contentsline {figure}{\numberline {7}{\ignorespaces Astable multivibrator; Abb.\ 5/6.15\cite {Praktikumsanleitung}}}{2}{figure.7}%
 \contentsline {figure}{\numberline {8}{\ignorespaces Time dependend amplification of a non--invertible amplifier as a \textsc {Bode}--plot}}{3}{figure.8}%
 \contentsline {figure}{\numberline {9}{\ignorespaces Astable multivibrator, voltage curve}}{4}{figure.9}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Sawtooth-Signal with calculated amplitudes}}{5}{figure.10}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Sawtooth-Signal with found amplitudes}}{5}{figure.11}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Schematic of a constant current source \cite {Praktikumsanleitung}}}{5}{figure.12}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Integrator with a square wave signal with \SI {100}{Hz} and \SI {1}{V_{PP}}.}}{6}{figure.13}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Integrator with a square wave signal with \SI {300}{Hz} and \SI {1}{V_{PP}}.}}{6}{figure.14}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Integrator with a square wave signal with \SI {80}{Hz} and \SI {1}{V_{PP}}.}}{6}{figure.15}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Integrator with a square wave signal with \SI {100}{Hz} and \SI {2}{V_{PP}}.}}{7}{figure.16}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Integrator with a square wave signal with \SI {100}{Hz} and \SI {1}{V_{PP}}.}}{7}{figure.17}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Integrator with a square wave signal with \SI {100}{Hz} and \SI {0.5}{V_{PP}}.}}{7}{figure.18}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Integrator wihtout \SI {1}{\mega \Omega } resistor with a square wave signal with \SI {100}{Hz} and \SI {0.5}{V_{PP}}.}}{7}{figure.19}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Integration of a sine wave.}}{8}{figure.20}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Lissajour figure of the sine wave and its integrated cosine output.}}{8}{figure.21}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Integration of a sine wave with \SI {100}{Hz} and \SI {1}{V_{PP}}}}{8}{figure.22}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Integration of a sine wave with \SI {100}{Hz} and \SI {1}{V_{PP}} in XY channel configuration as Lissajour figure.}}{8}{figure.23}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Integration of a sine wave with \SI {40}{Hz} and \SI {1}{V_{PP}}}}{9}{figure.24}%
+\contentsline {figure}{\numberline {25}{\ignorespaces Integration of a sine wave with \SI {40}{Hz} and \SI {1}{V_{PP}} in XY channel configuration as Lissajour figure.}}{9}{figure.25}%
+\contentsline {figure}{\numberline {26}{\ignorespaces Amplification of a sine wave with no base voltage.}}{9}{figure.26}%
+\contentsline {figure}{\numberline {27}{\ignorespaces Amplification of a sine wave with a base voltage of \SI {0.5}{V}.}}{9}{figure.27}%
+\contentsline {figure}{\numberline {28}{\ignorespaces Amplification of a sine wave with a base voltage of \SI {1.5}{V}.}}{10}{figure.28}%
