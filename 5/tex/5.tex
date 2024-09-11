@@ -125,7 +125,7 @@
 	\begin{Figure}
 		\centering
 		\includegraphics[width=0.6\textwidth]{noninverting_amp.png}
-		\captionof{figure}{Non--inverting amplifier; Abb.\ 5/6.4\cite{Praktikumsanleitung}}
+		\captionof{figure}{Non--inverting amplifier; Abb.\ 5/6.4\cite{Praktikumsanleitung}} \label{fig:non--inverting amplifier}
 	\end{Figure}
 	\noindent The opamp can also be used as an adder.
 	As discussed in \hyperref[pre:F]{preliminary task F} the output voltage is an addition of input voltages
@@ -328,6 +328,15 @@
 
 	\newpage
 	\section{Analysis}
+	\subsection{Non--inverting amplifier}
+	The \hyperref[fig:non--inverting amplifier]{non--inverting amplifier} is built with a gain of $\nu =11$ (i.e.\ $R_1=\SI{1}{k\ohm}$ and $R_2=\SI{10}{k\ohm}$).
+	A signal of $U_{p p}=\SI{1}{V}$ is applied to the circuit and the gain is observed for different frequencies.
+	\begin{Figure}
+		\centering
+		\includegraphics[width=0.6\textwidth]{../plot/5_1_2_crop.pdf}
+		\captionof{figure}{\textsc{Bode}--plot of a non--inverting amplifier with $\nu =11$}
+	\end{Figure}
+
 	\subsection{Adder}
 	With the help of Tri-Sinewave-Generator we generate three Sinewaves with \SI{50}{Hz}, \SI{100}{Hz} and \SI{150}{Hz}. The goal is to produce a sawtooth-signal. For that we look at the taylor expansion and find the amplitudes for our frequencies.
 	\begin{align}
@@ -349,155 +358,155 @@
 	\end{Figure}
 	For this Outputsignal we used
 	\begin{align*}
-		U(f=\SI{50}{Hz})  & =1\cdot U_0\text{,}\\
-    U(f=\SI{100}{Hz}) & =\frac{1}{2}\cdot U_0\text{\;and}\\
-    U(f=\SI{150}{Hz}) & =\frac{1}{6}\cdot U_0\text{.}
+		U(f=\SI{50}{Hz})  & =1\cdot U_0\text{,}               \\
+		U(f=\SI{100}{Hz}) & =\frac{1}{2}\cdot U_0\text{\;and} \\
+		U(f=\SI{150}{Hz}) & =\frac{1}{6}\cdot U_0\text{.}
 	\end{align*}
-  This difference from calculated to experimental optimum, could be a result of frequency dependent volatge, voltage loss from overlooked resistance or simply bad equipment.
-  \subsection{Constant current source}
-  In this subsection we build a constant current source circut, thats shown in the schematic in fig. \ref{fig:ccs}. We expect a current of $I_{R_2}=\frac{U}{R_1}=\frac{\SI{9.4}{V}}{\SI{47}{k\Omega}}=\SI{0.2}{mA}$. For $R_2$ we choose \SI{10}{k\Omega}.
+	This difference from calculated to experimental optimum, could be a result of frequency dependent volatge, voltage loss from overlooked resistance or simply bad equipment.
+	\subsection{Constant current source}
+	In this subsection we build a constant current source circut, thats shown in the schematic in fig. \ref{fig:ccs}. We expect a current of $I_{R_2}=\frac{U}{R_1}=\frac{\SI{9.4}{V}}{\SI{47}{k\Omega}}=\SI{0.2}{mA}$. For $R_2$ we choose \SI{10}{k\Omega}.
 	\begin{Figure}
 		\centering
 		\includegraphics[width=1\textwidth]{conscurrentshematic.png}
-    \captionof{figure}{Schematic of a constant current source \cite{Praktikumsanleitung}}
+		\captionof{figure}{Schematic of a constant current source \cite{Praktikumsanleitung}}
 		\label{fig:ccs}
 	\end{Figure}
-  Before resistor 2 we meassure a current of \SI{0.171}{\milli A}. Thats diviation of \SI{16.96}{\%} from the calculated current. Causes could be again and as always resitance that we have overlooked or bad equipment. Especially with souch low current (micro to milli ampere), we can expect some diviations alone from the resistance in the cables and bad connections.
+	Before resistor 2 we meassure a current of \SI{0.171}{\milli A}. Thats diviation of \SI{16.96}{\%} from the calculated current. Causes could be again and as always resitance that we have overlooked or bad equipment. Especially with souch low current (micro to milli ampere), we can expect some diviations alone from the resistance in the cables and bad connections.
 
-  Afterwards we replace the second resistor with a potentiometer and variate the resistance. We meassure no difference in the current. Thats as expected, since the feedback loop is supposed to do exactly that; regulate itself, since the output voltage will grow proportional to the input voltage, wich is less regulated by the higher resistor. With this idea we see that the outputvoltage will change with the change of the potentiometer. So we have to ways of reducing the current. Either we increase the first resistor or we reduce the input voltage.
+	Afterwards we replace the second resistor with a potentiometer and variate the resistance. We meassure no difference in the current. Thats as expected, since the feedback loop is supposed to do exactly that; regulate itself, since the output voltage will grow proportional to the input voltage, wich is less regulated by the higher resistor. With this idea we see that the outputvoltage will change with the change of the potentiometer. So we have to ways of reducing the current. Either we increase the first resistor or we reduce the input voltage.
 
-  \subsection{Integrator}
-  Now we substitute the second resistor / potentiometer and amperemeter with an \SI{1}{\mega \Omega} resistor and place a \SI{100}{\micro F} condesator parallel to it. We also set a square wave signal with \SI{100}{Hz} and \SI{1}{V_{PP}}. The resulting oscillogramm is displayed in fig. \ref{fig:int1} with CH1 beeing the input signal and CH2 the output signal.
+	\subsection{Integrator}
+	Now we substitute the second resistor / potentiometer and amperemeter with an \SI{1}{\mega \Omega} resistor and place a \SI{100}{\micro F} condesator parallel to it. We also set a square wave signal with \SI{100}{Hz} and \SI{1}{V_{PP}}. The resulting oscillogramm is displayed in fig. \ref{fig:int1} with CH1 beeing the input signal and CH2 the output signal.
 	\begin{Figure}
 		\centering
 		\includegraphics[width=1\textwidth]{../data/DS0032_n.png}
-    \captionof{figure}{Integrator with a square wave signal with \SI{100}{Hz} and \SI{1}{V_{PP}}.}
+		\captionof{figure}{Integrator with a square wave signal with \SI{100}{Hz} and \SI{1}{V_{PP}}.}
 		\label{fig:int1}
 	\end{Figure}
-  As expected the result is the integration of the input signal.
-  
-  Now we change the frequency. The result is displayed in fig. \ref{fig:int2} and \ref{fig:int3}.
+	As expected the result is the integration of the input signal.
+
+	Now we change the frequency. The result is displayed in fig. \ref{fig:int2} and \ref{fig:int3}.
 	\begin{Figure}
 		\centering
 		\includegraphics[width=1\textwidth]{../data/DS0033_n.png}
-    \captionof{figure}{Integrator with a square wave signal with \SI{300}{Hz} and \SI{1}{V_{PP}}.}
+		\captionof{figure}{Integrator with a square wave signal with \SI{300}{Hz} and \SI{1}{V_{PP}}.}
 		\label{fig:int2}
 	\end{Figure}
 	\begin{Figure}
 		\centering
 		\includegraphics[width=1\textwidth]{../data/DS0034_n.png}
-    \captionof{figure}{Integrator with a square wave signal with \SI{80}{Hz} and \SI{1}{V_{PP}}.}
+		\captionof{figure}{Integrator with a square wave signal with \SI{80}{Hz} and \SI{1}{V_{PP}}.}
 		\label{fig:int3}
 	\end{Figure}
-  We observe that with higher frequencies, the integrated signal looses peak-to-peak voltage. Thats logical since, firstly the condensator increases resistence with higher frequencies, and secondly if we think about it in a mathmatical sense, integrating a square wave signal with shorter pulses, gives the integration less time to increase, so the voltage does not increase as much.
+	We observe that with higher frequencies, the integrated signal looses peak-to-peak voltage. Thats logical since, firstly the condensator increases resistence with higher frequencies, and secondly if we think about it in a mathmatical sense, integrating a square wave signal with shorter pulses, gives the integration less time to increase, so the voltage does not increase as much.
 
-  Now we change input voltage. The result is displayed in fig. \ref{fig:int4}, \ref{fig:int5} and \ref{fig:int6}.
+	Now we change input voltage. The result is displayed in fig. \ref{fig:int4}, \ref{fig:int5} and \ref{fig:int6}.
 	\begin{Figure}
 		\centering
 		\includegraphics[width=1\textwidth]{../data/DS0035_n.png}
-    \captionof{figure}{Integrator with a square wave signal with \SI{100}{Hz} and \SI{2}{V_{PP}}.}
+		\captionof{figure}{Integrator with a square wave signal with \SI{100}{Hz} and \SI{2}{V_{PP}}.}
 		\label{fig:int4}
 	\end{Figure}
 	\begin{Figure}
 		\centering
 		\includegraphics[width=1\textwidth]{../data/DS0036_n.png}
-    \captionof{figure}{Integrator with a square wave signal with \SI{100}{Hz} and \SI{1}{V_{PP}}.}
+		\captionof{figure}{Integrator with a square wave signal with \SI{100}{Hz} and \SI{1}{V_{PP}}.}
 		\label{fig:int5}
 	\end{Figure}
 	\begin{Figure}
 		\centering
 		\includegraphics[width=1\textwidth]{../data/DS0037_n.png}
-    \captionof{figure}{Integrator with a square wave signal with \SI{100}{Hz} and \SI{0.5}{V_{PP}}.}
+		\captionof{figure}{Integrator with a square wave signal with \SI{100}{Hz} and \SI{0.5}{V_{PP}}.}
 		\label{fig:int6}
 	\end{Figure}
-  As we see, the input and output voltages are proportionaly lowerd as we descend from \SI{2}{V_{PP}} to \SI{0.5}{V_{PP}}. Thats not so surprising since every component scales the voltage linealy through its resistance.
+	As we see, the input and output voltages are proportionaly lowerd as we descend from \SI{2}{V_{PP}} to \SI{0.5}{V_{PP}}. Thats not so surprising since every component scales the voltage linealy through its resistance.
 
-  If we remove the \SI{1}{\mega \Omega} resistor we can occasionlly observe fracmentations, wich are displayed in fig. \ref{fig:int7}.
+	If we remove the \SI{1}{\mega \Omega} resistor we can occasionlly observe fracmentations, wich are displayed in fig. \ref{fig:int7}.
 	\begin{Figure}
 		\centering
 		\includegraphics[width=1\textwidth]{../data/DS0038_n.png}
-    \captionof{figure}{Integrator wihtout \SI{1}{\mega\Omega} resistor with a square wave signal with \SI{100}{Hz} and \SI{0.5}{V_{PP}}.}
+		\captionof{figure}{Integrator wihtout \SI{1}{\mega\Omega} resistor with a square wave signal with \SI{100}{Hz} and \SI{0.5}{V_{PP}}.}
 		\label{fig:int7}
 	\end{Figure}
-  We suspect that the base-line voltage is the cause of the phenomenon, since there is no resistance over wich it can decrease and every fluctuation, noise and base-voltage is captured by the capacitor/integrator.
+	We suspect that the base-line voltage is the cause of the phenomenon, since there is no resistance over wich it can decrease and every fluctuation, noise and base-voltage is captured by the capacitor/integrator.
 
-  Switching the input signal to a sine wave, gives us the expected cosine wave displayd in fig. \ref{fig:int8}. The drop in voltage is explainable through overlooked resistances or frequency dependent resistance. 
+	Switching the input signal to a sine wave, gives us the expected cosine wave displayd in fig. \ref{fig:int8}. The drop in voltage is explainable through overlooked resistances or frequency dependent resistance.
 	\begin{Figure}
 		\centering
 		\includegraphics[width=1\textwidth]{../data/DS0041_n.png}
-    \captionof{figure}{Integration of a sine wave.}
+		\captionof{figure}{Integration of a sine wave.}
 		\label{fig:int8}
 	\end{Figure}
-  Displaying the phases through XY configuration we can observe the Lissajour figure in fig. \ref{fig:int9}
+	Displaying the phases through XY configuration we can observe the Lissajour figure in fig. \ref{fig:int9}
 	\begin{Figure}
 		\centering
 		\includegraphics[width=1\textwidth]{../data/DS0040_n.png}
-    \captionof{figure}{Lissajour figure of the sine wave and its integrated cosine output.}
+		\captionof{figure}{Lissajour figure of the sine wave and its integrated cosine output.}
 		\label{fig:int9}
 	\end{Figure}
-  
-  Now we increase the voltage and observe a proportional increase in the output signal (fig. \ref{fig:int10}), where as the ellips (fig. \ref{fig:int11}) just increases in size in x and y direction.
+
+	Now we increase the voltage and observe a proportional increase in the output signal (fig. \ref{fig:int10}), where as the ellips (fig. \ref{fig:int11}) just increases in size in x and y direction.
 	\begin{Figure}
 		\centering
 		\includegraphics[width=1\textwidth]{../data/DS0043_n.png}
-    \captionof{figure}{Integration of a sine wave with \SI{100}{Hz} and \SI{1}{V_{PP}}}
+		\captionof{figure}{Integration of a sine wave with \SI{100}{Hz} and \SI{1}{V_{PP}}}
 		\label{fig:int10}
 	\end{Figure}
 	\begin{Figure}
 		\centering
 		\includegraphics[width=1\textwidth]{../data/DS0042_n.png}
-    \captionof{figure}{Integration of a sine wave with \SI{100}{Hz} and \SI{1}{V_{PP}} in XY channel configuration as Lissajour figure.}
+		\captionof{figure}{Integration of a sine wave with \SI{100}{Hz} and \SI{1}{V_{PP}} in XY channel configuration as Lissajour figure.}
 		\label{fig:int11}
 	\end{Figure}
 
-  Now we can also decrease the frequency from \SI{100}{Hz} to \SI{40}{Hz}. We observe that the ouput signal is increased to nearly the level of the input signal. This behaviour suggests that indeed the voltage is frequeny dependent, wich makes sense, since the impedance of the capacitor is also frequency dependent. We also observe a nearly perfect circel instead of a ellipse.
-	\begin{Figure} 
+	Now we can also decrease the frequency from \SI{100}{Hz} to \SI{40}{Hz}. We observe that the ouput signal is increased to nearly the level of the input signal. This behaviour suggests that indeed the voltage is frequeny dependent, wich makes sense, since the impedance of the capacitor is also frequency dependent. We also observe a nearly perfect circel instead of a ellipse.
+	\begin{Figure}
 		\centering
 		\includegraphics[width=1\textwidth]{../data/DS0045_n.png}
-    \captionof{figure}{Integration of a sine wave with \SI{40}{Hz} and \SI{1}{V_{PP}}}
+		\captionof{figure}{Integration of a sine wave with \SI{40}{Hz} and \SI{1}{V_{PP}}}
 		\label{fig:int12}
 	\end{Figure}
 	\begin{Figure}
 		\centering
 		\includegraphics[width=1\textwidth]{../data/DS0044_n.png}
-    \captionof{figure}{Integration of a sine wave with \SI{40}{Hz} and \SI{1}{V_{PP}} in XY channel configuration as Lissajour figure.}
+		\captionof{figure}{Integration of a sine wave with \SI{40}{Hz} and \SI{1}{V_{PP}} in XY channel configuration as Lissajour figure.}
 		\label{fig:int13}
 	\end{Figure}
 
-  \subsection{Differential amplifier}
-  At last we look back again at the differential amplifier and analyse the effect of applying a positiv base voltage at the the positiv input, wich is parallel connected to ground. As we can see in fig. \ref{fig:damp1}, \ref{fig:damp2} and \ref{fig:damp3}, that the increasing base line voltage increases the shift in its output.
-	\begin{Figure} 
+	\subsection{Differential amplifier}
+	At last we look back again at the differential amplifier and analyse the effect of applying a positiv base voltage at the the positiv input, wich is parallel connected to ground. As we can see in fig. \ref{fig:damp1}, \ref{fig:damp2} and \ref{fig:damp3}, that the increasing base line voltage increases the shift in its output.
+	\begin{Figure}
 		\centering
 		\includegraphics[width=1\textwidth]{../data/DS0047_n.png}
-    \captionof{figure}{Amplification of a sine wave with no base voltage.}
+		\captionof{figure}{Amplification of a sine wave with no base voltage.}
 		\label{fig:damp1}
 	\end{Figure}
 	\begin{Figure}
 		\centering
 		\includegraphics[width=1\textwidth]{../data/DS0048_n.png}
-    \captionof{figure}{Amplification of a sine wave with a base voltage of \SI{0.5}{V}.}
+		\captionof{figure}{Amplification of a sine wave with a base voltage of \SI{0.5}{V}.}
 		\label{fig:damp2}
 	\end{Figure}
 	\begin{Figure}
 		\centering
 		\includegraphics[width=1\textwidth]{../data/DS0049_n.png}
-    \captionof{figure}{Amplification of a sine wave with a base voltage of \SI{1.5}{V}.}
+		\captionof{figure}{Amplification of a sine wave with a base voltage of \SI{1.5}{V}.}
 		\label{fig:damp3}
 	\end{Figure}
 
-  At this point we were tasked to create a beat with two very slightly different frequencies. Since at this point we ran out of time, we were not able to do this. We are expecting to see the typical image of a beat, where two sine wave interfere with each other and produce a seemingly standing wave wich does not propergate. We would have used the normal frequency generator where we would set the variable frequency to the fixed frequency of another generator.
-  \section{Conclusion}
-  
+	At this point we were tasked to create a beat with two very slightly different frequencies. Since at this point we ran out of time, we were not able to do this. We are expecting to see the typical image of a beat, where two sine wave interfere with each other and produce a seemingly standing wave wich does not propergate. We would have used the normal frequency generator where we would set the variable frequency to the fixed frequency of another generator.
+	\section{Conclusion}
 
-  Afterwards we used an Adder to produce a sawtooth signal where our experimental optimum was slightly diffrent to the calculated one. We calculated for the \SI{150}{Hz} sine wave the best amplitude to be $\frac{1}{3}U_0$. We found that $\frac{1}{6}U_0$ was better in approximating the sawtooth signal.
 
-  With the constant current source we showed that any resistor in the feedback loop had no influence in the current and the only way to modify it would be to change the voltage or resistance of the source.
+	Afterwards we used an Adder to produce a sawtooth signal where our experimental optimum was slightly diffrent to the calculated one. We calculated for the \SI{150}{Hz} sine wave the best amplitude to be $\frac{1}{3}U_0$. We found that $\frac{1}{6}U_0$ was better in approximating the sawtooth signal.
 
-  Proceeding, we build an intergrator wich integrated a square wave signal and found an frequency dependncy. Removing a resistor that should be parallel to the condesator showed fragmentations in the output. Switching to sine waves we oberseved the integration to a cosine and could produce, through varying the frequency and input voltage, a nearly perfect circel of a Lissajour figure.
+	With the constant current source we showed that any resistor in the feedback loop had no influence in the current and the only way to modify it would be to change the voltage or resistance of the source.
 
-  Lastly we build a differential amplifier, where we observed the shifting of the output through increasing the grounded positiv voltage. Because we had no time left, we could not create a beat, but the theory and outcome is fully understood.
+	Proceeding, we build an intergrator wich integrated a square wave signal and found an frequency dependncy. Removing a resistor that should be parallel to the condesator showed fragmentations in the output. Switching to sine waves we oberseved the integration to a cosine and could produce, through varying the frequency and input voltage, a nearly perfect circel of a Lissajour figure.
 
-  Overall the lab course was very successfull.
+	Lastly we build a differential amplifier, where we observed the shifting of the output through increasing the grounded positiv voltage. Because we had no time left, we could not create a beat, but the theory and outcome is fully understood.
+
+	Overall the lab course was very successfull.
 
 \end{multicols}
 
