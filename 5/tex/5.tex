@@ -314,7 +314,7 @@
 	The switching frequency is therefore
 	\begin{align}
 		\tfrac{1}{t}=\SI{0.714}{\micro s ^{-1}}
-		.\end{align}
+        .\end{align}
 
 	\subsection{K} \label{pre:K}
 	\begin{Figure}
@@ -380,13 +380,17 @@
                 \includegraphics[width=0.6\textwidth]{../data/DS0026_negate.png}
                 \captionof{figure}{Slew rate for said square--wave}
         \end{Figure}
-        \noindent The slew rate is the time it takes the oscillograph to raise a signal from 10\% to 90\%.
+        \noindent The slew rate is the time it takes the oscillograph to raise a signal from 10\% to 90\% in volts per second.
         From the cursors on the oszillogramm, one can see the time difference to be $\Delta =\SI{66}{\micro s}$.
-        \\\indent When increasing the frequency, the slew rate stays the same, because the slew rate is an intrinsic property of the oscillograph and should not change if any outside parameters change.
+        This results in a slew rate of 
+        \begin{align}
+                s=\tfrac{\SI{16}{V}}{\SI{66}{\micro s}}\approx \SI{0.24}{V\per\micro s}.
+        \end{align}
+        When increasing the frequency, the slew rate stays the same, because the slew rate is an intrinsic property of the oscillograph and should not change if any outside parameters change.
         The amplitude decreases as the frequency increases because the plateaus of constant voltage shorten.
         If the frequency is high enough, the signal will change polarity too fast for the circuit to be complete saturated.
         There are no differences to the sine signal.
-        The slew rate is also not relevant for the sine signal, because it does not switch sign instantly.
+        The slew rate is also not relevant for the sine signal, because it does not change sign instantly.
         \\\\ Now a gain of $\nu =11$ (with $R_1=\SI{10}{k\ohm}$ and $R_2=\SI{100}{k\ohm}$) is set and a capacitor with $C=\SI{0.1}{\micro F}$ is connected in series with $R_1$.
         Due to different unkown reasons, like a loose connection in a cable, nothing seemed to have changend, when connecting the capacitor.
         Our expectation was that the capacitor and resistor would behave like a high--pass, meaning that signals with high frequencies would rather run through the capacitor into ground than the opamp, resulting in high frequency signals not being amplified.
@@ -403,14 +407,14 @@
 		\captionof{figure}{Sawtooth-Signal with calculated amplitudes}
 		\label{fig:calcsaw}
 	\end{Figure}
-	We see that it allready approximates a Sawtooth-Signal pretty well. But we think we can make it even better. So we adjust our amplitudes and find an even better approximation. It is displayed in fig. \ref{fig:foundsaw}.
+	We see that it already approximates a sawtooth-signal pretty well. But we think we can make it even better. So we adjust our amplitudes and find an even better approximation. It is displayed in fig. \ref{fig:foundsaw}.
 	\begin{Figure}
 		\centering
 		\includegraphics[width=1\textwidth]{../data/DS0030_n.png}
 		\captionof{figure}{Sawtooth-Signal with found amplitudes}
 		\label{fig:foundsaw}
 	\end{Figure}
-	For this Outputsignal we used
+	For this output signal we used
 	\begin{align*}
 		U(f=\SI{50}{Hz})  & =1\cdot U_0\text{,}               \\
 		U(f=\SI{100}{Hz}) & =\frac{1}{2}\cdot U_0\text{\;and} \\
@@ -425,7 +429,7 @@
 		\captionof{figure}{Schematic of a constant current source \cite{Praktikumsanleitung}}
 		\label{fig:ccs}
 	\end{Figure}
-	Before resistor 2 we meassure a current of \SI{0.171}{\milli A}. Thats diviation of \SI{16.96}{\%} from the calculated current. Causes could be again and as always resitance that we have overlooked or bad equipment. Especially with souch low current (micro to milli ampere), we can expect some diviations alone from the resistance in the cables and bad connections.
+	Before resistor 2 we meassure a current of \SI{0.171}{\milli A}. Thats diviation of \SI{16.96}{\%} from the calculated current. Causes could be again and as always resistance that we have overlooked or bad equipment. Especially with such low current (micro to milli ampere), we can expect some diviations alone from the resistance in the cables and bad connections.
 
 	Afterwards we replace the second resistor with a potentiometer and variate the resistance. We meassure no difference in the current. Thats as expected, since the feedback loop is supposed to do exactly that; regulate itself, since the output voltage will grow proportional to the input voltage, wich is less regulated by the higher resistor. With this idea we see that the outputvoltage will change with the change of the potentiometer. So we have to ways of reducing the current. Either we increase the first resistor or we reduce the input voltage.
 
@@ -550,15 +554,21 @@
 
 	At this point we were tasked to create a beat with two very slightly different frequencies. Since at this point we ran out of time, we were not able to do this. We are expecting to see the typical image of a beat, where two sine wave interfere with each other and produce a seemingly standing wave wich does not propergate. We would have used the normal frequency generator where we would set the variable frequency to the fixed frequency of another generator.
 	\section{Conclusion}
+        The first part of the lab course was the non--inverting amplifier.
+        Two \textsc{Bode}--plots have been created to show the gain dependence for different frequencies.
+        From these \textsc{Bode}--plots the cutoff frequency $f_\text{grenz}$ and transit frequency $f_T$ have been approximated.
+        They are, for a gain of $\nu \approx 11.3$, $f_\text{grenz}=\SI{18+-1}{kHz}$ and $f_T=\SI{240}{kHz}$; for a gain of $\nu =101$, $f_\text{grenz}=\SI{7.0+-0.5}{kHz}$ and $f_T=\SI{600}{kHz}$.
 
+        For a square--wave signal and gain of $\nu =101$ the slew rate of the oscillograph has been calculated by reading out the time difference for the signal to go from 10\% to 90\%.
+        This results in $s=\SI{0.24}{V/\micro s}$.
 
 	Afterwards we used an Adder to produce a sawtooth signal where our experimental optimum was slightly diffrent to the calculated one. We calculated for the \SI{150}{Hz} sine wave the best amplitude to be $\frac{1}{3}U_0$. We found that $\frac{1}{6}U_0$ was better in approximating the sawtooth signal.
 
 	With the constant current source we showed that any resistor in the feedback loop had no influence in the current and the only way to modify it would be to change the voltage or resistance of the source.
 
-	Proceeding, we build an intergrator wich integrated a square wave signal and found an frequency dependncy. Removing a resistor that should be parallel to the condesator showed fragmentations in the output. Switching to sine waves we oberseved the integration to a cosine and could produce, through varying the frequency and input voltage, a nearly perfect circel of a Lissajour figure.
+	Proceeding, we build an intergrator wich integrated a square wave signal and found an frequency dependency. Removing a resistor that should be parallel to the condesator showed fragmentations in the output. Switching to sine waves we oberseved the integration to a cosine and could produce, through varying the frequency and input voltage, a nearly perfect circel of a Lissajour figure.
 
-	Lastly we build a differential amplifier, where we observed the shifting of the output through increasing the grounded positiv voltage. Because we had no time left, we could not create a beat, but the theory and outcome is fully understood.
+	Lastly we build a differential amplifier, where we observed the shifting of the output by increasing the grounded positiv voltage. Because we had no time left, we could not create a beat, but the theory and outcome is fully understood.
 
 	Overall the lab course was very successfull.
 
