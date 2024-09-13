@@ -1,0 +1,32 @@
+# +---------------+
+# | inverting exp |
+# +---------------+
+# R = 10k\ohm, diode = AA118
+# DS0000
+#
+#
+# +--------------------+
+# | non--inverting exp |
+# +--------------------+
+# R = 47k\ohm, diode = AA118
+# negative input voltage: U_in is also negative > negative output
+# low input: outupt is linear because +U_in term
+# exponential increase after input voltage <1 
+# input too large: opamp is saturated and cuts signal (looks like square--wave)
+#
+# 
+# +-------------------------------+
+# | non--inverting exp (Schottky) |
+# +-------------------------------+
+# D2 Diodenkennlinienbrett / Gleichrichter 10BQ015
+# U_out[V] U_in[mV] xerror = 0.2 yerror = 0.8
+0.4 14.4
+0.5 15.2
+0.9 21.9
+1.2 27.1
+2.2 37.0
+2.9 42.0
+4.7 52.5
+5.5 56.5
+7.1 62.3
+10.30 71.6

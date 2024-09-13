@@ -152,8 +152,50 @@
         
         \clearpage
         \section{Analysis}
-
-
+        
+        \subsection{Non--inverting exponentiator}
+        \begin{Figure}
+                \centering
+                \includegraphics[width=0.6\textwidth]{non_inverting_exp.png} \label{fig:non_inverting_exp}
+                \captionof{figure}{Non--inverting exponentiator; Abb.\ 6.5\cite{Praktikumsanleitung}}
+        \end{Figure}
+        The input impedance of the non--inverting exponentiator is very high, because the opamp has a high input impedance.
+        The output voltage of this circuit can be calculated via the golden rules (g.r.) of an opamp.
+        \textsc{Kirchhoff}s law states that
+        \begin{align} 
+                 &&&& I_D &= I_R+I_- &&&& \,|\, \text{g.r. }I_-=0\\
+                 \Leftrightarrow  &&&& I_D &= I_R &&&& \\
+                 \Leftrightarrow  &&&& I_D &= \dfrac{U_R}{R} &&&& \,|\, U_R=U_\text{out}-\underbrace{U_-}_{U_\text{in}}\\
+                 \Leftrightarrow  &&&& I_D &= \dfrac{U_\text{out}-U_\text{in}}{R} &&&& \,|\, I_D=I_0\text{e}^{\alpha U_\text{in}}\\
+                 \Leftrightarrow  &&&& RI_0\text{e}^{\alpha U_\text{in}} &= U_\text{out}-U_\text{in} &&&& \,|\, A:=RI_0,B:=\dfrac{1}{\alpha }\\
+                 \Leftrightarrow  &&&& U_\text{out} &= A\text{e}^{\tfrac{U_\text{in}}{B}}+U_\text{in} &&&& 
+        \end{align} 
+        The ciruit \ref{fig:non_inverting_exp} is built with $R=\SI{47}{k\ohm}$ and a Si--diode. 
+        The input is a triangle signal.
+        The signal is amplified solely when the polarity is aligned with that of the diode, the other polarity is not amplified.
+        Because the signal is alternating current, the diode behaves differently for different polarity.
+        Forward bias: 
+        When in forward bias the signal gets amplified exponentially, when the threshold voltage is reached.
+        This happenes because the feedback current is routed into ground by the low impedance of the diode, thus it is not regulating the opamp resulting in an exponential gain.
+        Reverse bias: 
+        In Reverse bias the diode has a very high impedance, which means, the current from the feedback loop is completely fed into the opamp.
+        This results in no amplification of the input signal.
+        Because the output voltage also has a linear term, the input voltage is mimicked.
+        The same happenes for very low input voltages, i.e.\ when the signal passes zero or is lower than one, because the exponential term doesn't contribute.
+        After an input voltage of one, the output starts to rise exponentially.
+        When the input is too large, the opamp gets saturated and maxes out at the supply voltage.\par
+        The next part is done with a \textsc{Schottky}diode.
+        A \textsc{Schottky}diode has a lower forward bias than the Si--diode, which means that the signal will be amplified for lower input voltages.
+        Also, the \textsc{Schottky}diode has a current running in reverse bias which is considerably more, than the Si--diode has.
+        This results in the output voltage (which is still mimicked by the linear term) to be amplified by this reverse current.
+        \begin{Figure}
+                \centering
+                \includegraphics[width=0.6\textwidth]{../plot/6_1_2_crop.pdf}
+                \captionof{figure}{$U_\text{in}$--$U_\text{out}$--diagram of the non--inverting amplifier (\textsc{Schottky}diode)}
+        \end{Figure}
+        \noindent One can see, that the amplification is exponential (linear in this log plot).
+        The amplification for low input signals is not as steep, due to the UI--curve of the \textsc{Schottky}diode.
+        This behavior was expected because the circuit amplifies a signal exponentially.
 \end{multicols}
 
 \clearpage
