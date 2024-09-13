@@ -188,7 +188,7 @@
                 \includegraphics[width=0.6\textwidth]{non_inverting_exp.png} \label{fig:non_inverting_exp}
                 \captionof{figure}{Non--inverting exponentiator; Abb.\ 6.5\cite{Praktikumsanleitung}}
         \end{Figure}
-        The input impedance of the non--inverting exponentiator is very high, because the opamp has a high input impedance.
+        \noindent The input impedance of the non--inverting exponentiator is very high, because the opamp has a high input impedance.
         The output voltage of this circuit can be calculated via the golden rules (g.r.) of an opamp.
         \textsc{Kirchhoff}s law states that
         \begin{align} 
@@ -201,7 +201,12 @@
         \end{align} 
         The ciruit \ref{fig:non_inverting_exp} is built with $R=\SI{47}{k\ohm}$ and a Si--diode. 
         The input is a triangle signal.
-        The signal is amplified solely when the polarity is aligned with that of the diode, the other polarity is not amplified.
+        \begin{Figure}
+                \centering
+                \includegraphics[width=0.6\textwidth]{../data/DS0001.png}
+                \captionof{figure}{Non--inverting exponentiator oscillogram} \label{fig:non_exp}
+        \end{Figure}
+        \noindent The signal is amplified solely when the polarity is aligned with that of the diode, the other polarity is not amplified.
         Because the signal is alternating current, the diode behaves differently for different polarity.
         Forward bias: 
         When in forward bias the signal gets amplified exponentially, when the threshold voltage is reached.
@@ -212,8 +217,13 @@
         Because the output voltage also has a linear term, the input voltage is mimicked.
         The same happenes for very low input voltages, i.e.\ when the signal passes zero or is lower than one, because the exponential term doesn't contribute.
         After an input voltage of one, the output starts to rise exponentially.
-        When the input is too large, the opamp gets saturated and maxes out at the supply voltage.\par
-        The next part is done with a \textsc{Schottky}diode.
+        When the input is too large, the opamp gets saturated and maxes out at the supply voltage.
+        \begin{Figure}
+                \centering
+                \includegraphics[width=0.6\textwidth]{../data/DS0002.png}
+                \captionof{figure}{Non--inverting exponentiator oscillogram (saturated)}
+        \end{Figure}
+        \noindent The next part is done with a \textsc{Schottky}diode.
         A \textsc{Schottky}diode has a lower forward bias than the Si--diode, which means that the signal will be amplified for lower input voltages.
         Also, the \textsc{Schottky}diode has a current running in reverse bias which is considerably more, than the Si--diode has.
         This results in the output voltage (which is still mimicked by the linear term) to be amplified by this reverse current.
@@ -230,7 +240,8 @@
   \subsection{The grand circuit}
   After we have assambled our non-inverting exponentiater with a potentiometer we plug the Sawtooth-Generator infront of our circuit and plug our circuit in the voltage-fequency-changer. After some debugging we hear a singal from the speaker thats pluged into the the voltage-frequency-changer. Todays lab course was a very pleasend one, since in comparisson to the last ones we had not to do as meany meassuremnts or analysis. It was a nice experimente to see the diffrent use cases for an op amp.
   \section{Conclusion}
-  In the lab course we constructed a inverting and non-inverting exponentiater with diffrent resistors and a potantiometer. We saw from fig. \ref{fig:invexpoisc} the amplification with an exponential behaviour.
+  In the lab course we constructed a inverting and non-inverting exponentiater with diffrent resistors and a potentiometer. We saw in fig.\ \ref{fig:invexpoisc} the amplification with an exponential behaviour and in fig.\ \ref{fig:non_exp} the amplification with a non--inverting exponentiator.
+  Overall the behavior of the circuit, also with different types of diodes and input signal voltages, was as expected. 
 
   At the end we connected all the diffrent kinds of circuits to achieve a sound from a speaker connected at the end. 
 \end{multicols}
