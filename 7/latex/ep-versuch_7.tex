@@ -319,6 +319,35 @@
 		\label{fig:sadd}
 	\end{Figure}
 	\section{Auswertung}
+        \subsection{e) \& f)}
+        Mit dem seriell oder parallel ladbaren n-Bit Schieberegister lässt sich eine n-Bit Zahl speichern und wieder ausgeben.
+        Die Schaltskizzen sind in den Voraufgaben zu finden.
+        Im Versuch wurde erfolgreich ein serielles 4-Bit und parallels 3-Bit Schieberegister aufgebaut.
+        Das 3-Bit Schieberegister wurde auch als Ringschieberegister aufgebaut, indem der letzte Ausgang wieder an den Eingang angeschlossen wird, was es möglich macht, die Zahl \glqq im Kreis\grqq{} durch das Register zu schieben.
+        Verschiedene Zahlen konnten gespeichert und ausgelesen werden; die Schaltung (oder Speichern und Auslesen der Bits) funktioniert nach dem FIFO Prinzip.
+
+        \subsection{g)}
+        Mit den beiden Halbaddierern kann ein Volladdierer gebaut werden, welcher, durch Verwendung zweier serieller 3-Bit Ringschieberegistern zu einem Addierwerk verbaut werden kann.
+        Dieses wurde bereits in den Voraufgaben besprochen.
+        Dieses Addierwerk kann zwei 3-Bit Zahlen addieren, allerdings nur bis maximal \texttt{111} darstellen.
+        Das Limit ist also die Größe des Ringschiebers.
+        \par Eine Zahl kann durch umlegen eines Schalters in einen Ringschieber eingelesen werden.
+        Indem man die Ringschieber taktet \glqq rutscht\grqq{} der Bit von der dritten Stelle $\left(3_2=4_{10}\right)$ zur zweiten $\left(2_2=2_{10}\right)$ und zur ersten Stelle $\left(1_2=1_{10}\right)$.
+        Durch weitere drei Takte können diese beiden Zahlen addiert werden.
+        Das Addieren funktioniert so, dass immer jeweils ein Bit aus den Ringschiebern mit dem Volladdierer addiert werden und der Übertrag wieder in den Eingang des Volladdierers eingeführt wird.
+        Das Ergebnis wird im ersten Ringschieber angezeigt (die eingegebenen Zahlen gehen dabei verloren).
+        Einige Beispiele sind
+        \begin{align} 
+                001+000&=001&011+001&=100&100+011&=111
+        .\end{align} 
+        
 	\section{Fazit}
+        In diesem Versuch wurde die Übertragungskennlinie eines Invertierers (aufgebaut aus CMOS) gemessen.
+        Mit Hilfe dieser CMOS wurde ein NAND Gatter gebaut, für welches wieder die Übertragungskennlinie gemessen wurde.
+        Beide Kennlinien haben den theoretischen Erwartungen entsprochen.
+        \par Danach wurde Schritt für Schritt ein serielles 3-Bit Addierwerk aufgebaut.
+        Angefangen mit einem XOR-Gatter aus NAND-Gattern zu einem Halbaddierer und dann einem Volladdierer, indem ein zweiter Halbaddierer gebaut wurde und die Überträge entsprechend zurückgeführt wurden.
+        Mit einem seriellen 3-Bit Ringschieber konnten dann zwei verschiedene Zahlen eingelesen werden und durch drei mal takten (da es sich hier um 3-Bit Zahlen handelt) des Volladdierers addiert werden.
+        Das Ergebnis wurde in einem Ringschieber gespeichert und konnte durch Abgreifen der Ausgänge angezeigt werden.
 \end{multicols}
 \end{document}
