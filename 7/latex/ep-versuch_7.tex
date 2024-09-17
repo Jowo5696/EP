@@ -54,7 +54,7 @@
 
 \begin{multicols}{2}
 	\section{Einleitung}
-  Dieser Versuch ist die Einführung in die boolische Elektrotechnik, wobei wir boolische Algebra nutzen, um logische Operationen zu konstruieren und z.B. Flip-Flops bauen, mit denen wir ein Shreiberegister und Zähler bauen. Dabei basiert alles darauf, dass hohe Spannungen einer logsichen 1 zugeordnet werden und niedrige Spannungen einer logischen 0 zugeordnet werden. Von hier aus wird die grundlegende Informatik praktisch aufgebaut.
+	Dieser Versuch ist die Einführung in die boolische Elektrotechnik, wobei wir boolische Algebra nutzen, um logische Operationen zu konstruieren und z.B. Flip-Flops bauen, mit denen wir ein Shreiberegister und Zähler bauen. Dabei basiert alles darauf, dass hohe Spannungen einer logsichen 1 zugeordnet werden und niedrige Spannungen einer logischen 0 zugeordnet werden. Von hier aus wird die grundlegende Informatik praktisch aufgebaut.
 
 	\section{Theorie}
 	\subsection{Boolische Algebra und Schaltfunktionen}
@@ -101,7 +101,7 @@
 	\end{Figure}
 	Ist $a=b=1$, so ist das signal gespeichert und es lässt sich durch belegen mit einer 0 löschen. Hierbei ist dann $Q_2=\overline{Q_1}$ gespeichert.
 	\subsection{Schrieberegister und Zähler}
-	Nun kann man mithilfe von FFs eine Schreibregister bauen, dass mit jedem Takt den Inhalt des $i$-ten FFs in das $(i+1)$-te FF schreibt. Neben dem gibt es dann noch den Dualzähler. Er erzeugt in ansteigender Reinfolge mit jedem Takt Dualzahlen.
+	Nun kann man mithilfe von FFs eine Schreiberegister bauen, dass mit jedem Takt den Inhalt des $i$-ten FFs in das $(i+1)$-te FF schreibt. Neben dem gibt es dann noch den Dualzähler. Er erzeugt in ansteigender Reinfolge mit jedem Takt Dualzahlen.
 	\subsection{Aufbau von elektronischen Logikschaltungen}
 	Um nun Logikschaltungen zu konstruieren, wird eine Minimalspannung, ab der das Signal als 1 interpretiert wird, und eine Maximalspannung, unter der das Signal als 0 interpretiert wird, definiert. Diese Schwellspannungen lassen sich in Übertragungskennlinien darstellen, hier in Abb. \ref{fig:kennlinie}.
 	\begin{Figure}
@@ -242,15 +242,15 @@
 	\begin{Figure}
 		\centering
 		\includegraphics[width=1\textwidth]{circuit-20240908-2016.png}
-		\captionof{figure}{4-Bit Schreibregister}
+		\captionof{figure}{4-Bit Schreiberegister}
 		\label{fig:schreibregister}
 	\end{Figure}
 	\subsection*{H}
-	Ein paralleles Schieberegister wird nach Abb. \ref{fig:paraschreibregister} konstruiert.
+	Ein paralleles Schreiberegister wird nach Abb. \ref{fig:paraschreibregister} konstruiert.
 	\begin{Figure}
 		\centering
 		\includegraphics[width=1\textwidth]{parallel-schieberegister.png}
-		\captionof{figure}{parallel 4-Bit Schreibregister}
+		\captionof{figure}{parallel 4-Bit Schreiberegister}
 		\label{fig:paraschreibregister}
 	\end{Figure}
 	\subsection*{I}
@@ -258,7 +258,7 @@
 	\begin{Figure}
 		\centering
 		\includegraphics[width=1\textwidth]{4bit_dualzähler.png}
-		\captionof{figure}{parallel 4-Bit Dualzähler}
+		\captionof{figure}{4-Bit Dualzähler}
 		\label{fig:dualzähler}
 	\end{Figure}
 	\subsection*{J}
@@ -271,9 +271,17 @@
 	\end{align}
 	zeigen, dass der Ausgangspegel korrekt ist.
 	\subsection*{K}
-	Es fließt Strom, aber es gibt probleme.
-
-	Muss noch gemacht werden!!!!!!1
+	Werden die Dioden umgepolt und ein Spannungsteiler über die \SI{5}{V} mit \SI{2.2}{\kilo \Omega} realisiert, so erhalten wir die in Abb. \ref{fig:xand} dargestellte Schaltung. Wir erhalten so mit
+	\begin{align*}
+		U_{in} & =\SI{5}{V}\frac{2\cdot\SI{1}{\kilo \Omega}}{\SI{2.2}{\kilo \Omega}+2\cdot\SI{1}{\kilo \Omega}} \\
+		       & \approx \SI{2.38}{V}.
+	\end{align*}
+	Durch die Eigenschaft der Sperrichtung der Dioden sehen wir, dass es sich hier um ein NAND-Gate handelt. Nun muss allerdings beachtet werden, dass durch den Spannungsteiler eine Spannung von $U_E=U_{ELmax}$ nicht mehr ausreicht, um ein H-Signal auszugeben.
+	\begin{Figure}
+		\centering\includegraphics[width=0.8\textwidth]{K.png}
+		\captionof{figure}{NAND-Gate}
+		\label{fig:xand}
+	\end{Figure}
 	\subsection*{L}
 	Beim CMOS-Inverter fließt bei geringer anliegender Spannung Strom, sodass beim Ausgang Spannung anliegt. Bei hoher Spanung fließt kein Strom, sodass keine Ausgangsspannung anliegt.
 	\subsection*{M}
@@ -319,6 +327,60 @@
 		\label{fig:sadd}
 	\end{Figure}
 	\section{Auswertung}
+	\subsection{Inverter}
+	Zuerst wird ein Inverter nach Abb. \ref{fig:inverter} aufgebaut. Um nun dessen Kennlinien zu zeigen, wird ein \SI{60}{Hz} Rampensignal mit \SI{5}{V_{PP}} und \SI{2.5}{V} Offset eingestellt. Das resultierende Oszillogramm wird in Abb. \ref{fig:kennlinieinverter} gezeigt.
+	\begin{Figure}
+		\centering\includegraphics{../data/DS0003.png}
+		\captionof{figure}{Kennlinie des Inverters}
+		\label{fig:kennlinieinverter}
+	\end{Figure}
+	\subsection{NAND-Gatter}
+	Es wird ein NAND-Gatter nach \ref{fig:xand} gebaut. Dazu wird ein Eingang konstant 0 gehalten und die entsprechende Abb. \ref{fig:NAND0} aufgenommen. Hier wurde der zweiter Eingang mit einer Rampe (gelb), wie zuvor, besteuert. Nun wird der Eingang konsant 1 gehalten und die Abb. \ref{fig:NAND1} aufgenommen.
+	\begin{Figure}
+		\centering\includegraphics{../data/DS0005.png}
+		\captionof{figure}{Eingang 1: konstant 0; Eingang 2: Rampen-Signal}
+		\label{fig:NAND0}
+	\end{Figure}
+	\begin{Figure}
+		\centering\includegraphics{../data/DS0006.png}
+		\captionof{figure}{Eingang 1: konstant 1; Eingang 2: Rampen-Signal}
+		\label{fig:NAND1}
+	\end{Figure}
+	Es ist direkt zu erkennen, dass das Signal die folgende Funktiontafel erfüllt.
+	\begin{center}
+		\begin{tabular}{|c|c|c|}
+			\hline
+			$a$ & $b$ & $Q$ \\
+			\hline
+			0   & 0   & 1   \\
+			0   & 1   & 1   \\
+			1   & 0   & 1   \\
+			1   & 1   & 0   \\
+			\hline
+		\end{tabular}
+	\end{center}
+  Es schein alles Funktionert zu haben, da alles stimmt.
+  \subsection{XOR}
+  Nun wird ein XOR-Gatter nur mit NAND-Gatter gebaut. Dies wird nach dem Schaltplan in Abb. \ref{fig:XOR} realisiert.
+	\begin{Figure}
+    \centering\includegraphics[width=1\textwidth]{XOR.png}
+		\captionof{figure}{XOR-Gatter mit NAND-Gattern}
+		\label{fig:XOR}
+	\end{Figure}
+  Nach testen erhalten wir folgende Funktionstafel.
+	\begin{center}
+		\begin{tabular}{|c|c|c|}
+			\hline
+			$a$ & $b$ & $Q$ \\
+			\hline
+			0   & 0   & 0   \\
+			0   & 1   & 1   \\
+			1   & 0   & 1   \\
+			1   & 1   & 0   \\
+			\hline
+		\end{tabular}
+	\end{center}
+  Es schein alles funktioniert zu haben, da die Funktiontafel stimmt.
 	\section{Fazit}
 \end{multicols}
 \end{document}
