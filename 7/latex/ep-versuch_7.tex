@@ -334,19 +334,20 @@
 		\captionof{figure}{Kennlinie des Inverters}
 		\label{fig:kennlinieinverter}
 	\end{Figure}
+	Wir sehen, dass der Umschlag zwischen \SI{0.8}{V} bis \SI{1.1}{V} geschieht. Ein high signal (1) wird in ein low signal (0) umgewandelt.
 	\subsection{NAND-Gatter}
-	Es wird ein NAND-Gatter nach \ref{fig:xand} gebaut. Dazu wird ein Eingang konstant 0 gehalten und die entsprechende Abb. \ref{fig:NAND0} aufgenommen. Hier wurde der zweiter Eingang mit einer Rampe (gelb), wie zuvor, besteuert. Nun wird der Eingang konsant 1 gehalten und die Abb. \ref{fig:NAND1} aufgenommen.
+	Es wird ein NAND-Gatter nach Abb. \ref{fig:xand} gebaut. Dazu wird ein Gattereingang konstant 0 gehalten und die entsprechende Abb. \ref{fig:NAND0} aufgenommen. Hier wurde der zweiter Gattereingang mit einer Rampe (gelb $\hat{=}$ Oszillographen-Eingang 1), wie zuvor, besteuert. Nun wird der Gattereingang konsant 1 gehalten und die Abb. \ref{fig:NAND1} aufgenommen.
 	\begin{Figure}
 		\centering\includegraphics{../data/DS0005.png}
-		\captionof{figure}{Eingang 1: konstant 0; Eingang 2: Rampen-Signal}
+		\captionof{figure}{Gattereingang 1: konstant 0; Gattereingang 2: Rampen-Signal}
 		\label{fig:NAND0}
 	\end{Figure}
 	\begin{Figure}
 		\centering\includegraphics{../data/DS0006.png}
-		\captionof{figure}{Eingang 1: konstant 1; Eingang 2: Rampen-Signal}
+		\captionof{figure}{Gattereingang 1: konstant 1; Gattereingang 2: Rampen-Signal}
 		\label{fig:NAND1}
 	\end{Figure}
-	Es ist direkt zu erkennen, dass das Signal die folgende Funktiontafel erfüllt.
+	Es ist direkt zu erkennen, dass das Signal die folgende Funktionstafel erfüllt.
 	\begin{center}
 		\begin{tabular}{|c|c|c|}
 			\hline
@@ -359,15 +360,15 @@
 			\hline
 		\end{tabular}
 	\end{center}
-  Es schein alles Funktionert zu haben, da alles stimmt.
-  \subsection{XOR}
-  Nun wird ein XOR-Gatter nur mit NAND-Gatter gebaut. Dies wird nach dem Schaltplan in Abb. \ref{fig:XOR} realisiert.
+	Es schein alles Funktionert zu haben, da alles stimmt.
+	\subsection{XOR}
+	Nun wird ein XOR-Gatter nur mit NAND-Gatter gebaut. Dies wird nach dem Schaltplan in Abb. \ref{fig:XOR} realisiert.
 	\begin{Figure}
-    \centering\includegraphics[width=1\textwidth]{XOR.png}
+		\centering\includegraphics[width=1\textwidth]{XOR.png}
 		\captionof{figure}{XOR-Gatter mit NAND-Gattern}
 		\label{fig:XOR}
 	\end{Figure}
-  Nach testen erhalten wir folgende Funktionstafel.
+	Nach testen erhalten wir folgende Funktionstafel.
 	\begin{center}
 		\begin{tabular}{|c|c|c|}
 			\hline
@@ -380,7 +381,76 @@
 			\hline
 		\end{tabular}
 	\end{center}
-  Es schein alles funktioniert zu haben, da die Funktiontafel stimmt.
+	Es schein alles funktioniert zu haben, da die Funktiontafel stimmt.
+
+	\subsection{Halbaddierer und Volladdierer}
+	Es wird ein Halbaddierer nach Abb. \ref{fig:halbadd} realisiert. Es erfüllt die folgende Funktionstafel und ist somit funktionstüchtig.
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			$x$ & $y$ & $S$ & Ü \\
+			\hline
+			0   & 0   & 0   & 0 \\
+			0   & 1   & 1   & 0 \\
+			1   & 0   & 1   & 0 \\
+			1   & 1   & 0   & 1 \\
+			\hline
+		\end{tabular}
+	\end{center}
+	\begin{Figure}
+		\centering\includegraphics[width=1\textwidth]{halbaddierer.png}
+		\captionof{figure}{XOR-Gatter mit NAND-Gattern}
+		\label{fig:halbadd}
+	\end{Figure}
+	Nun wird aus zwei Halbaddierern und einem OR-Gate nach Abb. \ref{fig:volladdierer} ein Volladdierer gebaut, der mithilfe eines vorheriegen Übertrags eine nachkommende Summe mit neuem Übetrag bilden kann. Wir erhalten die folgende Funktionstafel.
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			Ü$_{-1}$ & $x$ & $y$ & Ü & $S$ \\
+			\hline
+			0        & 0   & 0   & 0   & 0   \\
+			0        & 0   & 1   & 0   & 1   \\
+			0        & 1   & 0   & 0   & 1   \\
+			0        & 1   & 1   & 1   & 0   \\
+			1        & 0   & 0   & 0   & 1   \\
+			1        & 0   & 1   & 1   & 0   \\
+			1        & 1   & 0   & 1   & 0   \\
+			1        & 1   & 1   & 1   & 1   \\
+			\hline
+		\end{tabular}
+	\end{center}
+	Somit funktioniert die Schaltung.
+
+	\subsection{Schiebe- und Ringschieberegister}
+	Mit dem seriell oder parallel ladbaren n-Bit Schieberegister lässt sich eine n-Bit Zahl speichern und wieder ausgeben.
+	Die Schaltskizzen sind in den Voraufgaben zu finden.
+	Im Versuch wurde erfolgreich ein serielles 4-Bit und parallels 3-Bit Schieberegister aufgebaut.
+	Das 3-Bit Schieberegister wurde auch als Ringschieberegister aufgebaut, indem der letzte Ausgang wieder an den Eingang angeschlossen wird, was es möglich macht, die Zahl \glqq im Kreis\grqq{} durch das Register zu schieben.
+	Verschiedene Zahlen konnten gespeichert und ausgelesen werden; die Schaltung (oder Speichern und Auslesen der Bits) funktioniert nach dem FIFO Prinzip.
+
+	\subsection{Addierwerk}
+	Mit den beiden Halbaddierern kann ein Volladdierer gebaut werden, welcher, durch Verwendung zweier serieller 3-Bit Ringschieberegistern zu einem Addierwerk verbaut werden kann.
+	Dieses wurde bereits in den Voraufgaben besprochen.
+	Dieses Addierwerk kann zwei 3-Bit Zahlen addieren, allerdings nur bis maximal \texttt{111} darstellen.
+	Das Limit ist also die Größe des Ringschiebers.
+	\par Eine Zahl kann durch umlegen eines Schalters in einen Ringschieber eingelesen werden.
+	Indem man die Ringschieber taktet \glqq rutscht\grqq{} der Bit von der dritten Stelle $\left(3_2=4_{10}\right)$ zur zweiten $\left(2_2=2_{10}\right)$ und zur ersten Stelle $\left(1_2=1_{10}\right)$.
+	Durch weitere drei Takte können diese beiden Zahlen addiert werden.
+	Das Addieren funktioniert so, dass immer jeweils ein Bit aus den Ringschiebern mit dem Volladdierer addiert werden und der Übertrag wieder in den Eingang des Volladdierers eingeführt wird.
+	Das Ergebnis wird im ersten Ringschieber angezeigt (die eingegebenen Zahlen gehen dabei verloren).
+	Einige Beispiele sind
+	\begin{align*}
+		001+000 & =001 & 011+001 & =100 & 100+011 & =111
+		.
+	\end{align*}
+
 	\section{Fazit}
+	In diesem Versuch wurde die Übertragungskennlinie eines Invertierers (aufgebaut aus Bipolartransistoren) gemessen.
+	Mit Hilfe dieser Bipolartransistoren wurde ein NAND Gatter gebaut, für welches wieder die Übertragungskennlinie gemessen wurde.
+	Beide Kennlinien haben den theoretischen Erwartungen entsprochen.
+	\par Danach wurde Schritt für Schritt ein serielles 3-Bit Addierwerk aufgebaut.
+	Angefangen mit einem XOR-Gatter aus NAND-Gattern zu einem Halbaddierer und dann einem Volladdierer, indem ein zweiter Halbaddierer gebaut wurde und die Überträge entsprechend zurückgeführt wurden.
+	Mit einem seriellen 3-Bit Ringschieber konnten dann zwei verschiedene Zahlen eingelesen werden und durch drei mal takten (da es sich hier um 3-Bit Zahlen handelt) des Volladdierers addiert werden.
+	Das Ergebnis wurde in einem Ringschieber gespeichert und konnte durch Abgreifen der Ausgänge angezeigt werden.
 \end{multicols}
 \end{document}
