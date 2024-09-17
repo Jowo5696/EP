@@ -1,6 +1,5 @@
 \documentclass[10pt]{article}
 \usepackage[a4paper, left=1.5cm, right=1.5cm, top=3.5cm]{geometry}
-\usepackage[ngerman]{babel}
 \usepackage[]{graphicx}
 \usepackage{multicol}
 \usepackage{amssymb}
@@ -31,11 +30,11 @@
 
 \begin{titlepage}
     \title{Elektronikpraktikum -- Versuch 7: Logische Schaltungen}
-    \author[1]{Jonas Wortmann\thanks{s02jwort@uni-bonn.de}}
-    \author[1]{Angelo V. Brade\thanks{s72abrad@uni-bonn.de}}
+    \author[1]{Johnny Schäfer\thanks{s6jyscha@uni-bonn.de}, Jonas Wortmann\thanks{s02jwort@uni-bonn.de} and Angelo V. Brade\thanks{s72abrad@uni-bonn.de}}
     \affil[1]{Rheinische Friedrich-Wilhelms-Universität Bonn}
     \date{\today}
 \end{titlepage}
+\usepackage[ngerman]{babel}
 
 \begin{document}
 \pagenumbering{gobble}
@@ -90,14 +89,14 @@
 	\begin{Figure}
 		\centering
 		\includegraphics[width=1\textwidth]{schaltfunktionen.png}
-		\captionof{figure}{Gebräuchliche Schaltfunktionen}
+    \captionof{figure}{Gebräuchliche Schaltfunktionen\cite{Praktikumsanleitung}}
 	\end{Figure}
 	\subsection{Flip-Flops}
 	Die einfachste möglichkeit ein Signal zu speicher, ist mithilfe eines Flip-Flops.
 	\begin{Figure}
 		\centering
 		\includegraphics[width=1\textwidth]{fliflop.png}
-		\captionof{figure}{Flip-Flop}
+		\captionof{figure}{Flip-Flop\cite{Praktikumsanleitung}}
 	\end{Figure}
 	Ist $a=b=1$, so ist das signal gespeichert und es lässt sich durch belegen mit einer 0 löschen. Hierbei ist dann $Q_2=\overline{Q_1}$ gespeichert.
 	\subsection{Schrieberegister und Zähler}
@@ -107,20 +106,20 @@
 	\begin{Figure}
 		\centering
 		\includegraphics[width=1\textwidth]{übetragungskennlinie.png}
-		\captionof{figure}{Übertragungskennlinie eines Inverters}
+		\captionof{figure}{Übertragungskennlinie eines Inverters\cite{Praktikumsanleitung}}
 		\label{fig:kennlinie}
 	\end{Figure}
 	\begin{Figure}
 		\centering
 		\includegraphics[width=1\textwidth]{inverter.png}
-		\captionof{figure}{Schaltung eines Inverters}
+		\captionof{figure}{Schaltung eines Inverters\cite{Praktikumsanleitung}}
 		\label{fig:inverter}
 	\end{Figure}
 	Z.B ein Inverter kann nun mit Transistoren realisiert werden. Hier in Abb. \ref{fig:inverter} dargestellt. Diese Schaltung kann mit z.B. Dioden erweitert werden, um mehr Eingänge zu erhalten. Dies wird allerding heutzutage nicht mehr mit Diodon, sondern direkt mit Transistoren gemacht, da diese deutlich kleiner hergestellt werden können. So kann auch ein CMOS-Gatter realisiert werden, welches allein aus Transistoren besteht und somit extrem klein gebaut werden kann. Dies ist hier in Abb. \ref{fig:gatter} dargestellt.
 	\begin{Figure}
 		\centering
 		\includegraphics[width=1\textwidth]{cmos-gatter.png}
-		\captionof{figure}{Schaltung eines CMOS-Gatter}
+		\captionof{figure}{Schaltung eines CMOS-Gatter\cite{Praktikumsanleitung}}
 		\label{fig:gatter}
 	\end{Figure}
 	\section{Voraufgaben}
@@ -452,5 +451,7 @@
 	Angefangen mit einem XOR-Gatter aus NAND-Gattern zu einem Halbaddierer und dann einem Volladdierer, indem ein zweiter Halbaddierer gebaut wurde und die Überträge entsprechend zurückgeführt wurden.
 	Mit einem seriellen 3-Bit Ringschieber konnten dann zwei verschiedene Zahlen eingelesen werden und durch drei mal takten (da es sich hier um 3-Bit Zahlen handelt) des Volladdierers addiert werden.
 	Das Ergebnis wurde in einem Ringschieber gespeichert und konnte durch Abgreifen der Ausgänge angezeigt werden.
+\bibliographystyle{plain}
+\bibliography{refs}
 \end{multicols}
 \end{document}
