@@ -1,0 +1,4 @@
+B1 und 18 werden wie in der anleitung eingegeben, gespeichert und dann subtrahiert
+B1 - 18 = 99 (177 - 24 = 153)
+für die größere rechnung in c) werden die results direkt in das A register gespeichert und man kann direkt die nächste operation durchführen
+ergebnis c) R = 2B (=43)

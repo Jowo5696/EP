@@ -1,0 +1,10 @@
+einzelne bits werden mit tasten unter der led matrix dargestellt
+C ist Steuerwort (in C wird S0 - S4 festgelegt)
+A und B sind Register
+A, B, C können mit tasten ausgewählt und mit bit-tasten gesetzt werden
+bei R wird das result angezeigt
+falls die Zahl negativ ist geht die flag auf 1; negative zahlen werden im zweierkomplement angezeigt
+
+Beispiele:
+A = 2, B = 1: befehl 11111 > R = -5, flag = 1
+A = 1, B = 1: befehl 00011 > R = 2
