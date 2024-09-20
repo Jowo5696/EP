@@ -1,0 +1,18 @@
+mvi b, 15 
+
+ani 8     ; AND immediate
+cpi 8     ; compare immediate
+cz set_1  ; call if zero
+cnz set_0 ; call if non zero
+mov a, c
+mvi a, 1
+hlt
+
+
+set_1:
+mvi c,1
+ret       ; return 
+
+set_0:
+mvi c,0
+ret       ; return

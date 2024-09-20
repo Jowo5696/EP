@@ -1,0 +1,145 @@
+mvi a, 10
+mvi b, 10
+
+mov e, a
+mov l, a
+
+mov c, b
+
+mvi l, 0
+mvi h, 0
+
+mvi b, 0
+F1:
+inr b
+mov a, b
+cmp c     ; compare register to A
+dad d     ; double precission add HL + DE -> HL
+jnz F1    ; jump if non zero to F1
+
+hlt
+
+
+
+
+F1: mvi l, 0
+mvi h, 0
+mvi d, 0
+IN 00
+mov e, a
+IN 01
+mov c, a
+inr c
+F2: drc c
+jz F3
+dad d
+jmp F2
+F3: mov a, h
+OUT 00
+mov a, l
+OUT 01
+jmp F1
+
+
+
+
+
+
+
+
+
+
+F1:
+mvi d, 0
+mvi h, 0
+mvi l, 0
+mvi a, 1  ; db 00
+mov b, a
+mvi a, 1  ; db 01
+mov c, a
+mov e, c
+mov a, e
+adi 0
+F2:
+
+jz F3
+dad d
+dcr b
+jmp F2
+
+F3:
+mov a, h
+mvi a, 1  ; d3 00
+mov a, l
+mvi a, 1  ; d3 01
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+mvi d, 0
+mvi h, 0
+mvi l, 0
+mvi a, 2 ; db 00 
+mov b, a
+mvi a, 4 ; db 01
+mov c, a
+mov e, c
+mov a, e
+adi 0
+F2:
+
+jz F3
+dad d
+dcr b
+jmp F2
+
+F3:
+mov a, h
+mvi a, 1 d3 00
+mov a, l
+mvi a, 1 d3 01
+
+
+
+
+
+
+
+
+
+
+
+
+F1: mvi l, 0
+mvi h, 0
+mvi d, 0
+mvi a, 3 ;IN 00
+mov e, a
+mvi a, 3 ; IN 01
+mov c, a
+inr c
+F2: dcr c
+jz F3
+dad d
+jmp F2
+F3: mov a, h
+mvi a, 1 ; OUT 00
+mov a, l
+mvi a, 1 ; OUT 01
+jmp F1

@@ -54,54 +54,54 @@
 
 \begin{multicols}{2}
 	\section{Einleitung}
-  In diesem Versuch werden wir einen Prozessor angefangen von einigen wenigen logischen Verknüpfunkt bis zu einem vollständig mit Assambly programmierbaren 8080 Mikroprozessor verstehen. Dafür wird zunächst die Arithmetic Logic Unit und dann dessen Ereweiterungen betrachtet. Zum Schluss führen wir ein Programm zu Multiplikation von Zahlen aus.
+	In diesem Versuch werden wir einen Prozessor angefangen von einigen wenigen logischen Verknüpfunkt bis zu einem vollständig mit Assambly programmierbaren 8080 Mikroprozessor verstehen. Dafür wird zunächst die Arithmetic Logic Unit und dann dessen Ereweiterungen betrachtet. Zum Schluss führen wir ein Programm zu Multiplikation von Zahlen aus.
 	\section{Theorie}
-  \subsection{Grundlagen}
-  Als Grundlage unserer logischen Operationen dient, wie schon zuvor untersucht und verstanden, die Binärarithmetik. Es lassen sich z.B. Zahlen einfach addieren, wobei auf ein Überlauf geachtete werden muss. Ein Überlauf dritt dann auf, wenn das Ergebnis größer, als die Speichergröße der Zahl ist. Es lässt sich auch eine Subtraktion durch umwandlung des Subtrahenden in eine Addition überführen. Dafür wird der Subtrahend bitweise invertiert und von dem gesammten Subtrahenden 1 abgezogen. Im allgemeinen lassen sich mit Binärzahlen aber genauso rechnen, wie wenn man die Dezimalbasis, statt der Binärbasis, benutzt. Neben den Binärzahlen werden auch Hexadezimalzahlen verwendet, da diese sich mit genau 4 Bits darstellen lassen. Durch die verkürtzte schreibweise werden sie zur Datenspeicherung verwendet. So können auch zwei Hexadezimalzahlen einen Byte (8 Bit) bilden. 
-  \subsection{Arithmetic Logic Unit}
-  Die Arithmetic Logic Unit (Abb. \ref{fig:alu}), kurz ALU, ermöglich die Verknüpfung von AND, OR und XOR, sowie die Verknüpfungen des integrierten 8-Bit-Addier-Subtrahierwerks (Abb. \ref{fig:addsub}). 
-  \begin{Figure}
-    \centering\includegraphics[width=0.8\textwidth]{alu.png}
-    \captionof{figure}{Arithmetic Logic Unit}
-    \label{fig:alu}
-  \end{Figure}
-  \begin{Figure}
-    \centering\includegraphics[width=0.7\textwidth]{addier-subtrahierwerk.png}
-    \captionof{figure}{8-bit Addier-Subtrahierwerk} \label{fig:addier_subtrahierwerk}
-    \label{fig:addsub}
-  \end{Figure}
+	\subsection{Grundlagen}
+	Als Grundlage unserer logischen Operationen dient, wie schon zuvor untersucht und verstanden, die Binärarithmetik. Es lassen sich z.B. Zahlen einfach addieren, wobei auf ein Überlauf geachtete werden muss. Ein Überlauf dritt dann auf, wenn das Ergebnis größer, als die Speichergröße der Zahl ist. Es lässt sich auch eine Subtraktion durch umwandlung des Subtrahenden in eine Addition überführen. Dafür wird der Subtrahend bitweise invertiert und von dem gesammten Subtrahenden 1 abgezogen. Im allgemeinen lassen sich mit Binärzahlen aber genauso rechnen, wie wenn man die Dezimalbasis, statt der Binärbasis, benutzt. Neben den Binärzahlen werden auch Hexadezimalzahlen verwendet, da diese sich mit genau 4 Bits darstellen lassen. Durch die verkürtzte schreibweise werden sie zur Datenspeicherung verwendet. So können auch zwei Hexadezimalzahlen einen Byte (8 Bit) bilden.
+	\subsection{Arithmetic Logic Unit}
+	Die Arithmetic Logic Unit (Abb. \ref{fig:alu}), kurz ALU, ermöglich die Verknüpfung von AND, OR und XOR, sowie die Verknüpfungen des integrierten 8-Bit-Addier-Subtrahierwerks (Abb. \ref{fig:addsub}).
+	\begin{Figure}
+		\centering\includegraphics[width=0.8\textwidth]{alu.png}
+		\captionof{figure}{Arithmetic Logic Unit}
+		\label{fig:alu}
+	\end{Figure}
+	\begin{Figure}
+		\centering\includegraphics[width=0.7\textwidth]{addier-subtrahierwerk.png}
+		\captionof{figure}{8-bit Addier-Subtrahierwerk} \label{fig:addier_subtrahierwerk}
+		\label{fig:addsub}
+	\end{Figure}
 
-  \subsection{Akkumulator}
-  Erweitert man den ALU mit einem ROM, sowie einem Register und einer Übertragsflag, so erhält man den Akkumulator (Abb. \ref{fig:akku}). Der Akkumulator kann mithilfe des Registers Ergebnisse zwischenspeichern. Tritt eine Übertrag auf, so wird er in der Übertragsflag gespeichert. Der Rom dient der Umkodierung, der Befehle, da von den 32 möglichen Funktionen (Abb. \ref{fig:add-sub-befehl}) nur 13 (Abb. \ref{fig:alu-befehle}) sinnvoll sind.
-  \begin{Figure}
-    \centering\includegraphics[width=0.8\textwidth]{akku.png}
-    \captionof{figure}{Akkumulator}
-    \label{fig:akku}
-  \end{Figure}
-  \begin{Figure}
-    \centering\includegraphics[width=0.7\textwidth]{addier-subtrahierwek-befehle.png}
-    \captionof{figure}{8-bit Addier-Subtrahierwerk Befehle}
-    \label{fig:add-sub-befehl}
-  \end{Figure}
-  \begin{Figure}
-    \centering\includegraphics[width=0.7\textwidth]{sinvolle-alu-funktionen.png}
-  \captionof{figure}{Sinnvolle Befehle des ALUs}
-    \label{fig:alu-befehle}
-  \end{Figure}
-  \subsection{Akkumulator mit Datenspeicher}
-  Fügt man dem Akkumulator einen Datenspeicher, hier RAM, hinzu, können jetzt auch zwischenergebnisse nicht nur abgespeichert, sondern auch wieder ausgelesen werden. Dieser ist in Abb. \ref{fig:akku-data} zu sehen.
-  \begin{Figure}
-    \centering\includegraphics[width=0.8\textwidth]{akku-und-datenspeicher.png}
-  \captionof{figure}{Sinnvolle Befehle des ALUs}
-    \label{fig:akku-data}
-  \end{Figure}
-  \subsection{Prozessor}
-  Um nun die Konstruktion zu einem Prozessor (Abb. \ref{fig:cpu}) zu vervollständigen, wird ein Programmspeicher mit einem Befehlszähler hinzugefügt. Aus dem Programmspeicher werden mithilfe des Befehlszählers nacheinander die Befehle des Programms aufgerufen. Ist der Befehl ausgeführt, so wird der Befehlszähler um Eins hochgeschalten. So ein Prozessor bildet der Mikroprozessor 8080.
-  \begin{Figure}
-    \centering\includegraphics[width=0.8\textwidth]{cpu.png}
-  \captionof{figure}{Sinnvolle Befehle des ALUs}
-    \label{fig:cpu}
-  \end{Figure}
+	\subsection{Akkumulator}
+	Erweitert man den ALU mit einem ROM, sowie einem Register und einer Übertragsflag, so erhält man den Akkumulator (Abb. \ref{fig:akku}). Der Akkumulator kann mithilfe des Registers Ergebnisse zwischenspeichern. Tritt eine Übertrag auf, so wird er in der Übertragsflag gespeichert. Der Rom dient der Umkodierung, der Befehle, da von den 32 möglichen Funktionen (Abb. \ref{fig:add-sub-befehl}) nur 13 (Abb. \ref{fig:alu-befehle}) sinnvoll sind.
+	\begin{Figure}
+		\centering\includegraphics[width=0.8\textwidth]{akku.png}
+		\captionof{figure}{Akkumulator}
+		\label{fig:akku}
+	\end{Figure}
+	\begin{Figure}
+		\centering\includegraphics[width=0.7\textwidth]{addier-subtrahierwek-befehle.png}
+		\captionof{figure}{8-bit Addier-Subtrahierwerk Befehle}
+		\label{fig:add-sub-befehl}
+	\end{Figure}
+	\begin{Figure}
+		\centering\includegraphics[width=0.7\textwidth]{sinvolle-alu-funktionen.png}
+		\captionof{figure}{Sinnvolle Befehle des ALUs}
+		\label{fig:alu-befehle}
+	\end{Figure}
+	\subsection{Akkumulator mit Datenspeicher}
+	Fügt man dem Akkumulator einen Datenspeicher, hier RAM, hinzu, können jetzt auch zwischenergebnisse nicht nur abgespeichert, sondern auch wieder ausgelesen werden. Dieser ist in Abb. \ref{fig:akku-data} zu sehen.
+	\begin{Figure}
+		\centering\includegraphics[width=0.8\textwidth]{akku-und-datenspeicher.png}
+		\captionof{figure}{Sinnvolle Befehle des ALUs}
+		\label{fig:akku-data}
+	\end{Figure}
+	\subsection{Prozessor}
+	Um nun die Konstruktion zu einem Prozessor (Abb. \ref{fig:cpu}) zu vervollständigen, wird ein Programmspeicher mit einem Befehlszähler hinzugefügt. Aus dem Programmspeicher werden mithilfe des Befehlszählers nacheinander die Befehle des Programms aufgerufen. Ist der Befehl ausgeführt, so wird der Befehlszähler um Eins hochgeschalten. So ein Prozessor bildet der Mikroprozessor 8080.
+	\begin{Figure}
+		\centering\includegraphics[width=0.8\textwidth]{cpu.png}
+		\captionof{figure}{Sinnvolle Befehle des ALUs}
+		\label{fig:cpu}
+	\end{Figure}
 	\section{Voraufgaben}
 	\subsection*{A}
 	Die folgenden Dualzahlen, lassen sich in die entsprechenden Hexadezimal- und Dezimalzahlen umwandeln:
@@ -171,120 +171,251 @@
 		\hline
 		1 & 00010111 &   &                  & 10100000 \\
 	\end{align*}
-  Bei der ersten Operation entseht ein Überlauf, wobei die Zahl mit einem 9-bit Rechner immernoch mit $-23_{10}$ immernoch im Definitionsbereich eines 8-bit Rechners wäre. Die zweite Operation ist mit $-32_{10}$ hat keinen Überlauf und ist immernoch im Definitionsbereich eines 8-bit Rechners.
+	Bei der ersten Operation entseht ein Überlauf, wobei die Zahl mit einem 9-bit Rechner immernoch mit $-23_{10}$ immernoch im Definitionsbereich eines 8-bit Rechners wäre. Die zweite Operation ist mit $-32_{10}$ hat keinen Überlauf und ist immernoch im Definitionsbereich eines 8-bit Rechners.
 
-  Es lassen sich auch Produkte berechnen: $1101 \cdot 1001$=1110101.
+	Es lassen sich auch Produkte berechnen: $1101 \cdot 1001$=1110101.
 
-  Genauso auch Quotienten: $1110111 / 101$=10111 mit Rest 100
-  \subsection*{E}
-  ROM steht für Read-Only-Memory und ist ein Speicher der, wie der Name wage ahnen lässt, nur gelesen werden und nur einmal beschrieben werden kann. RAM steht für Random-Access-Memory und ist ein Speicher, der beliebig gelesen und beschrieben werden kann.
-  \subsection*{F}
-  Um analoge Signal in Digitale umzuwandeln benötigen wir einen DAC (Digital Analog Converter). Dieser ist durch seine Bitzahl limitiert.
-  \subsection*{G}
-  Ein ALU hat verschiedene logische Verknüpfungen, wie z.B. AND, OR, XOR und noch grundleregendere, wie z.B. $A+1$. Erweitert man diesen mit einem Register, einer Übertragungsflagge und einem ROM, so erhält man ein Akkumulator. Mithilfe von einer Taktung kann nun das Ergebniss gespeichert werden und ist somit kein statisches Netzwerk.
-  \subsection*{H}
-  Erweitert man den Akkumulator mit einem RAM und Programmspeicher, so erhält man einen vollständigen Rechner.
-  \subsection*{I}
-  Hat ein Rechner ein dedizierten Daten-Bus, Adressen-Bus und Steuer-Bus, so hat er eine sog. Busstruktur. Er rechnet dabei mit Bit in Binärzahlen oder Hexadezimalzahlen für die Befehle.
-  \subsection*{J}
-  Ein Taktzyklus durchläuft ein Takt der Clock. Ein Befehlszyklus sind alle Takte, die benötigt werden, um einen Befehl auszuführen. Ein Operationszyklus sind alle Takte, die benötigt werdne, um eine Operation durchzuführen.
-  \subsection*{K}
-  Der 8080-Mikroprozessor kann mit 8 Bits $2^8$ also 256 Befehle speichern. Hierbei hat jeder Befehl ein bestimmte Zahl. Diese Zahl wird Operations-Code genannt. Allerdings hat der 8080 nur 115 Befehle.
-  \subsection*{L}
-  Ein Zweiweg-Tri-state-Datenbus hat nicht nur die Zustände 1 und 0, sondern auch Z, der sog. hochohmige Zustand. Er signalisiert, dass es sich werder noch um 1 oder 0 handelt.
-  \subsection*{M}
-  Die Länge eines Befehlszyklus hängt davon ab, mit wie vielen Takten der Befehl geholt, decodiert und dann ausgeführt wird. Beim ausführen wird ein Operationszyklus durchlaufen, weshalb der Befehlszyklus auch von ihm abhängt.
-  \subsection*{N}
-  Der DMA (Direct Memory Access) ermöglicht den Zugriff von Befehlen auf abgespeichert Daten und kann so wiederverwendbare Ergebnisse erreichen, die sonnst erneut berechnet weden müssen. Somit wird weniger Rechenzeit beansprucht.
-  \subsection*{O}
-  Der Befehlszähler zählt die Befehle und weiß so die Zahl, des als nächstes auszuführenden Befehls. Der Stackpionter speichert die Adressen für abgespeicherte Werte in dem Stack.
-  \subsection*{P}
-  Der Stack speichert Werte von Größen, die schon zu kompilierzeit bekannt sind. Wie der Name schon suggeriert handelt es sich um ein Stapel an Befehlen. Von diesem Stapel können nur von unten oder oben Befehle hinzugefügt oder entfernt weden. So werden dort Werte die schon beim kompilieren bekannt sind dort gespeichert, sowie Werte dessen benötigte Speichergröße bekannt sind, aber erst beim Ausführen ermittelt werden, dort gespeichert. Während das Programm läuft lässt kein weiterer Speicher mehr reservieren.
-  \subsection*{Q}
-  Es gibt die volgenden Adressierungsarten:
-  Unmittelbare Adressierung: Der Befehl hat den Wert selber.
-  Direkte Adressierung: Der Befehl kennt direkte Adresse des Werts.
-  Indirekt Adressierung: Der Befehl kennt die Adresse des Werts durch den Stackpointer.
-  Relative Adressierung: Der Befehl kennt durch das Addieren von einer bestimmten Größe die Adresse in Abhängigkeit eines Ausgangpunktes (Arrays auf dem Stack).
-  Indizierte Adressierung: Der Befehl kennt durch Indexen die Adressen einer Reihe an Werten.
-  \subsection*{R}
-  Der 8080 hat die folgenden Operationszyklen Befehlsaufruf, Speicher lesen, Speicher schreiben, Stack lesen, Stack einschreiben, Eingabe, Ausgabe, Unterbrechung und halten.
-  \subsection*{S}
-  Der erste Operationszyklus liest den Befehl ein, damit er dann mit dem Befehlregister decodiert werden kann.
+	Genauso auch Quotienten: $1110111 / 101$=10111 mit Rest 100
+	\subsection*{E}
+	ROM steht für Read-Only-Memory und ist ein Speicher der, wie der Name wage ahnen lässt, nur gelesen werden und nur einmal beschrieben werden kann. RAM steht für Random-Access-Memory und ist ein Speicher, der beliebig gelesen und beschrieben werden kann.
+	\subsection*{F}
+	Um analoge Signal in Digitale umzuwandeln benötigen wir einen DAC (Digital Analog Converter). Dieser ist durch seine Bitzahl limitiert.
+	\subsection*{G}
+	Ein ALU hat verschiedene logische Verknüpfungen, wie z.B. AND, OR, XOR und noch grundleregendere, wie z.B. $A+1$. Erweitert man diesen mit einem Register, einer Übertragungsflagge und einem ROM, so erhält man ein Akkumulator. Mithilfe von einer Taktung kann nun das Ergebniss gespeichert werden und ist somit kein statisches Netzwerk.
+	\subsection*{H}
+	Erweitert man den Akkumulator mit einem RAM und Programmspeicher, so erhält man einen vollständigen Rechner.
+	\subsection*{I}
+	Hat ein Rechner ein dedizierten Daten-Bus, Adressen-Bus und Steuer-Bus, so hat er eine sog. Busstruktur. Er rechnet dabei mit Bit in Binärzahlen oder Hexadezimalzahlen für die Befehle.
+	\subsection*{J}
+	Ein Taktzyklus durchläuft ein Takt der Clock. Ein Befehlszyklus sind alle Takte, die benötigt werden, um einen Befehl auszuführen. Ein Operationszyklus sind alle Takte, die benötigt werdne, um eine Operation durchzuführen.
+	\subsection*{K}
+	Der 8080-Mikroprozessor kann mit 8 Bits $2^8$ also 256 Befehle speichern. Hierbei hat jeder Befehl ein bestimmte Zahl. Diese Zahl wird Operations-Code genannt. Allerdings hat der 8080 nur 115 Befehle.
+	\subsection*{L}
+	Ein Zweiweg-Tri-state-Datenbus hat nicht nur die Zustände 1 und 0, sondern auch Z, der sog. hochohmige Zustand. Er signalisiert, dass es sich werder noch um 1 oder 0 handelt.
+	\subsection*{M}
+	Die Länge eines Befehlszyklus hängt davon ab, mit wie vielen Takten der Befehl geholt, decodiert und dann ausgeführt wird. Beim ausführen wird ein Operationszyklus durchlaufen, weshalb der Befehlszyklus auch von ihm abhängt.
+	\subsection*{N}
+	Der DMA (Direct Memory Access) ermöglicht den Zugriff von Befehlen auf abgespeichert Daten und kann so wiederverwendbare Ergebnisse erreichen, die sonnst erneut berechnet weden müssen. Somit wird weniger Rechenzeit beansprucht.
+	\subsection*{O}
+	Der Befehlszähler zählt die Befehle und weiß so die Zahl, des als nächstes auszuführenden Befehls. Der Stackpionter speichert die Adressen für abgespeicherte Werte in dem Stack.
+	\subsection*{P}
+	Der Stack speichert Werte von Größen, die schon zu kompilierzeit bekannt sind. Wie der Name schon suggeriert handelt es sich um ein Stapel an Befehlen. Von diesem Stapel können nur von unten oder oben Befehle hinzugefügt oder entfernt weden. So werden dort Werte die schon beim kompilieren bekannt sind dort gespeichert, sowie Werte dessen benötigte Speichergröße bekannt sind, aber erst beim Ausführen ermittelt werden, dort gespeichert. Während das Programm läuft lässt kein weiterer Speicher mehr reservieren.
+	\subsection*{Q}
+	Es gibt die volgenden Adressierungsarten:
+	Unmittelbare Adressierung: Der Befehl hat den Wert selber.
+	Direkte Adressierung: Der Befehl kennt direkte Adresse des Werts.
+	Indirekt Adressierung: Der Befehl kennt die Adresse des Werts durch den Stackpointer.
+	Relative Adressierung: Der Befehl kennt durch das Addieren von einer bestimmten Größe die Adresse in Abhängigkeit eines Ausgangpunktes (Arrays auf dem Stack).
+	Indizierte Adressierung: Der Befehl kennt durch Indexen die Adressen einer Reihe an Werten.
+	\subsection*{R}
+	Der 8080 hat die folgenden Operationszyklen Befehlsaufruf, Speicher lesen, Speicher schreiben, Stack lesen, Stack einschreiben, Eingabe, Ausgabe, Unterbrechung und halten.
+	\subsection*{S}
+	Der erste Operationszyklus liest den Befehl ein, damit er dann mit dem Befehlregister decodiert werden kann.
 
 
-  
+
 	\section{Auswertung}
-        \subsection{Versuchsaufgabe 1}
-        Zu Beginn des Versuches wird das System 0 ausgewählt und der FPGA springt in den Addier--Subtrahierwerk Modus.
-        Mit den Eingängen $S_0$ bis $S_4$ können verschiedene Operationen mit den Registern A und B durchgeführt werden.
-        Diese Operationen sind in (\ref{fig:addier_subtrahierwerk}) dargestellt.
-        \par Die einzelnen Bits der Register bzw.\ des Steuerwerks werden mit Tastern auf dem Schaltbrett gesetzt und in der LED--Matrix angezeigt.
-        Auf der LED--Matrix is C das Steuerregister S.
-        R ist das Result Register.
-        Sollte eine negative Zahl angezeigt werden, dann schaltet die flag--LED an und die zahl wird im zweierkomplement angezeigt.
-        Einige Beispiele sind:
-        \begin{enumerate}
-                \item[--] $A=2_{10}=10_{2}$, $B=1_{10}=1_2$ und $C=11111_{2}$: $R=-5_{10}=11001_2$ mit flag gleich 1.
-                        Der Befehl ist --A--B--1.
-                \item[--] $A=1_{10}=1_2$, $B=1_{10}=1_2$ und $C=11000_2$: $R=2_{10}=10_2$.
-                        Der Befehl ist A+B.
-        \end{enumerate}
+	\subsection{Versuchsaufgabe 1}
+	Zu Beginn des Versuches wird das System 0 ausgewählt und der FPGA springt in den Addier--Subtrahierwerk Modus.
+	Mit den Eingängen $S_0$ bis $S_4$ können verschiedene Operationen mit den Registern A und B durchgeführt werden.
+	Diese Operationen sind in (\ref{fig:addier_subtrahierwerk}) dargestellt.
+	\par Die einzelnen Bits der Register bzw.\ des Steuerwerks werden mit Tastern auf dem Schaltbrett gesetzt und in der LED--Matrix angezeigt.
+	Auf der LED--Matrix ist C das Steuerregister S.
+	R ist das Result Register.
+	Sollte eine negative Zahl angezeigt werden, dann schaltet die flag--LED an und die zahl wird im zweierkomplement angezeigt.
+	Einige Beispiele sind:
+	\begin{enumerate}
+		\item[--] $A=2_{10}=10_{2}$, $B=1_{10}=1_2$ und $C=11111_{2}$: $R=-5_{10}=11001_2$ mit flag gleich 1.
+		      Der Befehl ist --A--B--1.
+		\item[--] $A=1_{10}=1_2$, $B=1_{10}=1_2$ und $C=11000_2$: $R=2_{10}=10_2$.
+		      Der Befehl ist A+B.
+	\end{enumerate}
 
-        \subsection{Versuchsaufgabe 2}
-        Der Mikroprozessor wird auf System 2 eingestellt.
-        Diese Konfiguration ist das Addier--Subtrahierwerk mit einer ALU.
-        Es wird getestet für $A=01111010_2$ und $B=10000111_2$ 
-        Hier ist die Steuerung abhängig von $C_0$ bis $C_3$.
-        \begin{enumerate}
-                \item[--] Der Befehl $\overline{A}$ ist $0100_2$.
-                        Daraus folgt $R_A=10000101_2$ und $R_B=01111000_2$, was genau das Komplement von A bzw.\ B ist.
-                \item[--] Der Befehl $A\land B$ ist $1001_2$.
-                        Daraus folgt $R=000000010_2$.
-                        Dieses Ergebnis kommt durch das bitweise vergleichen von A und B mit einem logischen AND.
-                \item[--] Der Befehl $A\lor B$ ist $0101_2$.
-                        Daraus folgt $R=111111111_2$.
-                        Dieses Ergebnis kommt durch das bitweise vergleichen von A und B mit einem logischen OR.
-        \end{enumerate}
-        B FEHLT
+	\subsection{Versuchsaufgabe 2}
+	Der Mikroprozessor wird auf System 2 eingestellt.
+	Diese Konfiguration ist das Addier--Subtrahierwerk mit einer ALU.
+	Es wird getestet für $A=01111010_2$ und $B=10000111_2$
+	Hier ist die Steuerung abhängig von $C_0$ bis $C_3$.
+	\begin{enumerate}
+		\item[--] Der Befehl $\overline{A}$ ist $0100_2$.
+		      Daraus folgt $R_A=10000101_2$ und $R_B=01111000_2$, was genau das Komplement von A bzw.\ B ist.
+		\item[--] Der Befehl $A\land B$ ist $1001_2$.
+		      Daraus folgt $R=000000010_2$.
+		      Dieses Ergebnis kommt durch das bitweise vergleichen von A und B mit einem logischen AND.
+		\item[--] Der Befehl $A\lor B$ ist $0101_2$.
+		      Daraus folgt $R=111111111_2$.
+		      Dieses Ergebnis kommt durch das bitweise vergleichen von A und B mit einem logischen OR.
+	\end{enumerate}
+	B FEHLT
 
-        \subsection{Versuchsaufgabe 3}
-        Unter Verwendung von System 2 können Operationen auf zwei oder mehr Zahlen angewandt werden, indem sie im RAM gespeichert werden.
-        Zu erst wird eine Zahl in das B Register geschrieben, dann mit einem Takt in den Akku geladen.
-        B wird nun am R Register angezeigt.
-        Wird eine zweite Zahl in B geschrieben, so kann sie mit dem passenden Steuerbefehl addiert werden.
-        Für jede Operation wird auch getaktet.
-        Das Ergebnis lässt sich dann am R Register ablesen.
-        \par Rechnet man $B1_{16}-18_{16}$ geht man nach dem oben beschriebenen Prozedere vor.
-        Das Ergebnis ist $99_{16}=153_{10}$.
-        Für die Rechnung $22_{16}-08_{16}+1_{16}+10_{16}$ wird das selbe Verfahren verwendet.
-        Da das Ergebnis direkt in R gespeichert bleibt, kann die nächste Zahl sofort addiert bzw.\ subtrahiert werden, indem sie über B eingegeben und dann getaktet wird.
+	\subsection{Versuchsaufgabe 3}
+	Unter Verwendung von System 2 können Operationen auf zwei oder mehr Zahlen angewandt werden, indem sie im RAM gespeichert werden.
+	Zu erst wird eine Zahl in das B Register geschrieben, dann mit einem Takt in den Akku geladen.
+	B wird nun am R Register angezeigt.
+	Wird eine zweite Zahl in B geschrieben, so kann sie mit dem passenden Steuerbefehl addiert werden.
+	Für jede Operation wird auch getaktet.
+	Das Ergebnis lässt sich dann am R Register ablesen.
+	\par Rechnet man $B1_{16}-18_{16}$ geht man nach dem oben beschriebenen Prozedere vor.
+	Das Ergebnis ist $99_{16}=153_{10}$.
+	Für die Rechnung $22_{16}-08_{16}+1_{16}+10_{16}$ wird das selbe Verfahren verwendet.
+	Da das Ergebnis direkt in R gespeichert bleibt, kann die nächste Zahl sofort addiert bzw.\ subtrahiert werden, indem sie über B eingegeben und dann getaktet wird.
 
-        \subsection{Versuchsaufgabe 4}
-        Der RAM ist dafür da, um als Puffer zu agieren.
-        Er speichert Daten, die für spätere Berechnungen benötigt werden und erspart so das wiederholte Eingeben von Zahlen.
-        Zudem können aus ihm auch Daten gelesen werden, was es möglich macht mehrmals oder zu verschiedenen Zeitpunkten auf Daten zuzugreifen.
-        All dies ermöglicht es komplexere Schaltungen zu bauen, in denen viele Zahlen / Daten zu unterschiedlichen Zeitpunkten benötigt werden.
-        \par Der Programmspeicher wird dafür verwendet, um Programme bzw.\ Befehlsfolgen zu speichern und zu anderen Zeitpunkten auszuführen.
-        Zudem benutzt man ihn, um Befehle einzulesen und in der richtigen Reihenfolge auszuführen.
+	\subsection{Versuchsaufgabe 4}
+	Der RAM ist dafür da, um als Puffer zu agieren.
+	Er speichert Daten, die für spätere Berechnungen benötigt werden und erspart so das wiederholte Eingeben von Zahlen.
+	Zudem können aus ihm auch Daten gelesen werden, was es möglich macht mehrmals oder zu verschiedenen Zeitpunkten auf Daten zuzugreifen.
+	All dies ermöglicht es komplexere Schaltungen zu bauen, in denen viele Zahlen / Daten zu unterschiedlichen Zeitpunkten benötigt werden.
+	\par Der Programmspeicher wird dafür verwendet, um Programme bzw.\ Befehlsfolgen zu speichern und zu anderen Zeitpunkten auszuführen.
+	Zudem benutzt man ihn, um Befehle einzulesen und in der richtigen Reihenfolge auszuführen.
 
-        \subsection{Versuchsaufgabe 5}
-        Zu erst wird ein Sägezahlsignal in den Mikroprozessor eingegeben, indem er mit einer Tastatur verbunden wird und die Befehle in Hexadezimal eingegeben werden.
-        HIER ABBILDUNG
-        Die Periodendauer des Signals ist HIER PERIODENDAUER.
-        Das Programm funktioniert so, dass es das Register A anfangs mit Nullen füllt und dann mit jedem jump um eins erhöht.
-        Erreicht A die maximale Größe, so wird es wieder mit Nullen gefüllt, da der nächst größere Bit Überschüssig ist und nicht mehr gespeichert werden kann.
-        Dadurch entsteht eine ansteigende Rampe und ein instantaner Abfall zurück auf Null.
-        \par Das Programm kann nun so verändert werden, dass die Periodendauer über das Register B bestimmt wird. CODE UND BILDER SOWIE ERKLÄRUNG ZUM CODE HIER
-        \par RESTLICHEN PROGRAMME UND ERKLÄRUNGEN HIER
+	\subsection{Versuchsaufgabe 5}
+  Zu erst wird ein Sägezahlsignal in den Mikroprozessor eingegeben, indem er mit einer Tastatur verbunden wird und die Befehle in Hexadezimal eingegeben werden. Dieses ist in Abb. \ref{fig:ss} gezeigt.
+	\begin{Figure}
+		\centering\includegraphics{../data/DS0007.png}
+    \captionof{figure}{Sägezahn-Signal}
+    \label{fig:ss}
+	\end{Figure}
+	Die Periodendauer des Signals ist $T=\frac{1}{f}=\SI{288}{\micro s}$.
+	Das Programm funktioniert so, dass es das Register A anfangs mit Nullen füllt und dann mit jedem jump um eins erhöht.
+	Erreicht A die maximale Größe, so wird es wieder mit Nullen gefüllt, da der nächst größere Bit Überschüssig ist und nicht mehr gespeichert werden kann.
+	Dadurch entsteht eine ansteigende Rampe und ein instantaner Abfall zurück auf Null.
+
+  Das Programm kann nun so verändert werden, dass die Periodendauer über das Register B bestimmt wird. Dies wird über den Code in Tab. \ref{tab:varsäg} erreicht. Zu Beginn wird das Input B-Register eingelesen und gespeichert, sodass bei der Schleife, die hier mit F1 makiert ist, der Iterator immer auf den die gewünschte Größe zurückgestellt wird, sobald er Null erreicht.
+	\begin{center}
+		\begin{tabular}{|l|l|}
+			\hline
+			\textbf{Befehl}     & \textbf{Hexadzimal} \\
+			\hline
+			IN 01               & DB 01               \\
+			MOV A, B            & 47                  \\
+			MVI A, 0            & 3E 00               \\
+			\textbf{F1:} INR A  & 3C                  \\
+			OUT 04              & D3 04               \\
+			CMP B               & B8                  \\
+			JNZ F2              & C2 0E 00            \\
+			MVI A, 0            & 3E 00               \\
+			\textbf{F2:} JMP F1 & C3 05 00            \\
+			\hline
+		\end{tabular}
+    \captionof{table}{Variables Sägezahn}
+    \label{tab:varsäg}
+	\end{center}
+  Als Singal erhalten wir die folgenden Abb. \ref{fig:lp}, \ref{fig:mp} und \ref{fig:kp}.
+\begin{Figure}
+  \centering\includegraphics{../data/DS0008.png}
+  \captionof{figure}{Lange Periode}
+  \label{fig:lp}
+\end{Figure}
+\begin{Figure}
+  \centering\includegraphics{../data/DS0009.png}
+  \captionof{figure}{Mittlere Periode}
+  \label{fig:mp}
+\end{Figure}
+\begin{Figure}
+  \centering\includegraphics{../data/DS0011.png}
+  \captionof{figure}{Kurze Periode}
+  \label{fig:kp}
+\end{Figure}
+
+Nun lassen wir uns unserer Fantasie freien lauf und erschaffen ein Rechteck-Signal. Der Code ist unter Tab. \ref{tab:recht} zu finden. Der Code ist ein variable einstallbares Rechtecksignal, welches das D-Register nutzt um es abwechselnd auf 0 und 1 zusetzten. Durch diese Alternation wird abwechselnd SIG\_ON und SIG\_OFF aufgerufen, welches das Ausgangssignal auf 0 bzw. 255 setzt.
+	\begin{center}
+		\begin{tabular}{|l|l|}
+			\hline
+			\textbf{Befehl}              & \textbf{Hexadzimal} \\
+			\hline
+			MVI D, 1                     & 16 01               \\
+			\textbf{F1:} IN 01           & DB 01               \\
+			MOV B, A                     & 47                  \\
+			MOV C, B                     & 48                  \\
+			\textbf{F2:} DCR C           & 0D                  \\
+			JNZ F2                       & C2 06 00            \\
+			MOV A, D                     & 7A                  \\
+			ADI 0                        & C6 00               \\
+			CZ SIG\_ON                   & CC 18 00            \\
+			CNZ SIG\_OFF                 & C4 1D 00            \\
+			OUT 04                       & D3 04               \\
+			JMP F1                       & C3 02 00            \\
+			\textbf{SIG\_ON:} MVI A, 255 & 3E FF               \\
+			MVI D, 1                     & 16 01               \\
+			RET                          & C9                  \\
+			\textbf{SIG\_OFF:} MVI A, 0  & 3E 00               \\
+			MVI D, 0                     & 16 00               \\
+			RET                          & C9                  \\
+			\hline
+		\end{tabular}
+    \captionof{table}{Rechteck-Signal}
+    \label{tab:recht}
+	\end{center}
+  Wir erhalten somit die in Abb. \ref{fig:rs} gezeigte Signal.
+\begin{Figure}
+  \centering\includegraphics{../data/DS0013.png}
+  \captionof{figure}{Einstellbares Rechtecksignal}
+  \label{fig:rs}
+\end{Figure}
+
+Nun soll am X-Register gezeigt werden, ob der 4te Bit am B-Register an oder aus ist. Dafür lesen wir das B-Register ein und können mit einer AND Operation mit der Zahl 8 (4ter bit an) nur den 4ten Bit errausfiltern. Wir subtrahieren dann 8. Sollte der 4te Bit an gewesen sein, so wird das komplette Register nun 0 sein und die Zero-Flag erschein. Ist der 4te Bit aus, so erhalten wir $0-8\neq0$, womit die Zero-Flag nicht erscheint. Anhand der Zero-Flag können wir dann an dem X-Register 255 (alle 8 Bit leuchten) oder 0 (kein Bit leuchtet) ausgeben. Der verwendetet Code kann in Tab. \ref{tab:bit} eingesehen werden.
+
+	\begin{center}
+		\begin{tabular}{|l|l|}
+			\hline
+			\textbf{Befehl}             & \textbf{Hexadzimal} \\
+			\hline
+			IN 01                       & DB 01               \\
+			ANI 8                       & E6 08               \\
+			CPI 8                       & FE 08               \\
+			CZ SET\_1                   & CC 10 00            \\
+			CNZ SET\_0                  & C4 13 00            \\
+			MOV A, C                    & 79                  \\
+			OUT 00                      & D3 00               \\
+			HLT                         & 76                  \\
+			\textbf{SET\_1:} MVI C, 255 & 0E 01               \\
+			RET                         & C9                  \\
+			\textbf{SET\_0:} MVI C, 0   & 0E 00               \\
+			RET                         & C9                  \\
+			\hline
+		\end{tabular}
+    \captionof{table}{Überprüfe 4ten Bit}
+    \label{tab:bit}
+	\end{center}
+  Der Code wurde erfolgreich in dem Versuch mit verschiedenen Kombinationen getestet.
+
+  Nun war es die Aufgabe eine Multiplikation zu implementieren. Dafür gab es mehrere Möglichkeiten. Den Code wie die schriftliche Multiplikation zu konstruieren erfordert mehr Programmier-Aufwand, ist aber für große Operation relativ schnell. Einfach die Zahl mit sich selber so oft auf zu addieren, wie der Multiplikant groß ist, beansprucht weniger Programmier-Aufwand, ist aber dafür für große Operationen langsam. Da es sich bei uns um eine 8 Bit Operation handelt und somit die größte Zahl 255 ist, haben wir uns für letzteres entschieden. Somit wird genau dies im Code von Tab. \ref{tab:mult} verwirklicht. Das Programm macht genau das wie es schon beschrieben ist. Er liest A und B-Register ein und führt dann so groß, wie das B-Register ist, eine addition von dem A-Register auf sich selber aus. Dies wird allerdings mit einer Doppelgenauigkeit getan, weil das Ergebnis durchaus bis zu 16 Bit beanspruchen kann.
+	\begin{center}
+		\begin{tabular}{|l|l|}
+			\hline
+			\textbf{Befehl}        & \textbf{Hexadzimal} \\
+			\hline
+			\textbf{F1:} MVI L, 0 & 2E 00               \\
+			MVI H, 0              & 26 00               \\
+			MVI D, 0              & 16 00               \\
+			IN 00                  & DB 00               \\
+			MOV E, A               & 5F                  \\
+			IN 01                  & DB 01               \\
+			MOV C, A               & 4F                  \\
+			INR C                  & 0C                  \\
+			\textbf{F2:} DCR C     & 0D                  \\
+			JZ F3                  & CA 15 00            \\
+			DAD D                  & 19                  \\
+			JMP F2                 & C3 0D 00            \\
+			\textbf{F3:} MOV A, H  & 7C                  \\
+			OUT 00                 & D3 00               \\
+			MOV A, L               & 7D                  \\
+			OUT 01                 & D3 00               \\
+			JMP F1                 & C3 00 00            \\
+			\hline
+		\end{tabular}
+    \captionof{table}{Multiplikation}
+    \label{tab:mult}
+	\end{center}
+  Die Programm wurde für verschiedene Zahlen erfolgreich im Versuch getestet.
 
 	\section{Fazit}
-        In diesem Versuch wurde nach und nach aus elementaren Bauteilen ein Mikroprozessor entworfen.
-        Alle Teile wurden einzeln auf ihre Funktionen mit verschiedenen Dualzahlen überprüft.
-        Die Bauteile selbst wurden nicht aufgebaut, stattdessen werden sie von einem FPGA simuliert.
-        \par Zuerst wird ein Addier--Subtrahierwerk eingestellt mit dem erfolgreich verschiedene Zahlen addiert und subtrahiert werden können.
-        Dann schaltet man eine ALU dazu um logische Operationen zwischen zwei Zahlen auf verschiedenen Registern durchzuführen.
-        Mit Hilfe eines RAM konnten Zahlen gespeichert werden und größere bzw.\ längere Operationen waren möglich.
-        Mit dem Programmspeicher konnten dann Befehlsfolgen über eine Tastatur an den Mikroprozessor gegeben werden, mit denen unter anderem verschiedene Signale, wie ein Sägezahnsignal, aber auch die Multiplikation zweier Dualzahlen möglich war.
+	In diesem Versuch wurde nach und nach aus elementaren Bauteilen ein Mikroprozessor entworfen.
+	Alle Teile wurden einzeln auf ihre Funktionen mit verschiedenen Dualzahlen überprüft.
+	Die Bauteile selbst wurden nicht aufgebaut, stattdessen werden sie von einem FPGA simuliert.
+	\par Zuerst wird ein Addier--Subtrahierwerk eingestellt mit dem erfolgreich verschiedene Zahlen addiert und subtrahiert werden können.
+	Dann schaltet man eine ALU dazu um logische Operationen zwischen zwei Zahlen auf verschiedenen Registern durchzuführen.
+	Mit Hilfe eines RAM konnten Zahlen gespeichert werden und größere bzw.\ längere Operationen waren möglich.
+	Mit dem Programmspeicher konnten dann Befehlsfolgen über eine Tastatur an den Mikroprozessor gegeben werden, mit denen unter anderem verschiedene Signale, wie ein Sägezahnsignal, aber auch die Multiplikation zweier Dualzahlen möglich war.
 \end{multicols}
 \end{document}

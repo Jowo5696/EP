@@ -1,0 +1,6 @@
+selben verfahren wie aufg_1
+schaltung funktioniert wie in tabelle dargestellt
+
+Beispiele:
+Vergleich von A und B ist bitweise (010 AND 011 > 010)
+Schaltung mit A und B aus aufgabe überprüft (komplement, AND, OR)
