@@ -246,7 +246,9 @@
 		      Daraus folgt $R=111111111_2$.
 		      Dieses Ergebnis kommt durch das bitweise vergleichen von A und B mit einem logischen OR.
 	\end{enumerate}
-	B FEHLT
+        Die Existenz des 8ten Bit am Ausgang $S_7$ dient zur Unterdrückung des Übertrags.
+        Für logische Operationen ist dies sinnfrei; für arithmetische Operationen kann man ihn verwenden, um zu entscheiden ob eine Zahl einen Übertrag haben soll oder nicht.
+        Dies ist sinnvoll, falls man nicht über eine gewisse Größe an Bit hinaus will (z.B.\ um ab einer bestimmten Zahl wieder bei null anzufangen).
 
 	\subsection{Versuchsaufgabe 3}
 	Unter Verwendung von System 2 können Operationen auf zwei oder mehr Zahlen angewandt werden, indem sie im RAM gespeichert werden.
